@@ -11,6 +11,7 @@
 | age          | integer | null: false |
 | password     | string  | null: false |
 | phone_number | string  | null: false |
+| email        | string  | null: false |
 
 ### Association
 - has_many :reserves
