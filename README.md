@@ -77,7 +77,8 @@
 | Column              | Type       | Options           |
 |---------------------|------------|-------------------|
 | user                | references | foregin_key: true |
-| datetime            | datetime   | null: false       |
+| reserve_date        | date       | null: false       |
+| reserve_time        | time       | null: false       |
 | number_reserve      | integer    | null: false       |
 | reserve_categoty_id | integer    | null: false       |
 
