@@ -5,5 +5,13 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
 
+    <select name="chat[user_ids][]" id="">
+      <option value="">------------</option>
+      <% User.where.not(id: current_user.id).each do |user| %>
+        <option value=<%= user.id %>><%= user.nickname %></option>
+      <% end %>
+    </select>
+    <input type="hidden" name="room[user_ids][]" value=<%= current_user.id %> >
+
     <%= f.submit '新規作成' %>
   <% end %>
