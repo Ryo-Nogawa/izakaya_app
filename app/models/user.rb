@@ -17,4 +17,6 @@ class User < ApplicationRecord
   has_many :reserves
   has_many :visuals
   has_many :blogs
+  has_many :chat_users
+  has_many :chats, through: :chat_users
 end
