@@ -1,0 +1,9 @@
+<h1>外観/内装</h1>
+
+<%= link_to '追加', new_visual_path %>
+
+<% @visuals.each do |visual| %>
+  <%= link_to visual_path(visual.id) do %>
+    <%= image_tag visual.image.variant(resize: '400x400') %>
+  <% end %>
+<% end %>
