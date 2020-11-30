@@ -1,0 +1,25 @@
+<h1>ブログ一覧表示</h1>
+
+<%= link_to '新規投稿', new_blog_path %>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+      </tr>
+    </thead>
+    <% @blogs.each do |blog| %>
+        <tbody>
+          <tr>
+            <th scope="row"><%= blog.id %></th>
+            <td><%= blog.title %></td>
+            <td><%= blog.created_at %></td>
+            <td><%= link_to 'show', blog_path(blog.id) %></td>
+            <td><%= link_to 'edit', edit_blog_path(blog.id) %></td>
+            <td><%= link_to 'delete', blog_path(blog.id), method: :delete %></td>
+          </tr>
+        </tbody>
+    <% end %>
+</table>
