@@ -22,15 +22,24 @@ class VisualsController < ApplicationController
     @visual = Visual.find(params[:id])
   end
 
-  def 
+  def destroy
+    @visual = Visual.find(params[:id])
+    @visual.destroy
+    redirect_to visuals_path
+  end
 
   def edit
+    @visual = Visual.find(params[:id])
   end
 
   def update
-  end
-
-  def destroy
+    @visual = Visual.find(params[:id])
+    if @visual.valid?
+      @visual.update(visual_params)
+      redirect_to visuals_path
+    else
+      redirect_to edit_visual(params[:id])
+    end
   end
 
   private
