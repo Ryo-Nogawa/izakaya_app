@@ -1,0 +1,6 @@
+<h1>編集</h1>
+
+<%= form_with model: @visual, local: true do |f| %>
+  <%= f.file_field :image, {size: '400x400'} %>
+  <%= f.submit '保存する' %>
+<% end %>

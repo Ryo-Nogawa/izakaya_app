@@ -13,4 +13,7 @@ class User < ApplicationRecord
     validates :age,          numericality: { greater_than_or_equal_to: 20 }
     validates :phone_number, format: { with: /\A\d{10,11}\z/ }
   end
+
+  has_many :reserves
+  has_many :visuals
 end
