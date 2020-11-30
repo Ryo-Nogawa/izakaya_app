@@ -1,6 +1,5 @@
 class ReservesController < ApplicationController
-  def index
-  end
+  def index; end
 
   def new
     @reserve = Reserve.new
@@ -16,8 +15,8 @@ class ReservesController < ApplicationController
     end
   end
 
-
   private
+
   def reserve_params
     params.require(:reserve).permit(:reserve_date, :reserve_time, :number_reserve, :reserve_category_id).merge(user_id: current_user.id)
   end

@@ -1,5 +1,4 @@
 class VisualsController < ApplicationController
-
   def index
     @visuals = Visual.all
   end
@@ -43,6 +42,7 @@ class VisualsController < ApplicationController
   end
 
   private
+
   def visual_params
     params.require(:visual).permit(:image).merge(user_id: current_user.id)
   end
