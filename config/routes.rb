@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :reserves, only: [:new, :create]
   resources :visuals
   resources :blogs
+  resources :chats, only: [:new, :create]
 end
