@@ -16,4 +16,5 @@ class User < ApplicationRecord
 
   has_many :reserves
   has_many :visuals
+  has_many :blogs
 end
