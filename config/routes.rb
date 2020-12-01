@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   resources :foods do
     resources :food_comments, only: :create
   end
-  resources :drinks
+  resources :drinks do
+    resources :drink_comments, only: :create
+  end
 end

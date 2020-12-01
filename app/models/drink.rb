@@ -4,6 +4,7 @@ class Drink < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image
+  has_many :drink_comments
 
   with_options presence: true do
     validates :drink_category_id, numericality: { other_than: 1 }
