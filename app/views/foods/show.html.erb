@@ -1,0 +1,9 @@
+<h1>詳細ページ</h1>
+
+<%= @food.title %>
+<%= @food.detail %>
+<%= @food.price %>
+<%= image_tag @food.image.variant(resize: '400x400') %>
+
+<%= link_to '編集', edit_food_path(params[:id]) %>
+<%= link_to '削除', food_path(params[:id]), method: :delete %>
