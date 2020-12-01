@@ -23,4 +23,6 @@ class User < ApplicationRecord
   has_many :messages
   has_many :foods
   has_many :food_comments
+  has_many :drinks
+  has_many :drink_comments
 end
