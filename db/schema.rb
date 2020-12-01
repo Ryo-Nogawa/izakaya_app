@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_031646) do
+ActiveRecord::Schema.define(version: 2020_12_01_061821) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 2020_12_01_031646) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "blog_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "blog_id"
+    t.text "comment", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["blog_id"], name: "index_blog_comments_on_blog_id"
+    t.index ["user_id"], name: "index_blog_comments_on_user_id"
   end
 
   create_table "blogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -101,6 +111,8 @@ ActiveRecord::Schema.define(version: 2020_12_01_031646) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "blog_comments", "blogs"
+  add_foreign_key "blog_comments", "users"
   add_foreign_key "blogs", "users"
   add_foreign_key "chat_users", "chats"
   add_foreign_key "chat_users", "users"
