@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :reserves, only: [:new, :create]
   resources :visuals
   resources :blogs do
-    resources :blog_comments, only: [:new, :create]
+    resources :blog_comments, only: :create
   end
   resources :chats, only: [:new, :create]
   resources :messages, only: [:index, :create]
