@@ -1,11 +1,25 @@
 <h1>詳細画面</h1>
 
-<div class="card" style="width: 18rem;">
-  <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text></svg>
-  <div class="card-body">
-    <p class="card-text"><%= @blog.title %></p>
-    <p class="card-text"><%= @blog.text %></p>
-  </div>
+<%= @blog.title %><br />
+<%= @blog.text %><br />
+<%= @blog.created_at %><br />
+
+<div class="blog-comment">
+  <%= form_with model: [@blog, @comment], locat: true do |f| %>
+    <%= f.text_area :comment, placeholder: 'コメントをする' %>
+    <%= f.submit '送信' %>
+  <% end %>
 </div>
 
+
+<div class="comment-show">
+  <% if @comments %>
+    <% @comments.each do |comment| %>
+      <p>
+        <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>:</strong>
+        <%= comment.comment %>
+      </p>
+    <% end %>
+  <% end %>
+</div>
 <%= link_to '一覧へ戻る', blogs_path %>

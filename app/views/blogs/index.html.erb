@@ -3,13 +3,6 @@
 <%= link_to '新規投稿', new_blog_path %>
 
 <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-      </tr>
-    </thead>
     <% @blogs.each do |blog| %>
         <tbody>
           <tr>

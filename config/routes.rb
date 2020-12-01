@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'reserves#index'
   resources :reserves, only: [:new, :create]
   resources :visuals
-  resources :blogs
+  resources :blogs do
+    resources :blog_comments, only: :create
+  end
   resources :chats, only: [:new, :create]
   resources :messages, only: [:index, :create]
 
