@@ -93,4 +93,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_232634) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "blogs", "users"
+  add_foreign_key "chat_users", "chats"
+  add_foreign_key "chat_users", "users"
 end
