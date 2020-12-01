@@ -1,0 +1,11 @@
+<h1>ドリンクメニュー</h1>
+
+<% @drinks.each do |drink| %>
+  <%= drink.title %>
+  <%= drink.price %>
+  <%= link_to drink_path(drink.id) do %>
+    <%= image_tag drink.image.variant(resize: '400x400') %>
+  <% end %>
+<% end %>
+
+<%= link_to '新規投稿', new_drink_path %>

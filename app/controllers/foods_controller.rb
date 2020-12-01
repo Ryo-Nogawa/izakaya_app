@@ -39,7 +39,7 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
     if @food.valid?
       @food.update(food_params)
-      redirect_to foods_path
+      redirect_to food_path(params[:id])
     else
       redirect_to edit_food_path(params[:id])
     end

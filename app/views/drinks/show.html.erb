@@ -1,0 +1,9 @@
+<h1>詳細画面</h1>
+
+<%= @drink.title %><br />
+<%= @drink.detail %><br />
+<%= @drink.price %><br />
+<%= image_tag @drink.image.variant(resize: '400x400') %><br />
+
+<%= link_to '編集', edit_drink_path(params[:id]) %>
+<%= link_to '削除', drink_path(params[:id]), method: :delete %>

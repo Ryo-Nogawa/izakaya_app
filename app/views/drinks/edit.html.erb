@@ -1,0 +1,30 @@
+<h1>編集機能</h1>
+
+<%= form_with model: @drink, local: true do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :detail %>
+    <%= f.text_area :detail %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :drink_category_id %>
+    <%= f.collection_select :drink_category_id, DrinkCategory.all, :id, :name, {} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image, {size: '400x400'} %>
+  </div>
+
+  <%= f.submit '送信' %>
+<% end %>
