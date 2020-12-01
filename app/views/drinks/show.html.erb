@@ -5,5 +5,23 @@
 <%= @drink.price %><br />
 <%= image_tag @drink.image.variant(resize: '400x400') %><br />
 
+<div class="drink-comment">
+  <%= form_with model: [@drink, @comment], local: true do |f| %>
+    <%= f.text_area :comment, placeholder: 'コメントする' %>
+    <%= f.submit '送信' %>
+  <% end %>
+</div>
+
+<div class="comment-show">
+  <% if @comments %>
+    <% @comments.each do |comment| %>
+      <p>
+        <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>:</strong>
+        <%= comment.comment %>
+      </p>
+    <% end %>
+  <% end %>
+</div>
+
 <%= link_to '編集', edit_drink_path(params[:id]) %>
 <%= link_to '削除', drink_path(params[:id]), method: :delete %>
