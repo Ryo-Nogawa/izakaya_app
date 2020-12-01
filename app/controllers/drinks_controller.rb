@@ -17,6 +17,17 @@ class DrinksController < ApplicationController
     end
   end
 
+  def show
+    @drink = Drink.find(params[:id])
+  end
+
+  def destroy
+    drink = Drink.find(params[:id])
+    if drink.destroy
+      redirect_to drinks_path
+    end
+  end
+
   private
   def drink_params
     params.require(:drink).permit(:title, :detail, :price, :drink_category_id, :image).merge(user_id: current_user.id)
