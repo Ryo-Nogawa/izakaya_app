@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2020_12_01_095001) do
     t.string "title", null: false
     t.string "detail", null: false
     t.integer "price", null: false
-    t.integer "foo_category_id", null: false
+    t.integer "food_category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_foods_on_user_id"
