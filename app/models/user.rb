@@ -22,4 +22,5 @@ class User < ApplicationRecord
   has_many :chats, through: :chat_users
   has_many :messages
   has_many :foods
+  has_many :food_comments
 end
