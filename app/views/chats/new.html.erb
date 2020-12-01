@@ -1,6 +1,5 @@
 <h1>新規チャットルーム</h1>
 
-
   <%= form_with model: @chat, local: true do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -11,7 +10,7 @@
         <option value=<%= user.id %>><%= user.nickname %></option>
       <% end %>
     </select>
-    <input type="hidden" name="room[user_ids][]" value=<%= current_user.id %> >
+    <input type="hidden" name="chat[user_ids][]" value=<%= current_user.id %> >
 
     <%= f.submit '新規作成' %>
   <% end %>
