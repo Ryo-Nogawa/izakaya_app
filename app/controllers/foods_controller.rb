@@ -20,6 +20,8 @@ class FoodsController < ApplicationController
 
   def show
     @food = Food.find(params[:id])
+    @comment = FoodComment.new
+    @comments = @food.food_comments.includes(:user)
   end
 
   def destroy
