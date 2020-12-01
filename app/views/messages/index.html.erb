@@ -1,0 +1,14 @@
+<h1>チャット画面</h1>
+
+<% @messages.each do |message| %>
+  <%= message.user.nickname %>
+  <%= message.created_at %>
+  <%= message.content %>
+<% end %>
+
+<%= form_with model: @message, local: true do |f| %>
+  <%= f.text_field :content, placeholder: 'type a message' %>
+  <%= f.file_field :image %>
+
+  <%= f.submit '送信' %>
+<% end %>

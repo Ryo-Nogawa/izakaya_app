@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :visuals
   resources :blogs
   resources :chats, only: [:new, :create]
+  resources :messages, only: [:index, :create]
+
 end
