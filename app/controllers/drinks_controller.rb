@@ -28,6 +28,20 @@ class DrinksController < ApplicationController
     end
   end
 
+  def edit
+    @drink = Drink.find(params[:id])
+  end
+
+  def update
+    @drink = Drink.find(params[:id])
+    if @drink.valid?
+      @drink.update(drink_params)
+      redirect_to drink_path(params[:id])
+    else
+      redirect_to edit_drink_path(params[:id])
+    end
+  end
+
   private
   def drink_params
     params.require(:drink).permit(:title, :detail, :price, :drink_category_id, :image).merge(user_id: current_user.id)
