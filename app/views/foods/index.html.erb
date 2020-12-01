@@ -1,0 +1,11 @@
+<h1>料理メニュー</h1>
+
+<% @foods.each do |food| %>
+  <%= food.title %>
+  <%= food.price %>
+  <%= link_to food_path(food.id) do %>
+    <%= image_tag food.image.variant(resize: '400x400') %>
+  <% end %>
+<% end %>
+
+<%= link_to '新規作成', new_food_path %>
