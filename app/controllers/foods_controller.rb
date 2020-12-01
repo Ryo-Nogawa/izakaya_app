@@ -29,6 +29,20 @@ class FoodsController < ApplicationController
     end
   end
 
+  def edit
+    @food = Food.find(params[:id])
+  end
+
+  def update
+    @food = Food.find(params[:id])
+    if @food.valid?
+      @food.update(food_params)
+      redirect_to foods_path
+    else
+      redirect_to edit_food_path(params[:id])
+    end
+  end
+
   private
   def food_params
     params.require(:food).permit(:title, :detail, :price, :image, :food_category_id).merge(user_id: current_user.id)
