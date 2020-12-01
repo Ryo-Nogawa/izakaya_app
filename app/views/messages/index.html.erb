@@ -1,0 +1,13 @@
+<h1>チャット画面</h1>
+
+<div id="messages">
+  <% @messages.reverse_each do |message| %>
+    <p><%= message.content %></p>
+  <% end %>
+</div>
+
+<%= form_with model: @message, local: true do |f| %>
+  <%= f.text_field :content, placeholder: 'type a message' %>
+  <%= f.file_field :image %>
+  <%= f.submit '送信' %>
+<% end %>
