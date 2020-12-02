@@ -6,7 +6,7 @@
   <% end %>
 </div>
 
-<%= form_with model: @message, local: true do |f| %>
+<%= form_with model: @message do |f| %>
   <%= f.text_field :content, placeholder: 'type a message' %>
   <%= f.file_field :image %>
   <%= f.submit '送信' %>
