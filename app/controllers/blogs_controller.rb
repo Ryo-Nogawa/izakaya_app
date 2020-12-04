@@ -13,7 +13,7 @@ class BlogsController < ApplicationController
       @blog.save
       redirect_to blogs_path
     else
-      redirect_to new_blog_path
+      render :new
     end
   end
 
