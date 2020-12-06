@@ -1,0 +1,11 @@
+<% if current_user.liked_by?(food.id) %>
+    <%= link_to destroy_food_like_path(food.id), class: 'like-link', method: :DELETE, remote: true do %>
+      <i class="fa fa-heart unlike-btn"></i>
+    <% end %>
+    <%= food.food_likes.count %>
+<% else %>
+    <%= link_to create_food_like_path(food.id), class: 'like-link', method: :POST, remote: true do %>
+      <i class="fa fa-heart like-btn"></i>
+    <% end %>
+    <%= food.food_likes.count %>
+<% end %>

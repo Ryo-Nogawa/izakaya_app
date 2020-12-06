@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :foods do
     resources :food_comments, only: :create
   end
+  post 'foods/:id', to: 'food_likes#create', as: 'create_food_like'
+  delete 'foods/:id', to: 'food_likes#destroy', as: 'destroy_food_like'
   resources :drinks do
     resources :drink_comments, only: :create
   end
