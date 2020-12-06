@@ -23,6 +23,12 @@ class User < ApplicationRecord
   has_many :messages
   has_many :foods
   has_many :food_comments
+  has_many :food_likes
   has_many :drinks
   has_many :drink_comments
+
+  def liked_by?(food_id)
+    food_likes.where(food_id: food_id).exists?
+  end
+
 end
