@@ -1,0 +1,23 @@
+<h1>予約編集画面</h1>
+
+<%= form_with model: @reserve, local: true do |f| %>
+  <div class="field">
+    <%= f.label :reserve_date %>
+    <%= f.date_field :reserve_date, {value: Time.now.strftime('%Y-%m-%d')} %>
+  </div>
+  <div class="field">
+    <%= f.label :reserve_time %>
+    <%= f.time_select :reserve_time, { start_hour: 17, end_hour: 22, minute_step: 15, time_separater: "",  prompt: '---', ignore_date: true, include_seconds: false } %>
+  </div>
+  <div class="field">
+    <%= f.label :number_reserve %>
+    <%= f.number_field :number_reserve, {min: 2, max: 20, step: 1, include_blank: true, value: 2} %>
+  </div>
+  <div class="field">
+    <%= f.label :reserve_category_id %>
+    <%= f.collection_select :reserve_category_id, ReserveCategory.all, :id, :name, {} %>
+  </div>
+  <div class="actions">
+    <%= f.submit "予約する" %>
+  </div>
+<% end %>

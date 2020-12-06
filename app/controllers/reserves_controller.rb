@@ -1,4 +1,6 @@
 class ReservesController < ApplicationController
+  before_action :authenticate_user!, only: :index
+  
   def index; end
 
   def new
@@ -12,6 +14,27 @@ class ReservesController < ApplicationController
       redirect_to root_path
     else
       render action: :new
+    end
+  end
+
+  def edit
+    @reserve = Reserve.find(params[:id])
+  end
+
+  def update
+    @reserve = Reserve.find(params[:id])
+    if @reserve.valid?
+      @reserve.update(reserve_params)
+      redirect_to user_path(current_user.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    reserve = Reserve.find(params[:id])
+    if reserve.destroy
+      redirect_to user_path(current_user.id)
     end
   end
 

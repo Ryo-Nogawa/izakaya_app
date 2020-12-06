@@ -1,0 +1,23 @@
+<h1><%= @user.nickname %>さんの予約履歴</h1>
+<table>
+  <tr>
+    <th>日付</th>
+    <th>時間</th>
+    <th>人数</th>
+    <th>予約のコース</th>
+  </tr>
+  <% @reserves.each do |reserve| %>
+    <tr>
+      <th><%= reserve.reserve_date.strftime('%m/%d') %></th>
+      <th><%= reserve.reserve_time.strftime('%-H:%M') %> </th>
+      <th><%= reserve.number_reserve %>名</th>
+      <th><%= reserve.reserve_category.name %></th>
+      <th>
+        <% if reserve.reserve_date > @today %>
+          <%= link_to '予約を変更する', edit_reserve_path(reserve.id) %>
+          <%= link_to '予約をキャンセルする', reserve_path(reserve.id), method: :DELETE %>
+        <% end %>
+      </th>
+    </tr>
+  <% end %>
+</table>
