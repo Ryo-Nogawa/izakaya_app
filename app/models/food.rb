@@ -9,7 +9,7 @@ class Food < ApplicationRecord
 
   with_options presence: true do
     # カテゴリー選択は1以外
-    validates :drink_category_id, numericality: { other_than: 1 }
+    validates :food_category_id, numericality: { other_than: 1 }
     # 商品名は40文字以内
     validates :title, length: { minimum: 1, maximum: 40 }
     # 商品詳細は250文字以内
