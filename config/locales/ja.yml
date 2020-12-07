@@ -1,0 +1,40 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      blog: ブログ
+      chat: チャット
+    attributes:
+      user:
+        nickname: ニックネーム
+        name: お名前
+        name_kana: お名前（カナ）
+        age: 年齢
+        phone_number: 電話番号
+
+      blog:
+        title: タイトル
+        text: テキスト
+      
+      chat:
+        name: グループ名
+
+      drink:
+        drink_category_id: カテゴリー
+        title: 商品名
+        detail: 詳細
+        price: 値段
+        image: 画像
+
+      food:
+        food_category_id: カテゴリー
+        title: 商品名
+        detail: 詳細
+        price: 値段
+        image: 画像
+
+      reserve:
+        reserve_date: 御予約日時
+        reserve_time: 御予約時間
+        number_reserve: 御予約人数
+        reserve_category_id: カテゴリー

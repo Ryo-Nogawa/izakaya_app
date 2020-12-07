@@ -1,6 +1,7 @@
 <h1>予約画面</h1>
 
 <%= form_with model: @reserve, local: true do |f| %>
+<%= render 'shared/error_messages', resource: @reserve %>
   <div class="field">
     <%= f.label :reserve_date %>
     <%= f.date_field :reserve_date, {value: Time.now.strftime('%Y-%m-%d')} %>
@@ -11,7 +12,7 @@
   </div>
   <div class="field">
     <%= f.label :number_reserve %>
-    <%= f.number_field :number_reserve, {min: 2, max: 20, step: 1, include_blank: true, value: 2} %>
+    <%= f.number_field :number_reserve, {min: 1, max: 20, step: 1, include_blank: true, value: 2} %>
   </div>
   <div class="field">
     <%= f.label :reserve_category_id %>

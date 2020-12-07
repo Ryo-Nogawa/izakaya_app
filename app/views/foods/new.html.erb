@@ -1,6 +1,7 @@
 <h1>新規作成</h1>
 
 <%= form_with model: @food, local: true do |f| %>
+<%= render 'shared/error_messages', resource: @food %>
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>

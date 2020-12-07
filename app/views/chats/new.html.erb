@@ -1,6 +1,7 @@
 <h1>新規チャットルーム</h1>
 
   <%= form_with model: @chat, local: true do |f| %>
+  <%= render 'shared/error_messages', resource: @chat %>
     <%= f.label :name %>
     <%= f.text_field :name %>
 

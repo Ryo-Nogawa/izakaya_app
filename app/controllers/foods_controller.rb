@@ -11,7 +11,7 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(food_params)
     if @food.valid?
-      @food.save
+      @food.save(food_params)
       redirect_to foods_path
     else
       render :new
@@ -37,11 +37,10 @@ class FoodsController < ApplicationController
 
   def update
     @food = Food.find(params[:id])
-    if @food.valid?
-      @food.update(food_params)
+    if @food.update(food_params)
       redirect_to food_path(params[:id])
     else
-      redirect_to edit_food_path(params[:id])
+      render :edit
     end
   end
 

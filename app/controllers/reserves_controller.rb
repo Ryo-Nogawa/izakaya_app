@@ -13,7 +13,7 @@ class ReservesController < ApplicationController
       @reserve.save
       redirect_to root_path
     else
-      render action: :new
+      render new_reserve_path
     end
   end
 
@@ -23,8 +23,7 @@ class ReservesController < ApplicationController
 
   def update
     @reserve = Reserve.find(params[:id])
-    if @reserve.valid?
-      @reserve.update(reserve_params)
+    if @reserve.update(reserve_params)
       redirect_to user_path(current_user.id)
     else
       render :edit
