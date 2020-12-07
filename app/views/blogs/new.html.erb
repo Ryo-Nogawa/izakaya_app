@@ -18,11 +18,9 @@
 
   <div class="submit">
     <%= f.submit '送信' %>
-    <div id="image-list"></div>
+    <div id="blog-image-list"></div>
   </div>
 
-  <%# プレビュー画像の表示 %>
-  <div id='image-list'></div>
 <% end %>
 
 <%= image_tag @blog.image, id: 'image' if @blog.image.present? %>

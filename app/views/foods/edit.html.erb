@@ -27,4 +27,9 @@
   </div>
 
   <%= f.submit '送信' %>
+
+  <%# プレビュー画像の表示 %>
+  <div id='food-image-list'></div>
 <% end %>
+
+<%= image_tag @food.image, id: 'image' if @food.image.present? %>
