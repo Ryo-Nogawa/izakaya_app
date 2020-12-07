@@ -3,6 +3,7 @@ ja:
     models:
       user: ユーザー
       blog: ブログ
+      chat: チャット
     attributes:
       user:
         nickname: ニックネーム
@@ -14,3 +15,6 @@ ja:
       blog:
         title: タイトル
         text: テキスト
+      
+      chat:
+        name: グループ名
