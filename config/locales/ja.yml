@@ -32,3 +32,9 @@ ja:
         detail: 詳細
         price: 値段
         image: 画像
+
+      reserve:
+        reserve_date: 御予約日時
+        reserve_time: 御予約時間
+        number_reserve: 御予約人数
+        reserve_category_id: カテゴリー
