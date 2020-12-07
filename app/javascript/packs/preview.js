@@ -20,7 +20,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
     document.getElementById('blog_image').addEventListener('change', function(e) {
 
       // 画像が表示されている場合のみ、既に存在している画像を削除する
-      const imageContent = document.querySelector('img');
+      const imageContent = document.querySelector('image');
       if (imageContent) {
         imageContent.remove();
       };
