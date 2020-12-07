@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      blog: ブログ
     attributes:
       user:
         nickname: ニックネーム
@@ -9,3 +10,7 @@ ja:
         name_kana: お名前（カナ）
         age: 年齢
         phone_number: 電話番号
+
+      blog:
+        title: タイトル
+        text: テキスト
