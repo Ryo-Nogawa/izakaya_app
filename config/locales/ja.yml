@@ -18,3 +18,10 @@ ja:
       
       chat:
         name: グループ名
+
+      drink:
+        drink_category_id: カテゴリー
+        title: 商品名
+        detail: 詳細
+        price: 値段
+        image: 画像

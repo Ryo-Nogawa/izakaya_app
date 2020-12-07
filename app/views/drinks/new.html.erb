@@ -1,6 +1,7 @@
 <h1>新規投稿</h1>
 
 <%= form_with model: @drink, local: true do |f| %>
+<%= render 'shared/error_messages', resource: @drink %>
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
