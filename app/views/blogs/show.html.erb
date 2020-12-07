@@ -9,6 +9,7 @@
   <% if @comments %>
     <% @comments.each do |comment| %>
       <p>
+        <%= image_tag blog.image.variant(resize: '400x400') if blog.image.attached? %>
         <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>:</strong>
         <%= comment.comment %>
       </p>

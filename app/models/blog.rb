@@ -1,6 +1,6 @@
 class Blog < ApplicationRecord
   belongs_to :user
-  has_many_attached :images
+  has_one_attached :image
   has_many :blog_comments
 
   with_options presence: true do

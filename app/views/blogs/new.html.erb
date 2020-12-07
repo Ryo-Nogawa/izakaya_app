@@ -12,8 +12,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :images %><br />
-    <%= f.file_field :images, name: 'blog[images][]', id: 'blog_image' %>
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
   </div>
 
   <div class="submit">
@@ -21,8 +21,8 @@
     <div id="image-list"></div>
   </div>
 
+  <%# プレビュー画像の表示 %>
+  <div id='image-list'></div>
 <% end %>
 
-<% @blog.images.each do |image| %>
-  <%= image_tag image %>
-<% end %>
+<%= image_tag @blog.image, id: 'image' if @blog.image.present? %>
