@@ -1,7 +1,6 @@
 if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
   document.addEventListener('DOMContentLoaded', function() {
-    const ImageList = document.getElementById('food-image-list');
-    console.log(123)
+    const ImageList = document.getElementById('blog-image-list');
 
     // 選択した画像を表示する関数
     const createImageHTML = (blob) => {
@@ -18,7 +17,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       ImageList.appendChild(imageElement);
     };
 
-    document.getElementById('food_image').addEventListener('change', function(e) {
+    document.getElementById('blog_image').addEventListener('change', function(e) {
 
       // 画像が表示されている場合のみ、既に存在している画像を削除する
       const imageContent = document.querySelector('img');

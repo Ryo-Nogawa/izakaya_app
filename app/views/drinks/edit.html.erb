@@ -27,4 +27,9 @@
   </div>
 
   <%= f.submit '送信' %>
+
+  <%# プレビュー画像の表示 %>
+  <div id="drink-image-list"></div>
 <% end %>
+
+<%= image_tag @drink.image, id: 'image' if @drink.image.present? %>
