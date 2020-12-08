@@ -3,11 +3,16 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+// import '@fontswesome/fontawesome-free/js/all';
 require("@rails/ujs").start()
-// require("turbolinks").start()
+require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require('./preview')
+require('./blog_preview')
+require('./food_preview')
+require('./drink_preview')
+require('./visual_preview')
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

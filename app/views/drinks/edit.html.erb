@@ -1,6 +1,7 @@
 <h1>編集機能</h1>
 
 <%= form_with model: @drink, local: true do |f| %>
+<%= render 'shared/error_messages', resource: @drink %>
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -27,4 +28,9 @@
   </div>
 
   <%= f.submit '送信' %>
+
+  <%# プレビュー画像の表示 %>
+  <div id="drink-image-list"></div>
 <% end %>
+
+<%= image_tag @drink.image, id: 'image' if @drink.image.present? %>

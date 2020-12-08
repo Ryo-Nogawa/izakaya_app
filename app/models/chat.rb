@@ -1,6 +1,7 @@
 class Chat < ApplicationRecord
   has_many :chat_users
   has_many :users, through: :chat_users
-  
-  validates :name, presence: true
+
+  # チャットルームの名前は最大40文字
+  validates :name, presence: true, length: { minimum: 1, maximum: 40 }
 end

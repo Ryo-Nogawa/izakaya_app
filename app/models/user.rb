@@ -8,9 +8,9 @@ class User < ApplicationRecord
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,100}+\z/i }
   with_options presence: true do
     validates :nickname,     length: { minimum: 1, maximum: 40 }
-    validates :name,         format: { with: /\A[ぁ-んァ-ン一-龥]/ }
-    validates :name_kana,    format: { with: /\A[ァ-ヶー－]+\z/ }
-    validates :age,          numericality: { greater_than_or_equal_to: 20 }
+    validates :name,         format: { with: /\A[ぁ-んァ-ン一-龥々]/ }
+    validates :name_kana,    format: { with: /\A[ァ-ヶー－]/ }
+    validates :age,          numericality: { greater_than_or_equal_to: 20 }, format: { with: /\A[0-9]+\z/ }
     validates :phone_number, format: { with: /\A\d{10,11}\z/ }
   end
 
@@ -23,6 +23,12 @@ class User < ApplicationRecord
   has_many :messages
   has_many :foods
   has_many :food_comments
+  has_many :food_likes
   has_many :drinks
   has_many :drink_comments
+
+  def liked_by?(food_id)
+    food_likes.where(food_id: food_id).exists?
+  end
+
 end

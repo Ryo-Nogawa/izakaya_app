@@ -1,6 +1,7 @@
 <h1>新規投稿</h1>
 
 <%= form_with model: @blog, local: true do |f| %>
+<%= render 'shared/error_messages', resource: @blog %>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -12,17 +13,15 @@
   </div>
 
   <div class="field">
-    <%= f.label :images %><br />
-    <%= f.file_field :images, name: 'blog[images][]', id: 'blog_image' %>
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
   </div>
 
   <div class="submit">
     <%= f.submit '送信' %>
-    <div id="image-list"></div>
+    <div id="blog-image-list"></div>
   </div>
 
 <% end %>
 
-<% @blog.images.each do |image| %>
-  <%= image_tag image %>
-<% end %>
+<%= image_tag @blog.image, id: 'image' if @blog.image.present? %>

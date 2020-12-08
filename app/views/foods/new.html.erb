@@ -1,6 +1,7 @@
 <h1>新規作成</h1>
 
 <%= form_with model: @food, local: true do |f| %>
+<%= render 'shared/error_messages', resource: @food %>
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -26,5 +27,12 @@
     <%= f.file_field :image, {size: '400x400'} %>
   </div>
 
-  <%= f.submit '送信' %>
+  <div class="submit">
+    <%= f.submit '送信' %>
+  </div>
+  <%# プレビュー画像の表示 %>
+  <div id='food-image-list'></div>
+
 <% end %>
+
+<%= image_tag @food.image, id: 'image' if @food.image.present? %>

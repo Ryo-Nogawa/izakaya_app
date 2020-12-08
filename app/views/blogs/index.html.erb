@@ -9,6 +9,7 @@
             <th scope="row"><%= blog.id %></th>
             <td><%= blog.title %></td>
             <td><%= blog.created_at %></td>
+            <td><%= image_tag blog.image.variant(resize: '200x200') if blog.image.attached? %> </td>
             <td><%= link_to 'show', blog_path(blog.id) %></td>
             <td><%= link_to 'edit', edit_blog_path(blog.id) %></td>
             <td><%= link_to 'delete', blog_path(blog.id), method: :delete %></td>

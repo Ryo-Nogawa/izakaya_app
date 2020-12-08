@@ -13,7 +13,7 @@ class BlogsController < ApplicationController
       @blog.save
       redirect_to blogs_path
     else
-      redirect_to new_blog_path
+      render :new
     end
   end
 
@@ -35,9 +35,18 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
   end
 
+  def update
+    @blog = Blog.find(params[:id])
+    if @blog.update(blog_params)
+      redirect_to blogs_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def blog_params
-    params.require(:blog).permit(:title, :text, images: []).merge(user_id: current_user.id)
+    params.require(:blog).permit(:title, :text, :image).merge(user_id: current_user.id)
   end
 end

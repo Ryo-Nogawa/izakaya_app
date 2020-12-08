@@ -1,7 +1,11 @@
 <h1>新規投稿</h1>
 
 <%= form_with model: @visual, local: true do |f| %>
+<%= render 'shared/error_messages', resource: @visual %>
   <%= f.file_field :image, {size: '400x400'} %>
   <%= f.submit '保存する' %>
+  <div id="visual-image-list"></div>
 <% end %>
+
+<%= image_tag @visual.image, id: 'image' if @visual.image.present? %>
 

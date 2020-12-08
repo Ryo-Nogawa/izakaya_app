@@ -5,14 +5,8 @@
 <%= @food.price %><br />
 <%= image_tag @food.image.variant(resize: '400x400') %><br />
 
-<div class="food-comment">
-  <%= form_with model: [@food, @comment], local: true do |f| %>
-    <%= f.text_area :comment, placeholder: 'コメントする' %>
-    <%= f.submit '送信' %>
-  <% end %>
-</div>
 
-<div class="comment-show">
+<div class="comment-show" id = "messages">
   <% if @comments %>
     <% @comments.each do |comment| %>
       <p>
@@ -20,6 +14,13 @@
         <%= comment.comment %>
       </p>
     <% end %>
+  <% end %>
+</div>
+
+<div class="food-comment">
+  <%= form_with model: [@food, @comment], local: true do |f| %>
+    <%= f.text_area :comment, placeholder: 'コメントする' %>
+    <%= f.submit '送信' %>
   <% end %>
 </div>
 

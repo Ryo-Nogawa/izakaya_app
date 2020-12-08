@@ -2,7 +2,7 @@ class BlogCommentsController < ApplicationController
 
   def create
     comment = BlogComment.create(comment_params)
-    redirect_to "/blogs/#{comment.blog.id}"
+    redirect_to blog_path(params[:blog_id])
   end
 
   private
