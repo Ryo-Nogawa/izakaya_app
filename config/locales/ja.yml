@@ -9,6 +9,7 @@ ja:
       drink_comment: ドリンクコメント
       food: フード
       food_comment: フードコメント
+      message: メッセージ
 
     attributes:
       user:
@@ -53,3 +54,6 @@ ja:
 
       blog_comment:
         comment: コメント
+
+      message:
+        content: メッセージ
