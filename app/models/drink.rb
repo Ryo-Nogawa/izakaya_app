@@ -14,7 +14,7 @@ class Drink < ApplicationRecord
     # 商品詳細は250文字以内
     validates :detail, length: { minimum: 1, maximum: 250 }
     # 値段は半角数字
-    validates :price, numericality: { only_integer: true, less_than: 9_999_999}, format: { with: /\A[0-9]+\z/ }
+    validates :price, numericality: { only_integer: true, greater_than: 1, less_than: 9_999_999}, format: { with: /\A[0-9]+\z/ }
     # 画像は必須
     validates :image
   end

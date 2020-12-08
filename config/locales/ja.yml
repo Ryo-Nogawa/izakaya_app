@@ -3,7 +3,15 @@ ja:
     models:
       user: ユーザー
       blog: ブログ
+      blog_comment: ブログコメント
       chat: チャット
+      drink: ドリンク
+      drink_comment: ドリンクコメント
+      food: フード
+      food_comment: フードコメント
+      message: メッセージ
+      visual: 外観/内装
+
     attributes:
       user:
         nickname: ニックネーム
@@ -26,6 +34,9 @@ ja:
         price: 値段
         image: 画像
 
+      drink_comment:
+        comment: コメント
+
       food:
         food_category_id: カテゴリー
         title: 商品名
@@ -33,8 +44,20 @@ ja:
         price: 値段
         image: 画像
 
+      food_comment:
+        comment: コメント
+
       reserve:
         reserve_date: 御予約日時
         reserve_time: 御予約時間
         number_reserve: 御予約人数
         reserve_category_id: カテゴリー
+
+      blog_comment:
+        comment: コメント
+
+      message:
+        content: メッセージ
+
+      visual:
+        image: 画像
