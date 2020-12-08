@@ -7,6 +7,8 @@ ja:
       chat: チャット
       drink: ドリンク
       drink_comment: ドリンクコメント
+      food: フード
+      food_comment: フードコメント
 
     attributes:
       user:
@@ -39,6 +41,9 @@ ja:
         detail: 詳細
         price: 値段
         image: 画像
+
+      food_comment:
+        comment: コメント
 
       reserve:
         reserve_date: 御予約日時
