@@ -3,7 +3,9 @@ ja:
     models:
       user: ユーザー
       blog: ブログ
+      blog_comment: ブログコメント
       chat: チャット
+
     attributes:
       user:
         nickname: ニックネーム
@@ -38,3 +40,6 @@ ja:
         reserve_time: 御予約時間
         number_reserve: 御予約人数
         reserve_category_id: カテゴリー
+
+      blog_comment:
+        comment: コメント
