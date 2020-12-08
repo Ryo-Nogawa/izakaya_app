@@ -10,6 +10,7 @@ ja:
       food: フード
       food_comment: フードコメント
       message: メッセージ
+      visual: 外観/内装
 
     attributes:
       user:
@@ -57,3 +58,6 @@ ja:
 
       message:
         content: メッセージ
+
+      visual:
+        image: 画像
