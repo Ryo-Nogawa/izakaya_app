@@ -5,6 +5,8 @@ ja:
       blog: ブログ
       blog_comment: ブログコメント
       chat: チャット
+      drink: ドリンク
+      drink_comment: ドリンクコメント
 
     attributes:
       user:
@@ -27,6 +29,9 @@ ja:
         detail: 詳細
         price: 値段
         image: 画像
+
+      drink_comment:
+        comment: コメント
 
       food:
         food_category_id: カテゴリー
