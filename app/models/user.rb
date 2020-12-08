@@ -9,8 +9,8 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :nickname,     length: { minimum: 1, maximum: 40 }
     validates :name,         format: { with: /\A[ぁ-んァ-ン一-龥々]/ }
-    validates :name_kana,    format: { with: /\A[ァ-ヶー－]+\z/ }
-    validates :age,          numericality: { greater_than_or_equal_to: 20 }
+    validates :name_kana,    format: { with: /\A[ァ-ヶー－]/ }
+    validates :age,          numericality: { greater_than_or_equal_to: 20 }, format: { with: /\A[0-9]+\z/ }
     validates :phone_number, format: { with: /\A\d{10,11}\z/ }
   end
 
