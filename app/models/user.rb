@@ -18,8 +18,8 @@ class User < ApplicationRecord
   has_many :visuals
   has_many :blogs
   has_many :blog_comments
-  has_many :chat_users
-  has_many :chats, through: :chat_users
+  has_many :room_users
+  has_many :rooms, through: :room_users
   has_many :messages
   has_many :foods
   has_many :food_comments

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :blogs do
     resources :blog_comments, only: :create
   end
-  resources :chats, only: [:new, :create]
+  resources :rooms, only: [:new, :create]
   resources :messages, only: [:index, :create]
   resources :foods do
     resources :food_comments, only: :create
