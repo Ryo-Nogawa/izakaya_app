@@ -1,0 +1,16 @@
+<h1>チャットルーム作成画面</h1>
+
+<%= form_with model: @room, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: 'チャットルーム名を入力してください' %>
+
+  <select name="room[user_ids][]" id="">
+    <option value="">---------------</option>
+    <% User.where.not(id: current_user.id).each do |user| %>
+      <option value=<%= user.id%>><%= user.nickname %></option>
+    <% end %>
+  </select>
+  <input type="hidden" name="room[user_ids][]" value=<%= current_user.id %>>
+
+  <%= f.submit '作成' %>
+<% end %>
