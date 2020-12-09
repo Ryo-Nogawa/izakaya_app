@@ -1,0 +1,2 @@
+module BlogLikesHelper
+end

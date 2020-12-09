@@ -18,6 +18,7 @@ class User < ApplicationRecord
   has_many :visuals
   has_many :blogs
   has_many :blog_comments
+  has_many :blog_likes
   has_many :room_users
   has_many :rooms, through: :room_users
   has_many :messages

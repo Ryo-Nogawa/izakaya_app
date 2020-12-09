@@ -2,6 +2,7 @@ class Blog < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   has_many :blog_comments
+  has_many :blog_likes
 
   with_options presence: true do
     # タイトルは最大100文字

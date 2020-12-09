@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :visuals
   resources :blogs do
     resources :blog_comments, only: :create
+    resource :blog_likes, only: [:create, :destroy]
   end
   resources :rooms, only: [:new, :create]
   resources :messages, only: [:index, :create]
