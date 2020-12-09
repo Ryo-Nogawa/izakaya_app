@@ -1,17 +1,19 @@
 class FoodLikesController < ApplicationController
 
-  before_action :food_params
+  before_action :set_food
 
   def create
-    FoodLike.create(user_id: current_user.id, food_id: params[:food_id])
+    @food_like = FoodLike.new(user_id: current_user.id, food_id: @food.id)
+    @food_like.save
   end
 
   def destroy
-    FoodLike.find_by(user_id: current_user.id, food_id: params[:food_id]).destroy
+    @food_like = FoodLike.find_by(food_id: @food.id, user_id: current_user.id)
+    @food_like.destroy
   end
 
   private
-  def food_params
+  def set_food
     @food = Food.find(params[:food_id])
   end
 end

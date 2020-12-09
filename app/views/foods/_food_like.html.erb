@@ -1,7 +1,13 @@
-<% if current_user.liked_by?(food.id) %>
-    <%= link_to 'いいねを外す', destroy_food_like_path(food.id), class: 'like-link', method: :DELETE, remote: true %>
-    <%= food.food_likes.count %>
-<% else %>
-    <%= link_to 'いいねをする', create_food_like_path(food.id), class: 'like-link', method: :POST, remote: true %>
-    <%= food.food_likes.count %>
+<% if user_signed_in? %>
+  <% if current_user.food_likes.find_by(food_id: food.id) %>
+      <%= link_to food_food_likes_path(food.id), class: "like-link", method: :DELETE, remote: true do %>
+        <i class="fa fa-heart unlike-btn"></i>
+      <% end %>
+      <%= food.food_likes.count %>
+  <% else %>
+      <%= link_to food_food_likes_path(food.id), class: "like-link", method: :POST, remote: true do %>
+        <i class="fa fa-heart like-btn"></i>
+      <% end %>
+      <%= food.food_likes.count %>
+  <% end %>
 <% end %>
