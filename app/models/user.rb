@@ -26,5 +26,6 @@ class User < ApplicationRecord
   has_many :food_likes
   has_many :drinks
   has_many :drink_comments
+  has_many :drink_likes
 
 end

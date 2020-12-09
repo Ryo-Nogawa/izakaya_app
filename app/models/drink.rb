@@ -5,6 +5,7 @@ class Drink < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   has_many :drink_comments
+  has_many :drink_likes
 
   with_options presence: true do
     # カテゴリー選択は1以外
