@@ -5,16 +5,17 @@ Rails.application.routes.draw do
   resources :visuals
   resources :blogs do
     resources :blog_comments, only: :create
+    resource :blog_likes, only: [:create, :destroy]
   end
   resources :rooms, only: [:new, :create]
   resources :messages, only: [:index, :create]
   resources :foods do
     resources :food_comments, only: :create
+    resource :food_likes, only: [:create, :destroy]
   end
-  post 'foods/:id', to: 'food_likes#create', as: 'create_food_like'
-  delete 'foods/:id', to: 'food_likes#destroy', as: 'destroy_food_like'
   resources :drinks do
     resources :drink_comments, only: :create
+    resource :drink_likes, only: [:create, :destroy]
   end
   resources :users, only: :show
 end

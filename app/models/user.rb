@@ -18,6 +18,7 @@ class User < ApplicationRecord
   has_many :visuals
   has_many :blogs
   has_many :blog_comments
+  has_many :blog_likes
   has_many :room_users
   has_many :rooms, through: :room_users
   has_many :messages
@@ -26,9 +27,6 @@ class User < ApplicationRecord
   has_many :food_likes
   has_many :drinks
   has_many :drink_comments
-
-  def liked_by?(food_id)
-    food_likes.where(food_id: food_id).exists?
-  end
+  has_many :drink_likes
 
 end

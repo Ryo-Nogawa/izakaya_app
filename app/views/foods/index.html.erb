@@ -3,9 +3,9 @@
 <% @foods.each do |food| %>
   <%= food.title %>
   <%# いいね機能 %>
-    <%# <div id="food-<%= food.id"> %> 
-      <%#= render 'food_like', food: food %>
-    <%# </div> %>
+  <div id="food-<%= food.id %>"> 
+    <%= render 'food_like', food: food %>
+  </div>
   <%# いいね機能 %>
   <%= food.price %>
   <%= link_to food_path(food.id) do %>

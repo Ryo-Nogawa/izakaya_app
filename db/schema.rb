@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_042029) do
+ActiveRecord::Schema.define(version: 2020_12_09_100403) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2020_12_09_042029) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["blog_id"], name: "index_blog_comments_on_blog_id"
     t.index ["user_id"], name: "index_blog_comments_on_user_id"
+  end
+
+  create_table "blog_likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "blog_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["blog_id"], name: "index_blog_likes_on_blog_id"
+    t.index ["user_id"], name: "index_blog_likes_on_user_id"
   end
 
   create_table "blogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -75,6 +84,15 @@ ActiveRecord::Schema.define(version: 2020_12_09_042029) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["drink_id"], name: "index_drink_comments_on_drink_id"
     t.index ["user_id"], name: "index_drink_comments_on_user_id"
+  end
+
+  create_table "drink_likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "drink_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["drink_id"], name: "index_drink_likes_on_drink_id"
+    t.index ["user_id"], name: "index_drink_likes_on_user_id"
   end
 
   create_table "drinks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -179,11 +197,15 @@ ActiveRecord::Schema.define(version: 2020_12_09_042029) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "blog_comments", "blogs"
   add_foreign_key "blog_comments", "users"
+  add_foreign_key "blog_likes", "blogs"
+  add_foreign_key "blog_likes", "users"
   add_foreign_key "blogs", "users"
   add_foreign_key "chat_users", "chats"
   add_foreign_key "chat_users", "users"
   add_foreign_key "drink_comments", "drinks"
   add_foreign_key "drink_comments", "users"
+  add_foreign_key "drink_likes", "drinks"
+  add_foreign_key "drink_likes", "users"
   add_foreign_key "drinks", "users"
   add_foreign_key "food_comments", "foods"
   add_foreign_key "food_comments", "users"

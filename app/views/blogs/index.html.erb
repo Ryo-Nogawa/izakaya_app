@@ -7,6 +7,11 @@
         <tbody>
           <tr>
             <th scope="row"><%= blog.id %></th>
+            <%# いいね機能 %>
+            <td id="blog-<%= blog.id %>"> 
+              <%= render 'blog_like', blog: blog %>
+            </td>
+            <%# いいね機能 %>
             <td><%= blog.title %></td>
             <td><%= blog.created_at %></td>
             <td><%= image_tag blog.image.variant(resize: '200x200') if blog.image.attached? %> </td>

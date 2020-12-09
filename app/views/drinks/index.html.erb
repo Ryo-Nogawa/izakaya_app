@@ -2,6 +2,11 @@
 
 <% @drinks.each do |drink| %>
   <%= drink.title %>
+  <%# いいね機能 %>
+  <div id="drink-<%= drink.id %>"> 
+    <%= render 'drink_like', drink: drink %>
+  </div>
+  <%# いいね機能 %>
   <%= drink.price %>
   <%= link_to drink_path(drink.id) do %>
     <%= image_tag drink.image.variant(resize: '400x400') %>

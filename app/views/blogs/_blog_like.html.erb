@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+  <% if current_user.blog_likes.find_by(blog_id: blog.id) %>
+      <%= link_to blog_blog_likes_path(blog.id), class: "like-link", method: :DELETE, remote: true do %>
+        <i class="fa fa-heart unlike-btn"></i>
+      <% end %>
+      <%= blog.blog_likes.count %>
+  <% else %>
+      <%= link_to blog_blog_likes_path(blog.id), class: "like-link", method: :POST, remote: true do %>
+        <i class="fa fa-heart like-btn"></i>
+      <% end %>
+      <%= blog.blog_likes.count %>
+  <% end %>
+<% end %>
