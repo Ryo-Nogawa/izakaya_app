@@ -11,7 +11,7 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(food_params)
     if @food.valid?
-      @food.save(food_params)
+      @food.save
       redirect_to foods_path
     else
       render :new
