@@ -1,8 +1,11 @@
 class FoodCommentsController < ApplicationController
 
   def create
-    comment = FoodComment.create(comment_params)
-    redirect_to "/foods/#{comment.food.id}"
+    @food = Food.find(params[:food_id])
+    @food_comment = @food.food_comments.build(comment_params)
+    if @food_comment.save
+      render :index
+    end
   end
 
   private

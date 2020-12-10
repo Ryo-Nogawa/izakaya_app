@@ -5,24 +5,15 @@
 <%= @food.price %><br />
 <%= image_tag @food.image.variant(resize: '400x400') %><br />
 
-
-<div class="comment-show" id = "messages">
-  <% if @comments %>
-    <% @comments.each do |comment| %>
-      <p>
-        <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>:</strong>
-        <%= comment.comment %>
-      </p>
-    <% end %>
-  <% end %>
+<div id="food-comments-area">
+  <%= render 'food_comments/index', { comments: @comments } %>
 </div>
 
-<div class="food-comment">
-  <%= form_with model: [@food, @comment], local: true do |f| %>
-    <%= f.text_area :comment, placeholder: 'コメントする' %>
-    <%= f.submit '送信' %>
-  <% end %>
-</div>
+<% if user_signed_in? %>
+  <div id="food-comment-create">
+    <%= render 'food_comments/comment_form', { comment: @comment, food: @food } %>
+  </div>
+<% end %>
 
 <%= link_to '編集', edit_food_path(params[:id]) %>
 <%= link_to '削除', food_path(params[:id]), method: :delete %>
