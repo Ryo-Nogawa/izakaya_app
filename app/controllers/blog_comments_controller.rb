@@ -1,8 +1,12 @@
 class BlogCommentsController < ApplicationController
 
   def create
-    comment = BlogComment.create(comment_params)
-    redirect_to blog_path(params[:blog_id])
+    @blog = Blog.find(params[:blog_id])
+    # 投稿に紐づいたコメントを作成
+    @blog_comment = @blog.blog_comments.build(comment_params)
+    if @blog_comment.save
+      render :index
+    end
   end
 
   private

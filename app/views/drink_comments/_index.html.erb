@@ -1,0 +1,8 @@
+<% comments.each do |comment| %>
+  <% unless comment.id.nil? %>
+    <p>
+    <%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：<%= comment.comment %>
+    </p>
+    <p><%= comment.created_at.strftime("%Y/%m/%d %H:%M") %></p>
+  <% end %>
+<% end %>

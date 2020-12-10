@@ -20,7 +20,7 @@ class DrinksController < ApplicationController
   def show
     @drink = Drink.find(params[:id])
     @comment = DrinkComment.new
-    @comments = @drink.drink_comments.includes(:user)
+    @comments = @drink.drink_comments.includes(:user).order(created_at: :ASC)
   end
 
   def destroy

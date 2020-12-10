@@ -1,0 +1,5 @@
+<h3 class="">コメントを投稿する</h3>
+<%= form_with model: [blog, comment], id: "form", remote: true do |f| %>
+  <%= f.text_field :comment, id: "content" %>
+  <%= f.submit '送信', id: "submit" %>
+<% end %>

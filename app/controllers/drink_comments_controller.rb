@@ -1,8 +1,11 @@
 class DrinkCommentsController < ApplicationController
 
   def create
-    comment = DrinkComment.create(comment_params)
-    redirect_to "/drinks/#{comment.drink.id}"
+    @drink = Drink.find(params[:drink_id])
+    @drink_comment = @drink.drink_comments.build(comment_params)
+    if @drink_comment.save
+      render :index
+    end
   end
 
   private
