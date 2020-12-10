@@ -4,10 +4,6 @@
 <%= @blog.text %><br />
 <%= @blog.created_at %><br />
 
-<%# 追加したコメント欄 %>
-<div id="list">
-</div>
-
 <div id="blog-comments-area">
   <%# コメント欄 %>
   <%= render 'blog_comments/index', {comments: @comments} %>
