@@ -11,6 +11,7 @@ require('./blog_preview')
 require('./food_preview')
 require('./drink_preview')
 require('./visual_preview')
+// require('../comment')
 import '@fortawesome/fontawesome-free/js/all';
 
 
