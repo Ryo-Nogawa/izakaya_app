@@ -1,12 +1,13 @@
 <h1>検索結果</h1>
 
+<%= render 'foods/radio_button' %>
 <% if @results.length != 0 %>
   <% @results.each do |result| %>
     <%= result.title %>
+    <%= result.detail %>
     <%= result.price %>
     <%= result.food_category.name %>
-    <%= image_tag result.image.variant(resize: '400x400') %>
-    <%= result.detail %>
+    <%= image_tag result.image.variant(resize: '400x400') %><br />
   <% end %>
 <% else %>
   該当するものがありません
