@@ -1,7 +1,9 @@
 <h1>料理メニュー</h1>
 
 <%# 検索ボタン %>
-<%= render 'foods/radio_button' %>
+<div id="search-area">
+  <%= render 'foods/radio_button' %>
+</div>
 
 
 <% @foods.each do |food| %>

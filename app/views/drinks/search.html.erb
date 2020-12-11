@@ -1,15 +1,15 @@
 <h1>検索結果</h1>
 
 <%# 検索ボタン %>
-<%= render 'foods/radio_button' %>
+<%= render 'drinks/radio_button' %>
 
-<%# 検索結果の一覧表示 %>
+<%# 検索結果の一覧 %>
 <% if @results.length != 0 %>
   <% @results.each do |result| %>
     <%= result.title %>
     <%= result.detail %>
     <%= result.price %>
-    <%= result.food_category.name %>
+    <%= result.drink_category.name %>
     <%= image_tag result.image.variant(resize: '400x400') %><br />
   <% end %>
 <% else %>

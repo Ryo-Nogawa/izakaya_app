@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   resources :drinks do
     resources :drink_comments, only: :create
     resource :drink_likes, only: [:create, :destroy]
+    collection do
+      get 'search'
+    end
   end
   resources :users, only: :show
 end
