@@ -1,7 +1,14 @@
 class FoodsController < ApplicationController
+  before_action :search_product, only: [:index, :search]
 
   def index
     @foods = Food.all
+
+  end
+
+  def search
+    # @results = @p.result.includes(:food_category)
+    @results = @p.result.all
   end
 
   def new
@@ -48,4 +55,9 @@ class FoodsController < ApplicationController
   def food_params
     params.require(:food).permit(:title, :detail, :price, :image, :food_category_id).merge(user_id: current_user.id)
   end
+
+  def search_product
+    @p = Food.ransack(params[:q])
+  end
+
 end

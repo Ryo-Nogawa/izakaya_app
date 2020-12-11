@@ -1,6 +1,12 @@
 class DrinksController < ApplicationController
+  before_action :search_product, only: [:index, :search]
+
   def index
     @drinks = Drink.all
+  end
+
+  def search
+    @results = @p.result.all
   end
 
   def new
@@ -46,5 +52,9 @@ class DrinksController < ApplicationController
   private
   def drink_params
     params.require(:drink).permit(:title, :detail, :price, :drink_category_id, :image).merge(user_id: current_user.id)
+  end
+
+  def search_product
+    @p = Drink.ransack(params[:q])
   end
 end

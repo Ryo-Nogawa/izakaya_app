@@ -1,5 +1,10 @@
 <h1>ドリンクメニュー</h1>
 
+<%# 検索ボタン %>
+<div id="search-area">
+  <%= render 'drinks/radio_button' %>
+</div>
+
 <% @drinks.each do |drink| %>
   <%= drink.title %>
   <%# いいね機能 %>
