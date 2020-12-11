@@ -1,0 +1,13 @@
+<h1>検索結果</h1>
+
+<% if @results.length != 0 %>
+  <% @results.each do |result| %>
+    <%= result.title %>
+    <%= result.price %>
+    <%= result.food_category.name %>
+    <%= image_tag result.image.variant(resize: '400x400') %>
+    <%= result.detail %>
+  <% end %>
+<% else %>
+  該当するものがありません
+<% end %>
