@@ -1,4 +1,7 @@
 class VisualsController < ApplicationController
+
+  before_action :only_admin, only: [:new, :create, :destroy, :edit, :update]
+
   def index
     @visuals = Visual.all
   end
@@ -45,5 +48,11 @@ class VisualsController < ApplicationController
 
   def visual_params
     params.require(:visual).permit(:image).merge(user_id: current_user.id)
+  end
+
+  def only_admin
+    unless current_user.admin?
+      redirect_to root_path
+    end
   end
 end

@@ -2,5 +2,7 @@
 
 <%= image_tag @visual.image.variant(resize: '400x400') %>
 
-<%= link_to '編集', edit_visual_path(@visual.id) %>
-<%= link_to '削除', visual_path(@visual.id), method: :delete %>
+<% if current_user.admin? %>
+  <%= link_to '編集', edit_visual_path(@visual.id) %>
+  <%= link_to '削除', visual_path(@visual.id), method: :delete %>
+<% end %>
