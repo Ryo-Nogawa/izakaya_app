@@ -23,8 +23,7 @@ class ReservesController < ApplicationController
 
   def create
     @reserve = Reserve.new(reserve_params)
-    if @reserve.valid?
-      @reserve.save
+    if @reserve.save
       redirect_to complete_reserves_path
     else
       render confirm_reserves_path
