@@ -1,0 +1,34 @@
+<h1>入力情報の確認</h1>
+
+<ol class="nav">
+  <li class="current">1.入力</li>
+  <li>2.確認</li>
+  <li>3.完了</li>
+</ol> 
+
+<%= form_with model: @user, url: users_sign_up_complete_path, method: :GET, local: true do |f| %>
+  <%= f.label :nickname %>
+  <%= f.text_field :nickname, value: @user.nickname, readonly: true %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, value: @user.name, readonly: true %>
+
+  <%= f.label :name_kana %>
+  <%= f.text_field :name_kana, value: @user.name_kana, readonly: true %>
+
+  <%= f.label :age %>
+  <%= f.text_field :age, value: @user.age, readonly: true %>
+
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number, value: @user.phone_number, readonly: true %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, value: @user.email, readonly: true %>
+
+  <%= f.label :password %>
+  <%= f.text_field :password, value: @user.password, readonly: true %>
+
+  <%= f.submit '入力画面に戻る', name: :back %>
+  <%= f.submit '登録する' %>
+<% end %>
+

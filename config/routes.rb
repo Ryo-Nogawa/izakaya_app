@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+  devise_scope :user do
+    post 'users/sign_up/confirm', to: 'users/registrations#confirm'
+    get 'users/sign_up/complete', to: 'users/registrations#complete'
+  end
   root to: 'reserves#index'
   resources :reserves, only: [:new, :create, :edit, :update, :destroy]
   resources :visuals
@@ -13,14 +19,14 @@ Rails.application.routes.draw do
     resources :food_comments, only: :create
     resource :food_likes, only: [:create, :destroy]
     collection do
-      get 'search'
+      get :search
     end
   end
   resources :drinks do
     resources :drink_comments, only: :create
     resource :drink_likes, only: [:create, :destroy]
     collection do
-      get 'search'
+      get :search
     end
   end
   resources :users, only: :show

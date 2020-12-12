@@ -1,6 +1,12 @@
 <h2>Sign up</h2>
 
-  <%= form_with model: @user, url: '/users', local: true do |f| %>
+<ol class="nav">
+  <li class="current">1.入力</li>
+  <li>2.確認</li>
+  <li>3.完了</li>
+</ol>
+
+  <%= form_with model: @user, url: { action: 'confirm'}, local: true do |f| %>
   <%= render "shared/error_messages", model: @user %>
 
   <div class="field">
@@ -47,7 +53,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "確認画面" %>
   </div>
 <% end %>
 
