@@ -7,5 +7,5 @@ class ReserveCategory < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :reserves
+  has_many :books
 end
