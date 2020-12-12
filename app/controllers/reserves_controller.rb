@@ -7,13 +7,27 @@ class ReservesController < ApplicationController
     @reserve = Reserve.new
   end
 
+  def confirm
+    @reserve = Reserve.new(reserve_params)
+    if @reserve.valid?
+      render :confirm
+    else  
+      render :new
+    end
+  end
+
+  def back
+    @reserve = Reserve.new(reserve_params)
+    render :new 
+  end
+
   def create
     @reserve = Reserve.new(reserve_params)
     if @reserve.valid?
       @reserve.save
-      redirect_to root_path
+      redirect_to complete_reserves_path
     else
-      render new_reserve_path
+      render confirm_reserves_path
     end
   end
 

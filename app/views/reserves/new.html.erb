@@ -1,6 +1,13 @@
 <h1>予約画面</h1>
 
-<%= form_with model: @reserve, local: true do |f| %>
+<ol class="nav">
+  <li class="current">1.入力</li>
+  <li>2.確認</li>
+  <li>3.完了</li>
+</ol>
+
+
+<%= form_with model: @reserve, url: confirm_reserves_path, local: true do |f| %>
 <%= render 'shared/error_messages', resource: @reserve %>
   <div class="field">
     <%= f.label :reserve_date %>
@@ -19,6 +26,6 @@
     <%= f.collection_select :reserve_category_id, ReserveCategory.all, :id, :name, {} %>
   </div>
   <div class="actions">
-    <%= f.submit "予約する" %>
+    <%= f.submit "確認画面へ" %>
   </div>
 <% end %>

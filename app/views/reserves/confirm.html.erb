@@ -1,0 +1,39 @@
+<h1>予約確認画面</h1>
+
+<ol class="nav">
+  <li>1.入力</li>
+  <li class="current">2.確認</li>
+  <li>3.完了</li>
+</ol>
+
+<div>
+  御予約日時： <%= @reserve.reserve_date.strftime("%Y/%m/%d") %>
+</div>
+
+<div>
+  御予約時間： <%= @reserve.reserve_time.strftime("%-H:%M") %>
+</div>
+
+<div>
+  御予約人数： <%= @reserve.number_reserve %>
+</div>
+
+<div>
+  カテゴリー： <%= @reserve.reserve_category.name %>
+</div>
+
+<%= form_with model: @reserve, url: new_reserves_path, local: true do |f|%>
+  <%= f.hidden_field :reserve_date %>
+  <%= f.hidden_field :reserve_time %>
+  <%= f.hidden_field :number_reserve %>
+  <%= f.hidden_field :reserve_category_id %>
+  <%= f.submit "入力画面に戻る" %>
+<% end %>
+
+<%= form_with model: @reserve, url: {action: :create}, local: true do |f|%>
+  <%= f.hidden_field :reserve_date %>
+  <%= f.hidden_field :reserve_time %>
+  <%= f.hidden_field :number_reserve %>
+  <%= f.hidden_field :reserve_category_id %>
+  <%= f.submit "予約する" %>
+<% end %>

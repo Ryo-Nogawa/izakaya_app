@@ -7,7 +7,13 @@ Rails.application.routes.draw do
     get 'users/sign_up/complete', to: 'users/registrations#complete'
   end
   root to: 'reserves#index'
-  resources :reserves, only: [:new, :create, :edit, :update, :destroy]
+  resources :reserves, only: [:new, :create, :edit, :update, :destroy] do
+    collection do
+      post :confirm
+      get :complete
+      post :new, path: :new, as: :new, action: :back
+    end
+  end
   resources :visuals
   resources :blogs do
     resources :blog_comments, only: :create
