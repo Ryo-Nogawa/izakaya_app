@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_100403) do
+ActiveRecord::Schema.define(version: 2020_12_12_193057) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -61,19 +61,15 @@ ActiveRecord::Schema.define(version: 2020_12_09_100403) do
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end
 
-  create_table "chat_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "chat_id"
+    t.date "reserve_date", null: false
+    t.time "reserve_time", null: false
+    t.integer "number_reserve", null: false
+    t.integer "reserve_category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["chat_id"], name: "index_chat_users_on_chat_id"
-    t.index ["user_id"], name: "index_chat_users_on_user_id"
-  end
-
-  create_table "chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_books_on_user_id"
   end
 
   create_table "drink_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -144,17 +140,6 @@ ActiveRecord::Schema.define(version: 2020_12_09_100403) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "reserves", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.date "reserve_date", null: false
-    t.time "reserve_time", null: false
-    t.integer "number_reserve", null: false
-    t.integer "reserve_category_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_reserves_on_user_id"
-  end
-
   create_table "room_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "room_id"
     t.bigint "user_id"
@@ -178,6 +163,7 @@ ActiveRecord::Schema.define(version: 2020_12_09_100403) do
     t.string "phone_number", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.boolean "admin", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -200,8 +186,7 @@ ActiveRecord::Schema.define(version: 2020_12_09_100403) do
   add_foreign_key "blog_likes", "blogs"
   add_foreign_key "blog_likes", "users"
   add_foreign_key "blogs", "users"
-  add_foreign_key "chat_users", "chats"
-  add_foreign_key "chat_users", "users"
+  add_foreign_key "books", "users"
   add_foreign_key "drink_comments", "drinks"
   add_foreign_key "drink_comments", "users"
   add_foreign_key "drink_likes", "drinks"
@@ -214,4 +199,5 @@ ActiveRecord::Schema.define(version: 2020_12_09_100403) do
   add_foreign_key "foods", "users"
   add_foreign_key "room_users", "rooms"
   add_foreign_key "room_users", "users"
+  add_foreign_key "visuals", "users"
 end

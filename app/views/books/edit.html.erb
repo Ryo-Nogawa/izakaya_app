@@ -1,7 +1,7 @@
 <h1>予約編集画面</h1>
 
-<%= form_with model: @reserve, local: true do |f| %>
-<%= render 'shared/error_messages', resource: @reserve %>
+<%= form_with model: @book, url: book_path(@book.id), local: true do |f| %>
+<%= render 'shared/error_messages', resource: @book %>
   <div class="field">
     <%= f.label :reserve_date %>
     <%= f.date_field :reserve_date, {value: Time.now.strftime('%Y-%m-%d')} %>

@@ -1,6 +1,6 @@
-class CreateReserves < ActiveRecord::Migration[6.0]
+class CreateBooks < ActiveRecord::Migration[6.0]
   def change
-    create_table :reserves do |t|
+    create_table :books do |t|
       t.references :user,                foreign_key: true
       t.date       :reserve_date,        null: false
       t.time       :reserve_time,        null: false

@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     post 'users/sign_up/confirm', to: 'users/registrations#confirm'
     get 'users/sign_up/complete', to: 'users/registrations#complete'
   end
-  root to: 'reserves#index'
-  resources :reserves, only: [:new, :create, :edit, :update, :destroy] do
+  root to: 'books#index'
+  resources :books, only: [:new, :create, :edit, :update, :destroy] do
     collection do
       post :confirm
       get :complete

@@ -14,7 +14,7 @@ class User < ApplicationRecord
     validates :phone_number, format: { with: /\A\d{10,11}\z/ }
   end
 
-  has_many :reserves
+  has_many :books
   has_many :visuals
   has_many :blogs
   has_many :blog_comments, dependent: :destroy
