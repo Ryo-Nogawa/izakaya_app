@@ -5,7 +5,11 @@
 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
 
 <%= link_to '予約画面', new_book_path %>
-<%= link_to '予約履歴', user_path(current_user.id) %>
+<% if current_user.admin? %>
+  <%= link_to '予約表', book_admin_books_path(current_user.id) %>
+<% else %>
+  <%= link_to '予約履歴', user_path(current_user.id) %>
+<% end %>
 <%= link_to '外観/内装', visuals_path %>
 <%= link_to 'ブログ', blogs_path %>
 <%#= link_to 'チャットルーム作成', new_room_path %>
