@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+  before_action :only_admin, only: [:new, :create, :destroy, :edit, :update]
+
   def index
     @blogs = Blog.all
   end
@@ -48,5 +50,11 @@ class BlogsController < ApplicationController
 
   def blog_params
     params.require(:blog).permit(:title, :text, :image).merge(user_id: current_user.id)
+  end
+
+  def only_admin
+    unless current_user.admin?
+      redirect_to root_path
+    end
   end
 end
