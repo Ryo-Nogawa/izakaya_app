@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     collection do
       post :confirm
       get :complete
+      get :edit_complete
       post :new, path: :new, as: :new, action: :back
     end
   end
