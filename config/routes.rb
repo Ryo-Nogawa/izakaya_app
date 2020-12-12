@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       get :edit_complete
       post :new, path: :new, as: :new, action: :back
     end
+    namespace :admin do
+      resources :books, only: :index
+    end
   end
   resources :visuals
   resources :blogs do
