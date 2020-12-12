@@ -1,5 +1,6 @@
 class DrinksController < ApplicationController
   before_action :search_product, only: [:index, :search]
+  before_action :only_admin, only: [:new, :create, :destroy, :edit, :update]
 
   def index
     @drinks = Drink.all
@@ -56,5 +57,11 @@ class DrinksController < ApplicationController
 
   def search_product
     @p = Drink.ransack(params[:q])
+  end
+
+  def only_admin
+    unless current_user.admin?
+      redirect_to root_path
+    end
   end
 end

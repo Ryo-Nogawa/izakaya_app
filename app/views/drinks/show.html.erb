@@ -15,5 +15,7 @@
   </div>
 <% end %>
 
-<%= link_to '編集', edit_drink_path(params[:id]) %>
-<%= link_to '削除', drink_path(params[:id]), method: :delete %>
+<% if current_user.admin? %>
+  <%= link_to '編集', edit_drink_path(params[:id]) %>
+  <%= link_to '削除', drink_path(params[:id]), method: :delete %>
+<% end %>
