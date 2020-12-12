@@ -1,6 +1,8 @@
 <h1>ブログ一覧表示</h1>
 
-<%= link_to '新規投稿', new_blog_path %>
+<% if current_user.admin? %>
+  <%= link_to '新規投稿', new_blog_path %>
+<% end %>
 
 <table class="table">
     <% @blogs.each do |blog| %>
@@ -16,8 +18,10 @@
             <td><%= blog.created_at %></td>
             <td><%= image_tag blog.image.variant(resize: '200x200') if blog.image.attached? %> </td>
             <td><%= link_to 'show', blog_path(blog.id) %></td>
-            <td><%= link_to 'edit', edit_blog_path(blog.id) %></td>
-            <td><%= link_to 'delete', blog_path(blog.id), method: :delete %></td>
+            <% if current_user.admin? %>
+              <td><%= link_to 'edit', edit_blog_path(blog.id) %></td>
+              <td><%= link_to 'delete', blog_path(blog.id), method: :delete %></td>
+            <% end %>
           </tr>
         </tbody>
     <% end %>
