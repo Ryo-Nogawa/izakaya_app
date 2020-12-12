@@ -38,7 +38,7 @@ class ReservesController < ApplicationController
   def update
     @reserve = Reserve.find(params[:id])
     if @reserve.update(reserve_params)
-      redirect_to user_path(current_user.id)
+      redirect_to edit_complete_reserves_path
     else
       render :edit
     end
