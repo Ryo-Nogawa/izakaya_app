@@ -7,8 +7,8 @@
 </ol>
 
 
-<%= form_with model: @reserve, url: confirm_reserves_path, local: true do |f| %>
-<%= render 'shared/error_messages', resource: @reserve %>
+<%= form_with model: @book, url: confirm_books_path, local: true do |f| %>
+<%= render 'shared/error_messages', resource: @book %>
   <div class="field">
     <%= f.label :reserve_date %>
     <%= f.date_field :reserve_date, {value: Time.now.strftime('%Y-%m-%d')} %>

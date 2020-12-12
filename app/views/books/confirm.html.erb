@@ -7,22 +7,22 @@
 </ol>
 
 <div>
-  御予約日時： <%= @reserve.reserve_date.strftime("%Y/%m/%d") %>
+  御予約日時： <%= @book.reserve_date.strftime("%Y/%m/%d") %>
 </div>
 
 <div>
-  御予約時間： <%= @reserve.reserve_time.strftime("%-H:%M") %>
+  御予約時間： <%= @book.reserve_time.strftime("%-H:%M") %>
 </div>
 
 <div>
-  御予約人数： <%= @reserve.number_reserve %>
+  御予約人数： <%= @book.number_reserve %>
 </div>
 
 <div>
-  カテゴリー： <%= @reserve.reserve_category.name %>
+  カテゴリー： <%= @book.reserve_category.name %>
 </div>
 
-<%= form_with model: @reserve, url: new_reserves_path, local: true do |f|%>
+<%= form_with model: @book, url: new_books_path, local: true do |f|%>
   <%= f.hidden_field :reserve_date %>
   <%= f.hidden_field :reserve_time %>
   <%= f.hidden_field :number_reserve %>
@@ -30,7 +30,7 @@
   <%= f.submit "入力画面に戻る" %>
 <% end %>
 
-<%= form_with model: @reserve, url: {action: :create}, local: true do |f|%>
+<%= form_with model: @book, url: {action: :create}, local: true do |f|%>
   <%= f.hidden_field :reserve_date %>
   <%= f.hidden_field :reserve_time %>
   <%= f.hidden_field :number_reserve %>

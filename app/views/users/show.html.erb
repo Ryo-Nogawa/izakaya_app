@@ -14,8 +14,8 @@
       <th><%= reserve.reserve_category.name %></th>
       <th>
         <% if reserve.reserve_date > @today %>
-          <%= link_to '予約を変更する', edit_reserve_path(reserve.id) %>
-          <%= link_to '予約をキャンセルする', reserve_path(reserve.id), method: :DELETE %>
+          <%= link_to '予約を変更する', edit_book_path(reserve.id) %>
+          <%= link_to '予約をキャンセルする', book_path(reserve.id), method: :DELETE %>
         <% end %>
       </th>
     </tr>
