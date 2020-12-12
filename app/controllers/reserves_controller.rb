@@ -4,11 +4,11 @@ class ReservesController < ApplicationController
   def index; end
 
   def new
-    @reserve = Reserve.new
+    @reserve = Book.new
   end
 
   def confirm
-    @reserve = Reserve.new(reserve_params)
+    @reserve = Book.new(reserve_params)
     if @reserve.valid?
       render :confirm
     else  
@@ -17,12 +17,12 @@ class ReservesController < ApplicationController
   end
 
   def back
-    @reserve = Reserve.new(reserve_params)
+    @reserve = Book.new(reserve_params)
     render :new 
   end
 
   def create
-    @reserve = Reserve.new(reserve_params)
+    @reserve = Book.new(reserve_params)
     if @reserve.save
       redirect_to complete_reserves_path
     else
@@ -31,11 +31,11 @@ class ReservesController < ApplicationController
   end
 
   def edit
-    @reserve = Reserve.find(params[:id])
+    @reserve = Book.find(params[:id])
   end
 
   def update
-    @reserve = Reserve.find(params[:id])
+    @reserve = Book.find(params[:id])
     if @reserve.update(reserve_params)
       redirect_to edit_complete_reserves_path
     else
@@ -44,7 +44,7 @@ class ReservesController < ApplicationController
   end
 
   def destroy
-    reserve = Reserve.find(params[:id])
+    reserve = Book.find(params[:id])
     if reserve.destroy
       redirect_to user_path(current_user.id)
     end
@@ -53,6 +53,6 @@ class ReservesController < ApplicationController
   private
 
   def reserve_params
-    params.require(:reserve).permit(:reserve_date, :reserve_time, :number_reserve, :reserve_category_id).merge(user_id: current_user.id)
+    params.require(:book).permit(:reserve_date, :reserve_time, :number_reserve, :reserve_category_id).merge(user_id: current_user.id)
   end
 end
