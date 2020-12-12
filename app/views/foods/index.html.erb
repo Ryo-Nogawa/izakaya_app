@@ -20,4 +20,6 @@
   <% end %>
 <% end %>
 
-<%= link_to '新規作成', new_food_path %>
+<% if current_user.admin? %>
+  <%= link_to '新規作成', new_food_path %>
+<% end %>
