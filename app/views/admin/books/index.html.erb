@@ -13,15 +13,18 @@
   </tr>
 
   <% @books.each do |book| %>
-    <tr>
-      <th><%= book.reserve_date.strftime('%m/%d') %></th>
-      <th><%= book.user.name %></th>
-      <th><%= book.user.name_kana %></th>
-      <th><%= book.user.age %></th>
-      <th><%= book.reserve_time.strftime('%-H:%M') %></th>
-      <th><%= book.number_reserve %></th>
-      <th><%= book.reserve_category.name %></th>
-      <th><%= book.user.phone_number %></th>
-    </tr>
+    <% if book.reserve_date >= Date.today %>
+      <tr>
+        <th><%= book.reserve_date.strftime('%m/%d') %></th>
+        <th><%= book.user.name %></th>
+        <th><%= book.user.name_kana %></th>
+        <th><%= book.user.age %></th>
+        <th><%= book.reserve_time.strftime('%-H:%M') %></th>
+        <th><%= book.number_reserve %></th>
+        <th><%= book.reserve_category.name %></th>
+        <th><%= book.user.phone_number %></th>
+        <th><%= link_to '予約をキャンセルする', book_path(book.id), method: :DELETE %></th>
+      </tr>
+    <% end %>
   <% end %>
 </table>
