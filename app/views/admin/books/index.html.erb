@@ -1,0 +1,30 @@
+<h1>全員の予約履歴</h1>
+
+<table>
+  <tr>
+    <th>日付</th>
+    <th>名前</th>
+    <th>名前（カナ）</th>
+    <th>年齢</th>
+    <th>時間</th>
+    <th>人数</th>
+    <th>予約のコース</th>
+    <th>電話番号</th>
+  </tr>
+
+  <% @books.each do |book| %>
+    <% if book.reserve_date >= Date.today %>
+      <tr>
+        <th><%= book.reserve_date.strftime('%m/%d') %></th>
+        <th><%= book.user.name %></th>
+        <th><%= book.user.name_kana %></th>
+        <th><%= book.user.age %></th>
+        <th><%= book.reserve_time.strftime('%-H:%M') %></th>
+        <th><%= book.number_reserve %></th>
+        <th><%= book.reserve_category.name %></th>
+        <th><%= book.user.phone_number %></th>
+        <th><%= link_to '予約をキャンセルする', book_path(book.id), method: :DELETE %></th>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

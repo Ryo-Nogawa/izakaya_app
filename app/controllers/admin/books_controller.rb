@@ -2,7 +2,7 @@ class Admin::BooksController < ApplicationController
   before_action :only_admin
 
   def index
-    @books = Book.includes(:user)
+    @books = Book.includes(:user).order(reserve_date: :ASC)
   end
 
 
