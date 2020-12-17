@@ -11,7 +11,11 @@ require('./blog_preview')
 require('./food_preview')
 require('./drink_preview')
 require('./visual_preview')
-import '@fortawesome/fontawesome-free/js/all';
+import '@fortawesome/fontawesome-free/js/all'
+import '../stylesheets/application'
+import './bootstrap_custom.js'
+// import 'bootstrap'
+// import '../stylesheets/application.scss'
 
 
 
