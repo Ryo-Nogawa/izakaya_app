@@ -1,0 +1,21 @@
+
+header{
+  display: block;
+}
+
+.navbar{
+  height: 60px;
+  display: flex;
+}
+
+.login-nickname{
+  font-size: 30px;
+}
+
+.header-item {
+  font-size: 30px;
+}
+
+.nav-item{
+  padding-right: 20px;
+}
