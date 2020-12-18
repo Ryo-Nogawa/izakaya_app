@@ -1,0 +1,83 @@
+body{
+  padding-top: 60px;
+  border: none;
+}
+
+.top-main{
+  height: 100vh;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.main-content{
+  padding-top: 200px;
+}
+
+.card{
+  background-size: cover;
+}
+
+.card-item{
+  text-align: center;
+  display: block;
+  height: 150px;
+  width: 25vw;
+}
+
+.card-title{
+  font-size: 35px;
+
+  letter-spacing: 10px;
+  font-weight: bold;
+  text-shadow:1px 5px 5px black;
+  color: #FFFF00;
+}
+
+.new-book-grid{
+  height: 50px;
+  font-size: 30px;
+  width: 100%;
+  letter-spacing: 15px;
+  border: 2px red solid;
+  color: red;
+}
+
+.new-book-grid:hover{
+  background-color: red;
+  color: white;
+}
+
+
+.grid{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.card-item:hover{
+  text-decoration: none;
+}
+
+.book-card{
+  background-image: url(book-card.jpeg);
+}
+
+.chat-card{
+  background-image: url(chat-card.jpeg);
+}
+
+.blog-card{
+  background-image: url(blog-card.jpeg);
+}
+
+.visual-card{
+  background-image: url(visual-card.jpeg);
+}
+
+.food-card{
+  background-image: url(food-card.jpeg);
+}
+
+.drink-card{
+  background-image: url(beer.jpeg);
+}
