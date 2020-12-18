@@ -1,4 +1,4 @@
-.new-book-main, .confirm-book-main{
+.new-book-main, .confirm-book-main, .complete-book-main{
   text-align: center;
   padding-top: 40px;
 }
@@ -11,6 +11,12 @@
 
 .confirm-book-title{
   width: 300px;
+  border-bottom: 2px solid black;
+  margin: 0 auto 20px;
+}
+
+.complete-book-title{
+  width: 180px;
   border-bottom: 2px solid black;
   margin: 0 auto 20px;
 }
@@ -82,4 +88,16 @@
 .book-actios{
   display: flex;
   justify-content: center;
+}
+
+.complete-book-form{
+  background-color: #EEEEEE;
+  width: 40vw;
+  margin: 100px auto;
+  padding: 60px 0px;
+  border-radius: 5px;
+}
+
+.complete-book-btn{
+  margin-top: 40px;
 }
