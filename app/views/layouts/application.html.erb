@@ -25,8 +25,8 @@
               <li class="nav-item d-flex align-items-center"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header-item btn btn-outline-warning btn-sm" %></li>
             <% else %>
               <%# 未ログインユーザー %>
-              <li class="nav-item d-flex align-items-center"><%= link_to '新規登録', new_user_registration_path, class: "header-item btn btn-out-line-primary" %></li>
-              <li class="nav-item d-flex align-items-center"><%= link_to 'ログイン', new_user_session_path, class: "header-item btn btn-outline-primary" %></li>
+              <li class="nav-item d-flex align-items-center"><%= link_to '新規登録', new_user_registration_path, class: "header-item btn btn-outline-warning btn-md" %></li>
+              <li class="nav-item d-flex align-items-center"><%= link_to 'ログイン', new_user_session_path, class: "header-item btn btn-outline-warning btn-md" %></li>
             <% end %>
           </ul>
         </div>

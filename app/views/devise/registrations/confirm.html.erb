@@ -1,34 +1,58 @@
-<h1>入力情報の確認</h1>
+<div class="confirm-registrations-main">
 
-<ol class="nav">
-  <li class="current">1.入力</li>
-  <li>2.確認</li>
-  <li>3.完了</li>
-</ol> 
 
-<%= form_with model: @user, url: users_sign_up_complete_path, method: :GET, local: true do |f| %>
-  <%= f.label :nickname %>
-  <%= f.text_field :nickname, value: @user.nickname, readonly: true %>
+  <h1 class="confirm-registrations-title">入力情報の確認</h1>
 
-  <%= f.label :name %>
-  <%= f.text_field :name, value: @user.name, readonly: true %>
+  <ol class="nav">
+    <li class="nav-list">1.入力</li>
+    <li class="nav-list current">2.確認</li>
+    <li class="nav-list">3.完了</li>
+  </ol>
 
-  <%= f.label :name_kana %>
-  <%= f.text_field :name_kana, value: @user.name_kana, readonly: true %>
+  <div class="confirm-registrations-form">
+    <%= form_with model: @user, url: users_sign_up_complete_path, method: :GET, local: true do |f| %>
 
-  <%= f.label :age %>
-  <%= f.text_field :age, value: @user.age, readonly: true %>
+      <div class="field">
+        <%= f.label :nickname, class: "label" %><br />
+        <%= f.text_field :nickname, value: @user.nickname, readonly: true, class: "text-field" %>
+      </div>
 
-  <%= f.label :phone_number %>
-  <%= f.text_field :phone_number, value: @user.phone_number, readonly: true %>
+      <div class="field">
+        <%= f.label :name, class: "label" %><br />
+        <%= f.text_field :name, value: @user.name, readonly: true, class: "text-field" %>
+      </div>
 
-  <%= f.label :email %>
-  <%= f.email_field :email, value: @user.email, readonly: true %>
+      <div class="field">
+        <%= f.label :name_kana, class: "label" %><br />
+        <%= f.text_field :name_kana, value: @user.name_kana, readonly: true, class: "text-field" %>
+      </div>
 
-  <%= f.label :password %>
-  <%= f.text_field :password, value: @user.password, readonly: true %>
 
-  <%= f.submit '入力画面に戻る', name: :back %>
-  <%= f.submit '登録する' %>
-<% end %>
+      <div class="field">
+        <%= f.label :age, class: "label" %><br />
+        <%= f.number_field :age, value: @user.age, readonly: true, class: "number-field" %>
+      </div>
 
+      <div class="field">
+        <%= f.label :phone_number, class: "label" %><br />
+        <%= f.text_field :phone_number, value: @user.phone_number, readonly: true, class: "text-field" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email, class: "label" %><br />
+        <%= f.email_field :email, value: @user.email, readonly: true, class: "text-field" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, class: "label" %><br />
+        <%= f.text_field :password, value: @user.password, readonly: true, class: "text-field" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit '入力画面に戻る', name: :back, class: "btn btn-outline-primary mr-3" %>
+        <%= f.submit '登録する', class: "btn btn-outline-primary" %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
