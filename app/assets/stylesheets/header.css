@@ -1,4 +1,3 @@
-
 header{
   display: block;
 }
@@ -6,10 +5,12 @@ header{
 .navbar{
   height: 60px;
   display: flex;
+  background-color: #C00;
 }
 
 .login-nickname{
   font-size: 30px;
+  color: white;
 }
 
 .header-item {
@@ -18,4 +19,5 @@ header{
 
 .nav-item{
   padding-right: 20px;
+  font-weight: bold;
 }

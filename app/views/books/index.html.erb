@@ -1,13 +1,51 @@
+<div class="top-main">
+  <div class="main-content">
+    <div class="card booking-card">
+      <%= link_to new_book_path, class: "card-item new-book-grid" do %>
+        <div class="card-text"><i class="far fa-check-circle"></i>  ご予約はこちらから <i class="far fa-check-circle"></i></div>
+      <% end %>
+    </div>
+    <div class="grid">
+      <div class="card book-card">
+        <% if current_user.admin? %>
+          <%= link_to book_admin_books_path(current_user.id), class: "card-item" do %>
+            <div class="card-title">予約表</div>
+          <% end %>
+        <% else %>
+          <%= link_to user_path(current_user.id), class: "card-item" do %>
+            <div class="card-title">予約履歴</div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="card drink-card">
+        <%= link_to drinks_path, class: "card-item" do %>
+          <div class="card-title">お飲み物</div>
+        <% end %>
+      </div>
+      <div class="card food-card">
+        <%= link_to foods_path, class: "card-item" do %>
+          <div class="card-title">お料理</div>
+        <% end %>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card visual-card">
+        <%= link_to visuals_path, class: "card-item" do %>
+          <div class="card-title">外観/内装</div>
+        <% end %>
+      </div>
+      <div class="card blog-card">
+        <%= link_to blogs_path, class: "card-item" do %>
+          <div class="card-title">ブログ</div>
+        <% end %>
+      </div>
+      <div class="card chat-card">
+        <%= link_to messages_path, class: "card-item" do %>
+          <div class="card-title">ご意見/ご要望</div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to '予約画面', new_book_path %>
-<% if current_user.admin? %>
-  <%= link_to '予約表', book_admin_books_path(current_user.id) %>
-<% else %>
-  <%= link_to '予約履歴', user_path(current_user.id) %>
-<% end %>
-<%= link_to '外観/内装', visuals_path %>
-<%= link_to 'ブログ', blogs_path %>
 <%#= link_to 'チャットルーム作成', new_room_path %>
-<%= link_to 'チャット画面', messages_path %>
-<%= link_to '料理メニュー', foods_path %>
-<%= link_to '飲み物メニュー', drinks_path %>
