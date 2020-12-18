@@ -11,6 +11,7 @@ ja:
       food_comment: フードコメント
       message: メッセージ
       visual: 外観/内装
+      book: ご予約
 
     attributes:
       user:
@@ -47,11 +48,11 @@ ja:
       food_comment:
         comment: コメント
 
-      reserve:
+      book:
         reserve_date: 御予約日時
         reserve_time: 御予約時間
         number_reserve: 御予約人数
-        reserve_category_id: カテゴリー
+        reserve_category_id: 御予約内容
 
       blog_comment:
         comment: コメント
