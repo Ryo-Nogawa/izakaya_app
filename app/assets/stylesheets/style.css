@@ -12,13 +12,15 @@ body{
   width: 150px;
   height: 40px;
   padding-top: 8px;
-  background-color: #DDFFFF;
+  background-color: #EEFFFF;
+  border: 1px solid lightgray;
   margin-right: 5px;
   text-align: center;
 }
 
 .current{
   background-color: #99FFFF;
+  border: none;
   font-weight: bold;
 }
 
