@@ -3,11 +3,16 @@ body{
   border: none;
 }
 
+.nav{
+  justify-content: center;
+  padding-bottom: 15px;
+}
+
 .nav-list{
   width: 150px;
   height: 40px;
   padding-top: 8px;
-  background-color: lightgray;
+  background-color: #DDFFFF;
   margin-right: 5px;
   text-align: center;
 }
@@ -15,4 +20,8 @@ body{
 .current{
   background-color: #99FFFF;
   font-weight: bold;
+}
+
+.field_with_errors{
+  display: contents;
 }
