@@ -1,0 +1,18 @@
+body{
+  padding-top: 60px;
+  border: none;
+}
+
+.nav-list{
+  width: 150px;
+  height: 40px;
+  padding-top: 8px;
+  background-color: lightgray;
+  margin-right: 5px;
+  text-align: center;
+}
+
+.current{
+  background-color: #99FFFF;
+  font-weight: bold;
+}
