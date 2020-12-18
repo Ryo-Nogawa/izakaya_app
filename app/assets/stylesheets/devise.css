@@ -1,16 +1,22 @@
-.new-registrations-main{
+.new-registrations-main, .confirm-registrations-main{
   text-align: center;
   padding-top: 30px;
   margin-bottom: 50px;
 }
 
-.new-registrations-title{
+.new-registrations-title,{
   width: 250px;
   border-bottom: 2px solid black;
   margin: 0 auto 15px;
 }
 
-.new-registrations-form{
+.confirm-registrations-title{
+  width: 300px;
+  border-bottom: 2px solid black;
+  margin: 0 auto 15px;
+}
+
+.new-registrations-form, .confirm-registrations-form{
   background-color: #EEEEEE;
   width: 30vw;
   margin: 0 auto;
