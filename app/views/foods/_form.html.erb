@@ -29,12 +29,13 @@
 
       <%# プレビュー画像の表示 %>
       <div id='food-image-list'></div>
+      <%# 編集画面はこちらに表示 %>
+      <%= image_tag @food.image, id: 'image' if @food.image.present? %>
 
       <div class="submit">
-        <%= f.submit '確認画面へ', class: "btn btn-outline-primary mt-3" %>
+        <%= f.submit '投稿する', class: "btn btn-outline-primary mt-3" %>
       </div>
     </div>
   <% end %>
 
-  <%= image_tag @food.image, id: 'image' if @food.image.present? %>
 </div>
