@@ -57,7 +57,7 @@
       <%= image_tag @drink.image, id: 'image' if @drink.image.present? %>
 
       <div class="submit">
-        <%= link_to '戻る', drinks_path, class: "btn btn-outline-primary mt-3 mr-3" %>
+        <%= link_to '戻る', drink_path(@drink.id), class: "btn btn-outline-primary mt-3 mr-3" %>
         <%= f.submit '投稿する', class: "btn btn-outline-primary mt-3" %>
       </div>
     </div>
