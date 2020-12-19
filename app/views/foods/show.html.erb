@@ -24,12 +24,12 @@
 
     </div>
     <div class="content-only-admin">
+      <%= link_to '一覧へ戻る', foods_path, class: "btn btn-outline-danger btn-lg mr-3" %>
       <% if current_user.admin? %>
-        <%= link_to '一覧へ戻る', foods_path, class: "btn btn-outline-danger btn-lg mr-3" %>
         <%= link_to '編集', edit_food_path(params[:id]), class: "btn btn-outline-danger btn-lg mr-3" %>
         <%= link_to '削除', food_path(params[:id]), method: :delete, class: "btn btn-outline-danger btn-lg" %>
       <% end %>
-  </div>
+    </div>
   </div>
 
   <div class="show-content-right">
@@ -49,5 +49,4 @@
       <% end %>
     </div>
   </div>
-
 </div>

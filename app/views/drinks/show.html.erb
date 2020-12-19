@@ -1,21 +1,53 @@
-<h1>詳細画面</h1>
+<div class="show-content-main">
+  <div class="show-content-left">
+    <div class="show-content">
 
-<%= @drink.title %><br />
-<%= @drink.detail %><br />
-<%= @drink.price %><br />
-<%= image_tag @drink.image.variant(resize: '400x400') %><br />
+      <div class="show-content-image">
+        <%= image_tag @drink.image.variant(resize: '400x400') %><br />
+      </div>
 
-<div id="drink-comments-area">
-  <%= render 'drink_comments/index', { comments: @comments } %>
-</div>
+      <div class="show-content-title">
+        <%= @drink.title %><br />
+      </div>
 
-<% if user_signed_in? %>
-  <div id="drink-comment-create">
-    <%= render 'drink_comments/comment_form', { comment: @comment, drink: @drink } %>
+      <div class="show-content-detail">
+        <%= @drink.detail %><br />
+      </div>
+
+      <div class="show-content-price">
+        ¥<%= @drink.price %><br />
+      </div>
+
+      <div class="show-content-category">
+        <%= @drink.drink_category.name %>
+      </div>
+
+    </div>
+
+    <div class="content-only-admin">
+      <%= link_to '一覧へ戻る', drinks_path, class: "btn btn-outline-danger btn-lg mr-3" %>
+      <% if current_user.admin? %>
+        <%= link_to '編集', edit_drink_path(params[:id]), class: "btn btn-outline-danger btn-lg mr-3" %>
+        <%= link_to '削除', drink_path(params[:id]), method: :delete, class: "btn btn-outline-danger btn-lg" %>
+      <% end %>
+    </div>
   </div>
-<% end %>
 
-<% if current_user.admin? %>
-  <%= link_to '編集', edit_drink_path(params[:id]) %>
-  <%= link_to '削除', drink_path(params[:id]), method: :delete %>
-<% end %>
+  <div class="show-content-right">
+    <div class="comment-area">
+      <div class="comment-title">
+        <i class="fas fa-comments"></i><p class="comment-title-text">comment</p>
+      </div>
+
+      <div id="drink-comments-area">
+        <%= render 'drink_comments/index', { comments: @comments } %>
+      </div>
+
+      <% if user_signed_in? %>
+        <div id="drink-comment-create">
+          <%= render 'drink_comments/comment_form', { comment: @comment, drink: @drink } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
