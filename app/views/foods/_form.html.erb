@@ -33,6 +33,7 @@
       <%= image_tag @food.image, id: 'image' if @food.image.present? %>
 
       <div class="submit">
+        <%= link_to '戻る', foods_path, class: "btn btn-outline-primary mt-3 mr-3" %>
         <%= f.submit '投稿する', class: "btn btn-outline-primary mt-3" %>
       </div>
     </div>
