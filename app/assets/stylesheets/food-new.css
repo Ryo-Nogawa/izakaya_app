@@ -1,0 +1,23 @@
+.food-new-main{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.food-new-title{
+  width: 180px;
+  border-bottom: 2px solid black;
+  margin: 30px auto ;
+}
+
+#food_food_category_id{
+  width: 180px;
+  border: none;
+  border-radius: 5px;
+}
+
+#food-image-list img{
+  margin: 0 auto;
+  width: 450px;
+  height: 300px;
+}

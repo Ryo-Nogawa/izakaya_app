@@ -1,5 +1,4 @@
 <%= search_form_for @p, url: search_foods_path do |f| %>
-  <%= f.label :food_category_id %>
   <%= f.radio_button :food_category_id_eq, '2' %>おすすめ
   <%= f.radio_button :food_category_id_eq, '3' %>とりあえず
   <%= f.radio_button :food_category_id_eq, '4' %>サラダ
@@ -9,5 +8,5 @@
   <%= f.radio_button :food_category_id_eq, '8' %>海鮮
   <%= f.radio_button :food_category_id_eq, '9' %>主食
   <%= f.radio_button :food_category_id_eq, '10' %>デザート
-  <%= f.submit '検索' %>
+  <%= f.submit '検索', class: "btn btn-outline-primary ml-3" %>
 <% end %>

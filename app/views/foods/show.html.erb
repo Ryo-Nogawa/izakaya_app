@@ -1,21 +1,53 @@
-<h1>詳細ページ</h1>
+<div class="show-content-main">
+  <div class="show-content-left">
+    <div class="show-content">
 
-<%= @food.title %><br />
-<%= @food.detail %><br />
-<%= @food.price %><br />
-<%= image_tag @food.image.variant(resize: '400x400') %><br />
+      <div class="show-content-image">
+        <%= image_tag @food.image.variant(resize: '400x400') %><br />
+      </div>
 
-<div id="food-comments-area">
-  <%= render 'food_comments/index', { comments: @comments } %>
-</div>
+      <div class="show-content-title">
+        <%= @food.title %>
+      </div>
 
-<% if user_signed_in? %>
-  <div id="food-comment-create">
-    <%= render 'food_comments/comment_form', { comment: @comment, food: @food } %>
+      <div class="show-content-detail">
+        <%= @food.detail %><br />
+      </div>
+
+      <div class="show-content-price">
+        ¥<%= @food.price %><br />
+      </div>
+
+      <div class="show-content-category">
+        <%= @food.food_category.name %>
+      </div>
+
+    </div>
+    <div class="content-only-admin">
+      <% if current_user.admin? %>
+        <%= link_to '一覧へ戻る', foods_path, class: "btn btn-outline-danger btn-lg mr-3" %>
+        <%= link_to '編集', edit_food_path(params[:id]), class: "btn btn-outline-danger btn-lg mr-3" %>
+        <%= link_to '削除', food_path(params[:id]), method: :delete, class: "btn btn-outline-danger btn-lg" %>
+      <% end %>
   </div>
-<% end %>
+  </div>
 
-<% if current_user.admin? %>
-  <%= link_to '編集', edit_food_path(params[:id]) %>
-  <%= link_to '削除', food_path(params[:id]), method: :delete %>
-<% end %>
+  <div class="show-content-right">
+    <div class="comment-area">
+      <div class="comment-title">
+        <i class="fas fa-comments"></i><p class="comment-title-text">comment</p>
+      </div>
+
+      <div id="food-comments-area">
+        <%= render 'food_comments/index', { comments: @comments } %>
+      </div>
+
+      <% if user_signed_in? %>
+        <div id="food-comment-create">
+          <%= render 'food_comments/comment_form', { comment: @comment, food: @food } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>

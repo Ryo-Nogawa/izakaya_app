@@ -1,38 +1,5 @@
-<h1>新規作成</h1>
+<div class="food-new-main">
+  <h1 class="food-new-title">新規作成</h1>
 
-<%= form_with model: @food, local: true do |f| %>
-<%= render 'shared/error_messages', resource: @food %>
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :detail %>
-    <%= f.text_area :detail %>
-  </div>
-
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= f.label :food_category_id %>
-    <%= f.collection_select :food_category_id, FoodCategory.all, :id, :name, {} %>
-  </div>
-
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image, {size: '400x400'} %>
-  </div>
-
-  <div class="submit">
-    <%= f.submit '確認画面' %>
-  </div>
-  <%# プレビュー画像の表示 %>
-  <div id='food-image-list'></div>
-
-<% end %>
-
-<%= image_tag @food.image, id: 'image' if @food.image.present? %>
+  <%= render 'form' %>
+</div>
