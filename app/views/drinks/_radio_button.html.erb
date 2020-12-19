@@ -1,5 +1,4 @@
 <%= search_form_for @p, url: search_drinks_path do |f| %>
-  <%= f.label :drink_category_id %>
   <%= f.radio_button :drink_category_id_eq, '2' %>ビール
   <%= f.radio_button :drink_category_id_eq, '3' %>ハイボール
   <%= f.radio_button :drink_category_id_eq, '4' %>サワー
@@ -10,5 +9,5 @@
   <%= f.radio_button :drink_category_id_eq, '9' %>焼酎
   <%= f.radio_button :drink_category_id_eq, '10' %>日本酒
   <%= f.radio_button :drink_category_id_eq, '11' %>ノンアルコール
-  <%= f.submit '検索' %>
+  <%= f.submit '検索', class: "btn btn-outline-primary ml-3" %>
 <% end %>
