@@ -15,7 +15,9 @@
         <%= f.label :nickname, class: "label" %><br />
         <%= f.text_field :nickname, class: "text-field", placeholder: '40文字以内で入力して下さい' %>
         <% if @user.errors.include?(:nickname) %>
-          <p style="color: red;"><%= @user.errors.full_messages_for(:nickname).first %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:nickname).first %>
+          </p>
         <% end %>
       </div>
 
@@ -23,7 +25,9 @@
         <%= f.label :name, class: "label" %><br />
         <%= f.text_field :name, class: "text-field", placeholder: 'フルネームを入力して下さい' %>
         <% if @user.errors.include?(:name) %>
-          <p style="color: red;"><%= @user.errors.full_messages_for(:name).first %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:name).first %>
+          </p>
         <% end %>
       </div>
 
@@ -31,7 +35,9 @@
         <%= f.label :name_kana, class: "label" %><br />
         <%= f.text_field :name_kana, class: "text-field", placeholder: 'フリガナ' %>
         <% if @user.errors.include?(:name_kana) %>
-          <p style="color: red;"><%= @user.errors.full_messages_for(:name_kana).first %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:name_kana).first %>
+          </p>
         <% end %>
       </div>
 
@@ -39,7 +45,9 @@
         <%= f.label :age, class: "label" %><br />
         <%= f.number_field :age, class: "number-field", placeholder: '半角' %>
         <% if @user.errors.include?(:age) %>
-          <p style="color: red;"><%= @user.errors.full_messages_for(:age).first %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:age).first %>
+          </p>
         <% end %>
       </div>
 
@@ -47,7 +55,9 @@
         <%= f.label :phone_number, class: "label" %><br />
         <%= f.text_field :phone_number, class: "text-field", placeholder: 'ハイフン(ー)無し' %>
         <% if @user.errors.include?(:phone_number) %>
-          <p style="color: red;"><%= @user.errors.full_messages_for(:phone_number).first %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:phone_number).first %>
+          </p>
         <% end %>
       </div>
 
@@ -55,7 +65,9 @@
         <%= f.label :email, class: "label" %><br />
         <%= f.email_field :email, class: "text-field", placeholder: 'example@email.com' %>
         <% if @user.errors.include?(:email) %>
-          <p style="color: red;"><%= @user.errors.full_messages_for(:email).first %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:email).first %>
+          </p>
         <% end %>
       </div>
 
@@ -66,7 +78,9 @@
         <% end %><br />
         <%= f.password_field :password, class: "text-field", placeholder: '12345abcd' %>
         <% if @user.errors.include?(:password) %>
-          <p style="color: red;"><%= @user.errors.full_messages_for(:password).first %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:password).first %>
+          </p>
         <% end %>
       </div>
 
@@ -74,7 +88,9 @@
         <%= f.label :password_confirmation, class: "label" %><br />
         <%= f.password_field :password_confirmation, class: "text-field", placeholder: '12345abcd' %>
         <% if @user.errors.include?(:password_confirmation) %>
-          <p style="color: red;"><%= @user.errors.full_messages_for(:password_confirmation).first %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:password_confirmation).first %>
+          </p>
         <% end %>
       </div>
 
