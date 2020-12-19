@@ -1,0 +1,40 @@
+<div class="food-render-form">
+  <%= form_with model: @food, local: true do |f| %>
+    <div class="form-content">
+      <%= render 'shared/error_messages', resource: @food %>
+      <div class="field">
+        <%= f.label :title, class: "field-label" %><br/>
+        <%= f.text_field :title, class: "title-field" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :detail, class: "field-label" %><br />
+        <%= f.text_area :detail, class: "detail-field" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :price, class: "field-label" %><br />
+        <span class="price-icon">¥</span><%= f.text_field :price, class: "price-field" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :food_category_id, class: "field-label" %><br />
+        <%= f.collection_select :food_category_id, FoodCategory.all, :id, :name, {class: "food-category-select"} %>
+      </div>
+
+      <div class="field">
+        <%= f.label :image, class: "field-label" %><br />
+        <%= f.file_field :image %>
+      </div>
+
+      <%# プレビュー画像の表示 %>
+      <div id='food-image-list'></div>
+
+      <div class="submit">
+        <%= f.submit '確認画面へ', class: "btn btn-outline-primary mt-3" %>
+      </div>
+    </div>
+  <% end %>
+
+  <%= image_tag @food.image, id: 'image' if @food.image.present? %>
+</div>
