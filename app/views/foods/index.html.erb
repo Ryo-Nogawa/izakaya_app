@@ -3,7 +3,7 @@
     <h1 class="index-content-main-title">料理メニュー</h1>
     <div class="index-content-new">
       <% if current_user.admin? %>
-        <%= link_to '新規作成', new_food_path, class: "btn btn btn-outline-danger ml-5" %>
+        <%= link_to '新規作成', new_food_path, class: "btn btn-outline-danger ml-5" %>
       <% end %>
     </div>
   </div>
@@ -13,6 +13,7 @@
     <%= render 'foods/radio_button' %>
   </div>
 
+  <%# 投稿一覧 %>
   <div class="index-content-form">
     <% @foods.each do |food| %>
       <div class="index-content">

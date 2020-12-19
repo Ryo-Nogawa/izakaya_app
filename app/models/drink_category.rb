@@ -1,6 +1,6 @@
 class DrinkCategory < ActiveHash::Base
   self.data = [
-    { id: 1,  name: '---------' },
+    { id: 1,  name: '選択してください' },
     { id: 2,  name: 'ビール' },
     { id: 3,  name: 'ハイボール'},
     { id: 4,  name: 'サワー' },

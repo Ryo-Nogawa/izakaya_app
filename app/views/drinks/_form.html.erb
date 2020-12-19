@@ -1,12 +1,12 @@
-<div class="food-render-form">
-  <%= form_with model: @food, local: true do |f| %>
+<div class="drink-render-form">
+  <%= form_with model: @drink, local: true do |f| %>
     <div class="form-content">
       <div class="field">
-        <%= f.label :title, class: "field-label" %><br/>
+        <%= f.label :title, class: "field-label" %><br />
         <%= f.text_field :title, class: "title-field" %>
-        <% if @food.errors.include?(:title) %>
+        <% if @drink.errors.include?(:title) %>
           <p style="color: red; margin: 0;">
-            <%= @food.errors.full_messages_for(:title).first %>
+            <%= @drink.errors.full_messages_for(:title).first %>
           </p>
         <% end %>
       </div>
@@ -14,9 +14,9 @@
       <div class="field">
         <%= f.label :detail, class: "field-label" %><br />
         <%= f.text_area :detail, class: "detail-field" %>
-        <% if @food.errors.include?(:detail) %>
+        <% if @drink.errors.include?(:detail) %>
           <p style="color: red; margin: 0;">
-            <%= @food.errors.full_messages_for(:detail).first %>
+            <%= @drink.errors.full_messages_for(:detail).first %>
           </p>
         <% end %>
       </div>
@@ -24,19 +24,19 @@
       <div class="field">
         <%= f.label :price, class: "field-label" %><br />
         <span class="price-icon">¥</span><%= f.text_field :price, class: "price-field" %>
-        <% if @food.errors.include?(:price) %>
+        <% if @drink.errors.include?(:price) %>
           <p style="color: red; margin: 0;">
-            <%= @food.errors.full_messages_for(:price).first %>
+            <%= @drink.errors.full_messages_for(:price).first %>
           </p>
         <% end %>
       </div>
 
       <div class="field">
-        <%= f.label :food_category_id, class: "field-label" %><br />
-        <%= f.collection_select :food_category_id, FoodCategory.all, :id, :name, {class: "food-category-select"} %>
-        <% if @food.errors.include?(:food_category_id) %>
+        <%= f.label :drink_category_id, class: "field-label" %><br />
+        <%= f.collection_select :drink_category_id, DrinkCategory.all, :id, :name, {class: "food-category-select"} %>
+        <% if @drink.errors.include?(:drink_category_id) %>
           <p style="color: red; margin: 0;">
-            <%= @food.errors.full_messages_for(:food_category_id).first %>
+            <%= @drink.errors.full_messages_for(:drink_category_id).first %>
           </p>
         <% end %>
       </div>
@@ -44,23 +44,22 @@
       <div class="field">
         <%= f.label :image, class: "field-label" %><br />
         <%= f.file_field :image %>
-        <% if @food.errors.include?(:image) %>
+        <% if @drink.errors.include?(:image) %>
           <p style="color: red; margin: 0;">
-            <%= @food.errors.full_messages_for(:image).first %>
+            <%= @drink.errors.full_messages_for(:image).first %>
           </p>
         <% end %>
       </div>
 
       <%# プレビュー画像の表示 %>
-      <div id='food-image-list'></div>
+      <div id="drink-image-list"></div>
       <%# 編集画面はこちらに表示 %>
-      <%= image_tag @food.image, id: 'image' if @food.image.present? %>
+      <%= image_tag @drink.image, id: 'image' if @drink.image.present? %>
 
       <div class="submit">
-        <%= link_to '戻る', food_path(@food.id), class: "btn btn-outline-primary mt-3 mr-3" %>
+        <%= link_to '戻る', drink_path(@drink.id), class: "btn btn-outline-primary mt-3 mr-3" %>
         <%= f.submit '投稿する', class: "btn btn-outline-primary mt-3" %>
       </div>
     </div>
   <% end %>
-
 </div>

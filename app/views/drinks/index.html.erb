@@ -1,23 +1,46 @@
-<h1>ドリンクメニュー</h1>
-
-<%# 検索ボタン %>
-<div id="search-area">
-  <%= render 'drinks/radio_button' %>
-</div>
-
-<% @drinks.each do |drink| %>
-  <%= drink.title %>
-  <%# いいね機能 %>
-  <div id="drink-<%= drink.id %>"> 
-    <%= render 'drink_like', drink: drink %>
+<div class="index-content-main">
+  <div class="index-content-top">
+    <h1 class="index-content-main-title">飲み物メニュー</h1>
+    <div class="index-content-new">
+      <% if current_user.admin? %>
+        <%= link_to '新規投稿', new_drink_path, class: "btn btn-outline-danger ml-5" %>
+      <% end %>
+    </div>
   </div>
-  <%# いいね機能 %>
-  <%= drink.price %>
-  <%= link_to drink_path(drink.id) do %>
-    <%= image_tag drink.image.variant(resize: '400x400') %>
-  <% end %>
-<% end %>
 
-<% if current_user.admin? %>
-  <%= link_to '新規投稿', new_drink_path %>
-<% end %>
+  <%# 検索ボタン %>
+  <div id="search-area" class="search-btn">
+    <%= render 'drinks/radio_button' %>
+  </div>
+
+  <%# 投稿一覧 %>
+  <div class="index-content-form">
+  <% @drinks.each do |drink| %>
+    <div class="index-content">
+      <div class="index-content-image">
+        <%= link_to drink_path(drink.id) do %>
+          <%= image_tag drink.image.variant(resize: '400x400') %>
+        <% end %>
+      </div>
+
+      <%# いいね機能 %>
+      <div id="drink-<%= drink.id %>" class="content-like-btn"> 
+        <%= render 'drink_like', drink: drink %>
+      </div>
+      <%# いいね機能 %>
+
+      <div class="index-content-title">
+      <%= drink.title %>
+      </div>
+
+      <div class="index-content-price">
+        ¥<%= drink.price %>
+      </div>
+
+      <div class="index-content-category">
+        <%= drink.drink_category.name %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
