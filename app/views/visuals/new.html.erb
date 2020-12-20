@@ -1,11 +1,9 @@
-<h1>新規投稿</h1>
+<div class="visual-new-main">
+  <div class="visual-new-top">
+    <h1 class="visual-new-title">新規投稿</h1>
+  </div>
 
-<%= form_with model: @visual, local: true do |f| %>
-<%= render 'shared/error_messages', resource: @visual %>
-  <%= f.file_field :image, {size: '400x400'} %>
-  <%= f.submit '保存する' %>
-  <div id="visual-image-list"></div>
-<% end %>
-
-<%= image_tag @visual.image, id: 'image' if @visual.image.present? %>
-
+  <div class="visual-form">
+    <%= render 'form' %>
+  </div>
+</div>

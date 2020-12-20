@@ -1,0 +1,16 @@
+.visual-new-main{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.visual-new-top{
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.visual-new-title{
+  width: 180px;
+  border-bottom: 2px solid black;
+  margin: 0 auto;
+}
