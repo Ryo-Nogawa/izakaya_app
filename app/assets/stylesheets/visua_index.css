@@ -1,0 +1,28 @@
+.visual-index-main{
+  width: 95%;
+  height: 100%;
+  margin: 0 30px;
+}
+
+.visual-index-top{
+  text-align: start;
+}
+
+.visual-index-content{
+  margin-top: 50px;
+}
+
+.visual-col{
+  margin-bottom: 40px;
+}
+
+.visual-index-image img{
+  width: 350px;
+  height: 200px;
+  background-size: cover;
+}
+
+.visual-index-admin{
+  margin-top: 10px;
+  text-align: center;
+}

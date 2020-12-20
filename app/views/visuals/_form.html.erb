@@ -1,0 +1,22 @@
+<div class="visual-render-form">
+  <%= form_with model: @visual, local: true do |f| %>
+    <div class="form-content">
+      <div class="field">
+        <%= f.label :image, class: "field-label" %><br />
+        <%= f.file_field :image %>
+        <% if @visual.errors.include?(:image) %>
+          <p style="color: red; margin: 0;">
+            <%= @drink.errors.full_messages_for(:image).first %>
+          </p>
+        <% end %>
+      </div>
+      
+      <div id="visual-image-list"></div>
+      <%= image_tag @visual.image, id: 'image' if @visual.image.present? %>
+      <%= link_to '一覧へ戻る', visuals_path, class: "btn btn-outline-primary mr-3 mt-3" %>
+      <%= f.submit '投稿する', class: "btn btn-outline-primary mt-3" %>
+    </div>
+  <% end %>
+</div>
+
+
