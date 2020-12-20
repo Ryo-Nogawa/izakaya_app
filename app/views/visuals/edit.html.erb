@@ -1,9 +1,9 @@
-<h1>編集</h1>
+<div class="visual-edit-main">
+  <div class="visual-edit-top">
+  <h1 class="visual-edit-title">編集</h1>
+  </div>
 
-<%= form_with model: @visual, local: true do |f| %>
-  <%= f.file_field :image, {size: '400x400'} %>
-  <%= f.submit '保存する' %>
-  <div id="visual-image-list"></div>
-<% end %>
-
-<%= image_tag @visual.image, id: 'image' if @visual.image.present? %>
+  <div class="visual-form">
+    <%= render 'form' %>
+  </div>
+</div>
