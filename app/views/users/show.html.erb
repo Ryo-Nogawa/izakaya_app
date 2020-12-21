@@ -1,23 +1,31 @@
-<h1><%= @user.nickname %>さんの予約履歴</h1>
-<table>
-  <tr>
-    <th>日付</th>
-    <th>時間</th>
-    <th>人数</th>
-    <th>予約のコース</th>
-  </tr>
-  <% @books.each do |book| %>
-    <tr>
-      <th><%= book.reserve_date.strftime('%m/%d') %></th>
-      <th><%= book.reserve_time.strftime('%-H:%M') %> </th>
-      <th><%= book.number_reserve %>名</th>
-      <th><%= book.reserve_category.name %></th>
-      <th>
-        <% if book.reserve_date > @today %>
-          <%= link_to '予約を変更する', edit_book_path(book.id) %>
-          <%= link_to '予約をキャンセルする', book_path(book.id), method: :DELETE %>
+<div class="user-book-main">
+  <h1 class="user-book-title"><%= @user.name %>さんの予約履歴</h1>
+
+  <div class="user-book-table">
+    <table class="book-table">
+      <tr class="user-book-show">
+        <th>日付</th>
+        <th>時間</th>
+        <th>人数</th>
+        <th>予約のコース</th>
+        <th>変更</th>
+        <th>キャンセル</th>
+      </tr>
+
+      <% @books.each do |book| %>
+        <% if book.reserve_date >= Date.today %>
+          <tr class="user-book-content">
+            <td><%= book.reserve_date.strftime('%m/%d') %></td>
+            <td><%= book.reserve_time.strftime('%-H:%M') %> </td>
+            <td><%= book.number_reserve %>名</td>
+            <td><%= book.reserve_category.name %></td>
+            <% if book.reserve_date > @today %>
+              <td><%= link_to '変更する', edit_book_path(book.id), class: "btn btn-outline-primary" %></td>
+              <td><%= link_to 'キャンセルする', book_path(book.id), method: :DELETE, class: "btn btn-outline-primary" %></td>
+              <% end %>
+          </tr>
         <% end %>
-      </th>
-    </tr>
-  <% end %>
-</table>
+      <% end %>
+    </table>
+  </div>
+</div>
