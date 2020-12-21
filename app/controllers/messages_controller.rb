@@ -2,13 +2,14 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @messages = Message.includes(:user).order(created_at: :ASC)
+    @messages = Message.includes(:user).order(created_at: :DESC)
   end
 
   def create
     @message = Message.new(message_params)
     if @message.save
-      ActionCable.server.broadcast 'message_channel', content: @message
+      # ActionCable.server.broadcast 'message_channel', content: @message
+      redirect_to messages_path
     end
   end
 

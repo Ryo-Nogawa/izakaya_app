@@ -1,0 +1,24 @@
+#message-form-area{
+  position: fixed;
+  bottom: 18px;
+  border: none;
+  background-color: #EEEEEE;
+  left: 497px;
+  padding: 10px;
+}
+
+#message_content{
+  width: 390px;
+  border-radius: 3px;
+  border: none;
+}
+
+.message-btn{
+  border: none;
+  background: none;
+}
+
+.fa-paper-plane{
+  color: #0000DD;
+  font-size: 20px;
+}

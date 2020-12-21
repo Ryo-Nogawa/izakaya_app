@@ -1,0 +1,92 @@
+.message-content{
+  padding: 20px 10px;
+  max-width: 450px;
+  height: 600px;
+  margin: 15px auto;
+  text-align: right;
+  font-size: 14px;
+  background-color: #7da4cd;
+  border: 2px solid black;
+  overflow-y: scroll;
+}
+
+.othermessage {
+  margin: 10px 0;
+  overflow: hidden;
+  float: left;
+  margin-right: -50px;
+  width: 120px;
+  text-align: left;
+  display: contents;
+}
+
+#messages-comment-area{
+  margin-bottom: 40px;
+}
+
+.mymessage-content{
+  margin: 0;
+}
+
+.mymessage-content p{
+  display: inline-block;
+  position: relative;
+  margin: 0 10px 0 0;
+  padding: 8px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #30e852;
+  font-size: 15px;
+}
+
+.mymessage-content p:after{
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: -19px;
+  border: 8px solid transparent;
+  border-left: 18px solid #30e852;
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
+
+.message-daytime{
+  color: #EEE;
+  font-size: 13px;
+}
+
+.chatting{
+  width: 100%;
+  text-align: left;
+}
+
+.othermessage-content p{
+  display: inline-block;
+  position: relative;
+  margin: 0 0 0 10px;
+  padding: 10px;
+  max-width: 250px;
+  border-radius: 12px;
+  background-color: #edf1ee;
+}
+
+.othermessage-content p:after{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #edf1ee;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+
+.otermessage-user-nickname{
+  margin-bottom: 0;
+}
+
+.otermessage-user-nickname a{
+  font-weight: bold;
+  font-size: 18px;
+}

@@ -1,0 +1,32 @@
+<div class="message-main">
+  <div id="messages">
+    <% @messages.reverse_each do |message| %>
+      <% if message.user_id == current_user.id %>
+        <div class="mymessage">
+          <div class="mymessage-content">
+            <p><%= message.content %></p>
+          </div>
+          <div class="mymessage-daytime">
+            <p class="message-daytime"><%= message.created_at.strftime("%Y/%m/%d %H:%M") %></p>
+          </div>
+        </div>
+      <% else %>
+        <div class="fukidasi">
+          <div class="othermessage">
+            <div class="othermessage-nickname">
+              <p class="otermessage-user-nickname"><%= link_to message.user.nickname, "/users/#{message.user_id}" %></p>
+            </div>
+            <div class="chatting">
+              <div class="othermessage-content">
+                <p><%= message.content %></p>
+              </div>
+            </div>
+            <div class="othermessage-daytime">
+              <p class="message-daytime"><%= message.created_at.strftime("%Y/%m/%d %H:%M") %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

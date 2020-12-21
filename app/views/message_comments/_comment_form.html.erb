@@ -1,0 +1,8 @@
+<div class="message-form">
+  <%= form_with model: @message, local: true do |f| %>
+    <%= f.text_field :content, placeholder: 'type a message', id: "message_content" %>
+    <%= f.button type: "submit", class: "message-btn" do %>
+      <i class="fas fa-paper-plane"></i>
+    <% end %>
+  <% end %>
+</div>

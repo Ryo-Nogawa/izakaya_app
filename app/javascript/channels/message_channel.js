@@ -10,7 +10,19 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
-    const html = `<p>${data.content.content}</p>`;
+    const html = `
+                <div class="mymessage">
+                <div class="mymessage-nickname">
+                  <a href="/users/${messages.user_id}>${messages.nickname}</a>
+                </div>
+                <div class="mymessage-content">
+                  ${messages.content}
+                </div>
+                <div class="mymessage-daytime">
+                  ${messages.created_at.strftime("%Y/%m/%d %H:%M")}
+                </div>
+              </div>
+      `;
     const messages = document.getElementById('messages');
     const newMessage = document.getElementById('message_content');
     messages.insertAdjacentHTML('afterbegin', html);
