@@ -1,0 +1,34 @@
+.blog-form-main{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.blog-content-form{
+  width: 40vw;
+  background-color: #EEE;
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 20px 0;
+}
+
+.blog-title-form{
+  border: none;
+  width: 400px;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.blog-text-form{
+  border: none;
+  width: 400px;
+  height: 250px;
+  border-radius: 5px;
+}
+
+#blog-image-list img{
+  width: 450px;
+  height: 300px;
+  margin: 0 auto 20px;
+}

@@ -1,0 +1,45 @@
+<%= form_with model: @blog, local: true do |f| %>
+
+  <%# プレビュー画像の表示 %>
+  <div id="blog-image-list"></div>
+  <%# 編集画面はこちらに表示 %>
+  <%= image_tag @blog.image, id: 'image' if @blog.image.present? %>
+
+  <div class="field">
+    <%= f.label :image, class: "field-label" %><br />
+    <%= f.file_field :image %>
+    <% if @blog.errors.include?(:image) %>
+      <p style="color: red; margin: 0;">
+        <%= @blog.errors.full_messages_for(:image).first %>
+      </p>
+      <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title, class: "field-label" %><br />
+    <%= f.text_field :title, class: "blog-title-form" %>
+    <% if @blog.errors.include?(:title) %>
+      <p style="color: red; margin: 0;">
+        <%= @blog.errors.full_messages_for(:title).first %>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :text, class: "field-label" %><br />
+    <%= f.text_area :text, class: "blog-text-form" %>
+    <% if @blog.errors.include?(:text) %>
+      <p style="color: red; margin: 0;">
+        <%= @blog.errors.full_messages_for(:text).first %>
+      </p>
+    <% end %>
+  </div>
+
+
+
+  <div class="submit">
+    <%= link_to '戻る', blogs_path, class: "btn btn-outline-primary mt-3 mr-3" %>
+    <%= f.submit '投稿する', class: "btn btn-outline-primary mt-3" %>
+  </div>
+
+<% end %>

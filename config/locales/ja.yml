@@ -24,6 +24,7 @@ ja:
       blog:
         title: タイトル
         text: テキスト
+        image: 画像
       
       chat:
         name: グループ名
