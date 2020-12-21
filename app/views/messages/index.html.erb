@@ -1,13 +1,15 @@
-<h1>チャット画面</h1>
+<div class="messages-main">
+  <div class="message-top">
+    <h1 class="message-title">ご意見/ご要望</h1>
+  </div>
 
-<div id="messages">
-  <% @messages.reverse_each do |message| %>
-    <p><%= message.content %></p>
-  <% end %>
+  <div class="message-content">
+    <div id="messages-comment-area">
+      <%= render 'message_comments/index' %>
+    </div>
+
+      <div id="message-form-area">
+        <%= render 'message_comments/comment_form' %>
+      </div>
+  </div>
 </div>
-
-<%= form_with model: @message do |f| %>
-  <%= f.text_field :content, placeholder: 'type a message' %>
-  <%= f.file_field :image %>
-  <%= f.submit '送信' %>
-<% end %>
