@@ -1,28 +1,38 @@
-<h1>ブログ一覧表示</h1>
-
-<% if current_user.admin? %>
-  <%= link_to '新規投稿', new_blog_path %>
-<% end %>
-
-<table class="table">
-    <% @blogs.each do |blog| %>
-        <tbody>
-          <tr>
-            <th scope="row"><%= blog.id %></th>
-            <%# いいね機能 %>
-            <td id="blog-<%= blog.id %>"> 
-              <%= render 'blog_like', blog: blog %>
-            </td>
-            <%# いいね機能 %>
-            <td><%= blog.title %></td>
-            <td><%= blog.created_at %></td>
-            <td><%= image_tag blog.image.variant(resize: '200x200') if blog.image.attached? %> </td>
-            <td><%= link_to 'show', blog_path(blog.id) %></td>
-            <% if current_user.admin? %>
-              <td><%= link_to 'edit', edit_blog_path(blog.id) %></td>
-              <td><%= link_to 'delete', blog_path(blog.id), method: :delete %></td>
-            <% end %>
-          </tr>
-        </tbody>
+<div class="blog-index-main">
+  <div class="blog-index-top">
+    <% if current_user.admin? %>
+      <%= link_to '新規投稿', new_blog_path, class: "btn btn-outline-danger mt-4" %>
     <% end %>
-</table>
+  </div>
+
+  <table class="blog-table mt-5">
+      <% @blogs.each do |blog| %>
+          <tbody class="blog-table-body">
+            <tr class="blog-table-content">
+              <%# いいね機能 %>
+              <td>
+                <div id="blog-<%= blog.id %>" class="blog-like-btn">
+                  <%= render 'blog_like', blog: blog %>
+                </div>
+              </td>
+              <%# いいね機能 %>
+              <td class="blog-index-img">
+                <%= link_to blog_path(blog.id) do %>
+                  <%= image_tag blog.image.variant(resize: '200x200') if blog.image.attached? %> 
+                <% end %>
+              </td>
+              <td>
+                <div class="blog-index-title"><%= blog.title %></div>
+              </td>
+              <td>
+                <div class="blog-index-daytime"><%= blog.created_at.strftime("%Y/%m/%d") %></div>
+              </td>
+              <% if current_user.admin? %>
+                <td><%= link_to '編集', edit_blog_path(blog.id), class: "btn btn-outline-danger" %></td>
+                <td><%= link_to '削除', blog_path(blog.id), method: :delete, class: "btn btn-outline-danger" %></td>
+              <% end %>
+            </tr>
+          </tbody>
+      <% end %>
+  </table>
+</div>
