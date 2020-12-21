@@ -1,0 +1,16 @@
+#blog-comments-area{
+  text-align: center;
+}
+
+#blog-comment-create{
+  text-align: center;
+}
+
+.blog-comment-area{
+  border: 2px solid #00EE00;
+  border-radius: 10px;
+  background-color: #EEE;
+  width: 60%;
+  margin: 90px auto;
+  padding-bottom: 25px;
+}
