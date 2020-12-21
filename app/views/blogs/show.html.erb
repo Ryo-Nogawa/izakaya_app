@@ -1,18 +1,45 @@
-<h1>詳細画面</h1>
+<div class="blog-show-main">
+  <div class="show-content-left">
+  <%= link_to '一覧へ戻る', blogs_path, class: "btn btn-outline-primary mt-3 ml-3" %>
+    <div class="blog-show-content">
 
-<%= @blog.title %><br />
-<%= @blog.text %><br />
-<%= @blog.created_at %><br />
+      <div class="blog-show-image">
+        <%= image_tag @blog.image.variant(resize: '400x400') %><br />
+      </div>
 
-<div id="blog-comments-area">
-  <%# コメント欄 %>
-  <%= render 'blog_comments/index', {comments: @comments} %>
-</div>
+      <div class="blog-show-container">
+        <div class="blog-show-title">
+          <%= @blog.title %><br />
+        </div>
 
-<% if user_signed_in? %>
-  <div id="blog-comment-create">
-    <%# コメント入力欄 %>
-    <%= render 'blog_comments/comment_form',{ comment: @comment, blog: @blog } %>
+        <div class="blog-show-text">
+          <%= @blog.text %><br />
+        </div>
+
+        <div class="blog-show-daytime">
+          <%= @blog.created_at.strftime("%Y/%m/%d") %><br />
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>
-<%= link_to '一覧へ戻る', blogs_path %>
+
+  <div class="show-content-right">
+    <div class="blog-comment-area">
+      <div class="comment-title">
+        <i class="fas fa-comments"></i><p class="comment-title-text">comment</p>
+      </div>
+
+      <div id="blog-comments-area">
+        <%# コメント欄 %>
+        <%= render 'blog_comments/index', {comments: @comments} %>
+      </div>
+
+      <% if user_signed_in? %>
+        <div id="blog-comment-create">
+          <%# コメント入力欄 %>
+          <%= render 'blog_comments/comment_form',{ comment: @comment, blog: @blog } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
