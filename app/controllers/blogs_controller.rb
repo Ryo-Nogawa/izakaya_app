@@ -13,7 +13,6 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     if @blog.valid?
       @blog.save
-      redirect_to blogs_path
     else
       render :new
     end
