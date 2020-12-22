@@ -2,6 +2,7 @@
   <div class="comment-count">
     全<%= comments.count %>件のコメントがあります(古い順）<br />
   </div>
+
   <% comments.first(2).each do |comment| %>
     <% unless comment.id.nil? %>
       <div class="comment-content">

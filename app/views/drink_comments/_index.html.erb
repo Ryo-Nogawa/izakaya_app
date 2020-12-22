@@ -4,7 +4,7 @@
   </div>
 
   <% comments.first(2).each do |comment| %>
-    <% unless comment.id nil? %>
+    <% unless comment.id.nil? %>
       <div class="comment-content">
         <p class="comment-detail">
           <%= link_to comment.user.nickname, "/users/#{comment.user_id}", class: "comment-user-nickname" %>：<%= comment.created_at.strftime("%Y/%m/%d") %>
