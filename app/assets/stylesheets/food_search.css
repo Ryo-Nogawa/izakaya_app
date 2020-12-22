@@ -1,0 +1,13 @@
+.search-title{
+  width: 160px;
+  border-bottom: 2px solid black;
+  margin: 20px 0;
+}
+
+.non-result-research{
+  margin: 100px auto;
+  background-color: lightgray;
+  border-radius: 10px;
+  color: red;
+  padding: 30px;
+}
