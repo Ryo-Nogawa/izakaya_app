@@ -1,9 +1,9 @@
 .visual-render-form{
-  margin-top:80px;
+  margin-top:30px;
 }
 
 #visual-image-list img{
-  width: 350px;
-  height: 200px;
+  width: 450px;
+  height: 300px;
   background-size: cover;
 }

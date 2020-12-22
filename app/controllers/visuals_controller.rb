@@ -35,9 +35,7 @@ class VisualsController < ApplicationController
 
   def update
     @visual = Visual.find(params[:id])
-    if @visual.valid?
-      @visual.update(visual_params)
-      redirect_to visuals_path
+    if @visual.update(visual_params)
     else
       redirect_to edit_visual(params[:id])
     end
