@@ -1,14 +1,14 @@
-.food-create-main{
+.create-content-main{
   width: 100%;
   height: 100%;
   text-align: center;
 }
 
-.food-create-top{
+.create-content-top{
   margin-top: 30px;
 }
 
-.food-create-content{
+.create-content{
   margin: 170px auto;
   background-color: #EEE;
   width: 40vw;
