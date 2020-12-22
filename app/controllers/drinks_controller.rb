@@ -43,7 +43,6 @@ class DrinksController < ApplicationController
   def update
     @drink = Drink.find(params[:id])
     if @drink.update(drink_params)
-      redirect_to drink_path(params[:id])
     else
       render :edit
     end
