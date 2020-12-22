@@ -14,7 +14,6 @@ class VisualsController < ApplicationController
     visual = Visual.new(visual_params)
     if visual.valid?
       visual.save
-      redirect_to visuals_path
     else
       render :new
     end

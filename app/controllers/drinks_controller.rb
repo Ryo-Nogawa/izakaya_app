@@ -18,7 +18,6 @@ class DrinksController < ApplicationController
     @drink = Drink.new(drink_params)
     if @drink.valid?
       @drink.save
-      redirect_to drinks_path
     else
       render :new
     end

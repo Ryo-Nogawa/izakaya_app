@@ -20,7 +20,6 @@ class FoodsController < ApplicationController
     @food = Food.new(food_params)
     if @food.valid?
       @food.save
-      redirect_to foods_path
     else
       render :new
     end
