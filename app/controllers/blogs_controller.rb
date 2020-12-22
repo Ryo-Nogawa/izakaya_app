@@ -20,10 +20,7 @@ class BlogsController < ApplicationController
 
   def destroy
     blog = Blog.find(params[:id])
-    if blog.valid?
-      blog.destroy
-      redirect_to blogs_path
-    end
+    blog.destroy
   end
 
   def show
