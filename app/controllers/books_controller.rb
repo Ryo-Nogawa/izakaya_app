@@ -45,9 +45,7 @@ class BooksController < ApplicationController
   
   def destroy
     book = Book.find(params[:id])
-    if book.destroy
-      redirect_to user_path(current_user.id)
-    end
+    book.destroy
   end
 
   private

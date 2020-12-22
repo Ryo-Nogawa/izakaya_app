@@ -26,7 +26,6 @@ class VisualsController < ApplicationController
   def destroy
     @visual = Visual.find(params[:id])
     @visual.destroy
-    redirect_to visuals_path
   end
 
   def edit

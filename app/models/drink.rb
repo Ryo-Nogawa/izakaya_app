@@ -4,8 +4,8 @@ class Drink < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image
-  has_many :drink_comments
-  has_many :drink_likes
+  has_many :drink_comments, dependent: :destroy
+  has_many :drink_likes, dependent: :destroy
 
   with_options presence: true do
     # カテゴリー選択は1以外

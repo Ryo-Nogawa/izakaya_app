@@ -3,9 +3,9 @@ class Food < ApplicationRecord
   belongs_to :food_category
 
   belongs_to :user
-  has_many :food_comments
+  has_many :food_comments, dependent: :destroy
   has_one_attached :image
-  has_many :food_likes
+  has_many :food_likes, dependent: :destroy
 
   with_options presence: true do
     # カテゴリー選択は1以外
