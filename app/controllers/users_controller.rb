@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(current_user.id)
-    @books = @user.books.order(reserve_date: 'DESC')
+    @books = @user.books.order(reserve_date: :ASC)
     require 'date'
     @today = Date.today
   end
