@@ -1,3 +1,16 @@
-<h1>予約編集完了ページ</h1>
+<div class="complete-book-main">
+  <h1 class="edit-complete-book-title">予約変更完了</h1>
 
-<h2>予約の編集を受けたまりました</h2>
+  <ol class="nav">
+    <li class="nav-list">1.入力</li>
+    <li class="nav-list current">2.完了</li>
+  </ol>
+
+  <div class="complete-book-form">
+    <h2 class="complete-book-subtitle"><i class="far fa-check-circle"></i>ご予約の変更が完了しました</h2>
+    <div class="complete-book-btn">
+      <%= link_to '予約履歴確認', user_path(current_user.id), class: "btn btn-outline-primary mr-3" %>
+      <%= link_to 'トップページへ戻る', root_path, class: "btn btn-outline-primary" %>
+    </div>
+  </div>
+</div>

@@ -5,10 +5,10 @@
     <table class="book-table">
       <tr class="admin-book-index">
         <th>日付</th>
+        <th>時間</th>
         <th>名前</th>
         <th>名前（カナ）</th>
         <th>年齢</th>
-        <th>時間</th>
         <th>人数</th>
         <th>予約のコース</th>
         <th>電話番号</th>
@@ -18,10 +18,10 @@
         <% if book.reserve_date >= Date.today %>
           <tr class="admin-book-content">
             <td><%= book.reserve_date.strftime('%m/%d') %></td>
+            <td><%= book.reserve_time.strftime('%-H:%M') %></td>
             <td><%= book.user.name %></td>
             <td><%= book.user.name_kana %></td>
             <td><%= book.user.age %></td>
-            <td><%= book.reserve_time.strftime('%-H:%M') %></td>
             <td><%= book.number_reserve %>名</td>
             <td><%= book.reserve_category.name %></td>
             <td><%= book.user.phone_number %></td>
