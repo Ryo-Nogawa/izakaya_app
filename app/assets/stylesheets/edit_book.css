@@ -1,0 +1,10 @@
+.edit-book-main{
+  text-align: center;
+  margin: 40px 0;
+}
+
+.edit-book-title{
+  width: 250px;
+  border-bottom: 2px solid black;
+  margin: 20px auto;
+}

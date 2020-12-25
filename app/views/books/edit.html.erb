@@ -1,24 +1,49 @@
-<h1>予約編集画面</h1>
+<div class="edit-book-main">
+  <h1 class="edit-book-title">予約編集画面</h1>
 
-<%= form_with model: @book, url: book_path(@book.id), local: true do |f| %>
-<%= render 'shared/error_messages', resource: @book %>
-  <div class="field">
-    <%= f.label :reserve_date %>
-    <%= f.date_field :reserve_date, {value: Time.now.strftime('%Y-%m-%d')} %>
+  <ol class="nav">
+    <li class="current nav-list">1.入力</li>
+    <li class="nav-list">2.完了</li>
+  </ol>
+
+  <div class="new-book-form">
+    <%= form_with model: @book, url: book_path(@book.id), local: true do |f| %>
+      <div class="field">
+        <%= f.label :reserve_date, class: "laber" %><br />
+        <%= f.date_field :reserve_date, {value: Time.now.strftime('%Y-%m-%d'), class: "reserve-date-field"} %>
+        <% if @book.errors.include?(:reserve_date) %>
+          <p style="color: red; margin-bottom: 0"><%= @book.errors.full_messages_for(:reserve_date).first %>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= f.label :reserve_time, class: "label" %><br />
+        <%= f.time_select :reserve_time, { start_hour: 17, end_hour: 22, minute_step: 15, time_separater: "",  prompt: '-----', ignore_date: true, include_seconds: false, class: "reserve-time-fies" } %>
+        <% if @book.errors.include?(:reserve_time) %>
+          <p style="color: red; margin-bottom: 0"><%= @book.errors.full_messages_for(:reserve_time).first %>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= f.label :number_reserve, class: "label" %><br />
+        <%= f.number_field :number_reserve, {min: 2, max: 20, step: 1, include_blank: true, value: 2, class: "number-reserve-field"} %>
+        <% if @book.errors.include?(:number_reserve) %>
+          <p style="color: red; margin-bottom: 0"><%= @book.errors.full_messages_for(:number_reserve).first %>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= f.label :reserve_category_id, class: "label" %><br />
+        <%= f.collection_select :reserve_category_id, ReserveCategory.all, :id, :name, {class: "reserve-category-field"} %>
+        <% if @book.errors.include?(:reserve_category_id) %>
+          <p style="color: red; margin-bottom: 0"><%= @book.errors.full_messages_for(:reserve_category_id).first %>
+        <% end %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "予約を変更する", class: "btn btn-outline-primary mb-3" %><br />
+        <%= link_to "予約履歴一覧へ戻る", user_path(current_user.id), class: "btn btn-outline-primary btn-sm" %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :reserve_time %>
-    <%= f.time_select :reserve_time, { start_hour: 17, end_hour: 22, minute_step: 15, time_separater: "",  prompt: '---', ignore_date: true, include_seconds: false } %>
-  </div>
-  <div class="field">
-    <%= f.label :number_reserve %>
-    <%= f.number_field :number_reserve, {min: 2, max: 20, step: 1, include_blank: true, value: 2} %>
-  </div>
-  <div class="field">
-    <%= f.label :reserve_category_id %>
-    <%= f.collection_select :reserve_category_id, ReserveCategory.all, :id, :name, {} %>
-  </div>
-  <div class="actions">
-    <%= f.submit "予約を変更する" %>
-  </div>
-<% end %>
+</div>
