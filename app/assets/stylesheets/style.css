@@ -31,3 +31,8 @@ body{
 .login-flash-message{
   color: red;
 }
+
+.logo{
+  height: 60px;
+  width: 100px;
+}
