@@ -434,21 +434,21 @@
 # ローカルでの動作方
 
   #### ダウンロードとインストールの手順
-  1. このリポジトリのクローンを作成します
+  1. このリポジトリのクローンを作成してください<br />
   `$ git clone https://github.com/Ryo-Nogawa/izakaya_app.git` <br />
-  2. リポジトリに移動します
-  `$ cd izakaya_app`
-  3. 依存関係をインストールします
+  2. リポジトリに移動してください<br />
+  `$ cd izakaya_app`<br />
+  3. 依存関係をインストールしてください<br />
   `$ bundle install` <br />
-  `$ yarn install`
-  4. データベースを作成します
-  `$ rails db:create`
-  5. データベースを実行します
-  `$ rails db:migrate`
-  6. seedファイルを実行します
-  `$ rails db:seed`
-  7. アプリケーションを実行します
-  `$ rails s`
+  `$ yarn install`<br />
+  4. データベースを作成してください<br />
+  `$ rails db:create`<br />
+  5. データベースを実行してください<br />
+  `$ rails db:migrate`<br />
+  6. seedファイルを実行してください<br />
+  `$ rails db:seed`<br />
+  7. アプリケーションを実行してください<br />
+  `$ rails s`<br />
 
 # 開発環境
 
