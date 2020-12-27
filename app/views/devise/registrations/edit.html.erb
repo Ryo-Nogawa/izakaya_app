@@ -3,12 +3,11 @@
   
   <ol class="nav">
     <li class="current nav-list">1.入力</li>
-    <li class="nav-list">2.確認</li>
-    <li class="nav-list">3.完了</li>
+    <li class="nav-list">2.完了</li>
   </ol>
 
   <div class="edit-regitstrations-form">
-    <%= form_with model: @user, local: true do |f| %>
+    <%= form_with model: @user, url: {action: "update"}, local: true do |f| %>
 
       <div class="field">
         <%= f.label :nickname, class: "label" %><br />
@@ -91,6 +90,11 @@
             <%= @user.errors.full_messages_for(:password_confirmation).first %>
           </p>
         <% end %>
+      </div>
+
+      <div class="actions">
+        <%= link_to 'トップページへ戻る', root_path, class: "btn btn-outline-primary mr-3" %>
+        <%= f.submit '登録する', class: "btn btn-outline-primary" %>
       </div>
 
     <% end %>

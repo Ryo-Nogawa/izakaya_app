@@ -80,3 +80,34 @@
 .actions{
   padding-top: 10px;
 }
+
+.update-user-main{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.update-user-title{
+  width: 580px;
+  margin: 20px auto;
+}
+
+.update-user-form{
+  background-color: #EEE;
+  border-radius: 5px;
+  width: 40vw;
+  margin: 50px auto;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.update-user-table{
+  margin: 0 auto;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.update-user-table tr{
+  border-bottom: 1px solid black;
+}
+
