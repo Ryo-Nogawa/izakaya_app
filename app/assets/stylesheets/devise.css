@@ -1,4 +1,4 @@
-.new-registrations-main, .confirm-registrations-main, .complete-registrations-main, .new-sessions-main{
+.new-registrations-main, .confirm-registrations-main, .complete-registrations-main, .new-sessions-main, .edit-registrations-main{
   text-align: center;
   padding-top: 30px;
   margin-bottom: 50px;
@@ -16,13 +16,19 @@
   margin: 0 auto 15px;
 }
 
+.edit-registrations-title{
+  width: 430px;
+  border-bottom: 2px solid black;
+  margin: 0 auto 20px;
+}
+
 .new-sessions-title{
   width: 180px;
   border-bottom: 2px solid black;
   margin: 0 auto 15px;
 }
 
-.new-registrations-form, .confirm-registrations-form{
+.new-registrations-form, .confirm-registrations-form, .edit-regitstrations-form{
   background-color: #EEEEEE;
   width: 30vw;
   margin: 0 auto;

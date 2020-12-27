@@ -74,7 +74,7 @@
       <div class="field">
         <%= f.label :password, class: "label" %>
         <% if @minimum_password_length %>
-        <em>(英数字混合の<%= @minimum_password_length %>以上)</em>
+        <em>(英数字混合の<%= @minimum_password_length %>文字以上)</em>
         <% end %><br />
         <%= f.password_field :password, class: "text-field", placeholder: '12345abcd' %>
         <% if @user.errors.include?(:password) %>
