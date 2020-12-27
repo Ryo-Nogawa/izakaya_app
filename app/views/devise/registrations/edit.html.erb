@@ -1,43 +1,103 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="edit-registrations-main">
+  <h2 class="edit-registrations-title"><%= current_user.name %>さんのプロフィール</h2>
+  
+  <ol class="nav">
+    <li class="current nav-list">1.入力</li>
+    <li class="nav-list">2.完了</li>
+  </ol>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="edit-regitstrations-form">
+    <%= form_with model: @user, url: {action: "update"}, local: true do |f| %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <div class="field">
+        <%= f.label :nickname, class: "label" %><br />
+        <%= f.text_field :nickname, class: "text-field", placeholder: '40文字以内で入力して下さい' %>
+        <% if @user.errors.include?(:nickname) %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:nickname).first %>
+          </p>
+        <% end %>
+      </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+      <div class="field">
+        <%= f.label :name, class: "label" %><br />
+        <%= f.text_field :name, class: "text-field", placeholder: 'フルネームを入力して下さい' %>
+        <% if @user.errors.include?(:name) %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:name).first %>
+          </p>
+        <% end %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <div class="field">
+        <%= f.label :name_kana, class: "label" %><br />
+        <%= f.text_field :name_kana, class: "text-field", placeholder: 'フリガナ' %>
+        <% if @user.errors.include?(:name_kana) %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:name_kana).first %>
+          </p>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= f.label :age, class: "label" %><br />
+        <%= f.number_field :age, class: "number-field", placeholder: '半角' %>
+        <% if @user.errors.include?(:age) %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:age).first %>
+          </p>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= f.label :phone_number, class: "label" %><br />
+        <%= f.text_field :phone_number, class: "text-field", placeholder: 'ハイフン(ー)無し' %>
+        <% if @user.errors.include?(:phone_number) %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:phone_number).first %>
+          </p>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email, class: "label" %><br />
+        <%= f.email_field :email, class: "text-field", placeholder: 'example@email.com' %>
+        <% if @user.errors.include?(:email) %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:email).first %>
+          </p>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, class: "label" %>
+        <% if @minimum_password_length %>
+        <em>(英数字混合の<%= @minimum_password_length %>文字以上)</em>
+        <% end %><br />
+        <%= f.password_field :password, class: "text-field", placeholder: '12345abcd' %>
+        <% if @user.errors.include?(:password) %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:password).first %>
+          </p>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, class: "label" %><br />
+        <%= f.password_field :password_confirmation, class: "text-field", placeholder: '12345abcd' %>
+        <% if @user.errors.include?(:password_confirmation) %>
+          <p style="color: red; margin: 0;">
+            <%= @user.errors.full_messages_for(:password_confirmation).first %>
+          </p>
+        <% end %>
+      </div>
+
+      <div class="actions">
+        <%= link_to 'トップページへ戻る', root_path, class: "btn btn-outline-primary mr-3" %>
+        <%= f.submit '登録する', class: "btn btn-outline-primary" %>
+      </div>
+
     <% end %>
+
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
