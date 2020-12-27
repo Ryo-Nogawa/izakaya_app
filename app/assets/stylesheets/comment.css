@@ -3,7 +3,7 @@
   border-radius: 10px;
   background-color: #EEE;
   width: 60%;
-  margin: 100px auto;
+  margin: 50px auto;
   padding-bottom: 25px;
 }
 
@@ -44,15 +44,17 @@
   margin-left: 20px;
 }
 
-.more{
-  margin: 25px 0;
-  box-shadow: none;
-  cursor: pointer;
-  letter-spacing: 2px;
+.comment-container{
+  height: 350px;
+  overflow-y: scroll;
 }
 
 .comment-form-text{
-  margin: 0 auto;
+  margin: 0 auto ;
+}
+
+.comment-form{
+  margin-top: 50px;
 }
 
 
@@ -73,3 +75,4 @@
 .comment-submit:hover{
   background-color: #00DD00;
 }
+
