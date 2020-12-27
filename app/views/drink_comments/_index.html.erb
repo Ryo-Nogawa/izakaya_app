@@ -3,7 +3,7 @@
     全<%= comments.count %>件のコメントがあります<br />
   </div>
 
-  <div class="commnt-container" id="comment-container">
+  <div class="comment-container" id="comment-container">
     <% comments.each do |comment| %>
       <% unless comment.id.nil? %>
         <div class="comment-content" id="commnet-content">
