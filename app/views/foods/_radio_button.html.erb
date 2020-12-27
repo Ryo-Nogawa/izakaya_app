@@ -1,4 +1,5 @@
 <%= search_form_for @p, url: search_foods_path do |f| %>
+  <%= f.radio_button :food_category_id_eq, '' %>すべて
   <%= f.radio_button :food_category_id_eq, '2' %>おすすめ
   <%= f.radio_button :food_category_id_eq, '3' %>とりあえず
   <%= f.radio_button :food_category_id_eq, '4' %>サラダ
