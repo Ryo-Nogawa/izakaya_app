@@ -36,3 +36,18 @@ body{
   height: 60px;
   width: 100px;
 }
+
+.nickname-btn{
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+}
+
+.nickname-btn:hover{
+  border: 2px solid white;
+  text-decoration: none;
+  color: white;
+  padding: 3px;
+  border-radius: 15px;
+}
