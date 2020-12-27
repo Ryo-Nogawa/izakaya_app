@@ -1,6 +1,5 @@
 <div class="blog-show-main">
   <div class="show-content-left">
-  <%= link_to '一覧へ戻る', blogs_path, class: "btn btn-outline-primary mt-3 ml-3" %>
     <div class="blog-show-content">
 
       <div class="blog-show-image">
@@ -20,6 +19,10 @@
           <%= @blog.created_at.strftime("%Y/%m/%d") %><br />
         </div>
       </div>
+    </div>
+    
+    <div class="blog-back-btn">
+      <%= link_to '一覧へ戻る', blogs_path, class: "btn btn-outline-primary" %>
     </div>
   </div>
 
