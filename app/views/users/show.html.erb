@@ -2,30 +2,34 @@
   <h1 class="user-book-title"><%= @user.name %>さんの予約履歴</h1>
 
   <div class="user-book-table">
-    <table class="book-table">
-      <tr class="user-book-show">
-        <th>日付</th>
-        <th>時間</th>
-        <th>人数</th>
-        <th>予約のコース</th>
-        <th>変更</th>
-        <th>キャンセル</th>
-      </tr>
+    <table class="book-table table-hover">
+      <thead class="book-thead">
+        <tr class="user-book-show">
+          <th>日付</th>
+          <th>時間</th>
+          <th>人数</th>
+          <th>予約のコース</th>
+          <th>変更</th>
+          <th>キャンセル</th>
+        </tr>
+      </thead>
 
-      <% @books.each do |book| %>
-        <% if book.reserve_date >= Date.today %>
-          <tr class="user-book-content">
-            <td><%= book.reserve_date.strftime('%m/%d') %></td>
-            <td><%= book.reserve_time.strftime('%-H:%M') %> </td>
-            <td><%= book.number_reserve %>名</td>
-            <td><%= book.reserve_category.name %></td>
-            <% if book.reserve_date > @today %>
-              <td><%= link_to '変更する', edit_book_path(book.id), class: "btn btn-outline-primary" %></td>
-              <td><%= link_to 'キャンセルする', book_path(book.id), method: :DELETE, class: "btn btn-outline-primary" %></td>
-              <% end %>
-          </tr>
+      <tbody class="book-tbody">
+        <% @books.each do |book| %>
+          <% if book.reserve_date >= Date.today %>
+            <tr class="user-book-content">
+              <td><%= book.reserve_date.strftime('%m/%d') %></td>
+              <td><%= book.reserve_time.strftime('%-H:%M') %> </td>
+              <td><%= book.number_reserve %>名</td>
+              <td><%= book.reserve_category.name %></td>
+              <% if book.reserve_date > @today %>
+                <td><%= link_to '変更する', edit_book_path(book.id), class: "btn btn-outline-primary" %></td>
+                <td><%= link_to 'キャンセルする', book_path(book.id), method: :DELETE, class: "btn btn-outline-primary" %></td>
+                <% end %>
+            </tr>
+          <% end %>
         <% end %>
-      <% end %>
+      </tbody>
     </table>
   </div>
 </div>

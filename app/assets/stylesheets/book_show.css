@@ -11,6 +11,8 @@
 .user-book-table{
   width: 80%;
   margin: 0 auto;
+  height: 500px;
+  overflow-y: auto;
 }
 
 .user-book-show{

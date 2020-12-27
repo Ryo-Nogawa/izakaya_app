@@ -1,4 +1,10 @@
 .book-table{
-  margin: 0 auto;
   width: 100%;
+  overflow-y: scroll;
+  margin: 0 auto;
+}
+
+.admin-book-table{
+  height: 530px;
+  overflow-y: auto;
 }
