@@ -7,4 +7,5 @@ class Visual < ApplicationRecord
 
   # 画像は必須
   validates :image, presence: true
+  validates :visual_category_id
 end
