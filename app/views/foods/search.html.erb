@@ -14,12 +14,18 @@
       <% @results.each do |result| %>
         <div class="index-content">
           
+
           <div class="index-content-image">
             <%= link_to food_path(result.id) do %>
               <%= image_tag result.image.variant(resize: '400x400') %>
             <% end %>
           </div>
 
+          <%#= いいね機能 %>   
+          <div id="food-<%= result.id %>" class="content-like-btn"> 
+            <%= render 'food_like', food: result %>
+          </div>
+          
           <div class="index-content-title">
             <%= result.title %>
           </div>
