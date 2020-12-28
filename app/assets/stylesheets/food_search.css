@@ -1,5 +1,11 @@
 .search-title{
-  width: 160px;
+  width: 250px;
+  border-bottom: 2px solid black;
+  margin: 20px 0;
+}
+
+.drink-search-title{
+  width: 280px;
   border-bottom: 2px solid black;
   margin: 20px 0;
 }

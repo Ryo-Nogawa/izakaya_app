@@ -1,6 +1,6 @@
 <div class="index-content-main">
   <div class="index-content-top">
-    <h1 class="search-title">検索結果</h1>
+    <h1 class="search-title">料理メニュー</h1>
   </div>
 
   <%# 検索ボタン %>
@@ -13,11 +13,19 @@
     <% if @results.length != 0 %>
       <% @results.each do |result| %>
         <div class="index-content">
+          
 
           <div class="index-content-image">
-            <%= image_tag result.image.variant(resize: '400x400') %>
+            <%= link_to food_path(result.id) do %>
+              <%= image_tag result.image.variant(resize: '400x400') %>
+            <% end %>
           </div>
 
+          <%#= いいね機能 %>   
+          <div id="food-<%= result.id %>" class="content-like-btn"> 
+            <%= render 'food_like', food: result %>
+          </div>
+          
           <div class="index-content-title">
             <%= result.title %>
           </div>
