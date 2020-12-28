@@ -13,9 +13,11 @@
     <% if @results.length != 0 %>
       <% @results.each do |result| %>
         <div class="index-content">
-
+          
           <div class="index-content-image">
-            <%= image_tag result.image.variant(resize: '400x400') %>
+            <%= link_to food_path(result.id) do %>
+              <%= image_tag result.image.variant(resize: '400x400') %>
+            <% end %>
           </div>
 
           <div class="index-content-title">
