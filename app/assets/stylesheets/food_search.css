@@ -4,6 +4,12 @@
   margin: 20px 0;
 }
 
+.drink-search-title{
+  width: 280px;
+  border-bottom: 2px solid black;
+  margin: 20px 0;
+}
+
 .non-result-research{
   margin: 100px auto;
   background-color: lightgray;
