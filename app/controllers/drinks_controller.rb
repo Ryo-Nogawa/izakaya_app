@@ -3,7 +3,7 @@ class DrinksController < ApplicationController
   before_action :only_admin, only: [:new, :create, :destroy, :edit, :update]
 
   def index
-    @drinks = Drink.all
+    @drinks = Drink.all.order(drink_category_id: :ASC)
   end
 
   def search
