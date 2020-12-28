@@ -1,4 +1,7 @@
 class Visual < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :visual_category
+
   belongs_to :user
   has_one_attached :image
 
