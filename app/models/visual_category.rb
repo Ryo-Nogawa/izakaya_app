@@ -1,0 +1,2 @@
+class VisualCategory < ApplicationRecord
+end
