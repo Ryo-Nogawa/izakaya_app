@@ -4,6 +4,7 @@ class Book < ApplicationRecord
 
   # 予約日は過去と今日の日付を選択できない
   validate :date_not_before_today
+  validates :reserve_date, uniqueness: {scope: :user}
   with_options presence: true do
     # カテゴリーは1以外
     validates :reserve_category_id, numericality: {other_than: 1}
