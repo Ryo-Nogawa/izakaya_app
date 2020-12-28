@@ -3,8 +3,7 @@ class FoodsController < ApplicationController
   before_action :only_admin, only: [:new, :create, :destroy, :edit, :update]
 
   def index
-    @foods = Food.all
-
+    @foods = Food.all.order(food_category_id: :ASC)
   end
 
   def search
