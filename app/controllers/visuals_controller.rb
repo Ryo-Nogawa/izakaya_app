@@ -2,8 +2,14 @@ class VisualsController < ApplicationController
 
   before_action :only_admin, only: [:new, :create, :destroy, :edit, :update]
 
+  before_action :search_product, only: [:index, :search]
+  
   def index
     @visuals = Visual.all.order(visual_category_id: :ASC)
+  end
+
+  def search
+    @results = @p.result.all
   end
 
   def new
@@ -50,5 +56,9 @@ class VisualsController < ApplicationController
     unless current_user.admin?
       redirect_to root_path
     end
+  end
+
+  def search_product
+    @p = Visual.ransack(params[:q])
   end
 end
