@@ -3,7 +3,7 @@ class VisualsController < ApplicationController
   before_action :only_admin, only: [:new, :create, :destroy, :edit, :update]
 
   def index
-    @visuals = Visual.all
+    @visuals = Visual.all.order(visual_category_id: :ASC)
   end
 
   def new
@@ -11,9 +11,9 @@ class VisualsController < ApplicationController
   end
 
   def create
-    visual = Visual.new(visual_params)
-    if visual.valid?
-      visual.save
+    @visual = Visual.new(visual_params)
+    if @visual.valid?
+      @visual.save
     else
       render :new
     end
@@ -43,7 +43,7 @@ class VisualsController < ApplicationController
   private
 
   def visual_params
-    params.require(:visual).permit(:image).merge(user_id: current_user.id)
+    params.require(:visual).permit(:image, :visual_category_id).merge(user_id: current_user.id)
   end
 
   def only_admin

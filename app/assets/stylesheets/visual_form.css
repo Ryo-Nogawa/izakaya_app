@@ -7,3 +7,12 @@
   height: 300px;
   background-size: cover;
 }
+
+#visual_visual_category_id{
+  border: none;
+  border-radius: 5px;
+}
+
+#visual-image-list img{
+  margin-top: 10px;
+}

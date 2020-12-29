@@ -1,4 +1,4 @@
-User.create(nickname: 'admin', 
+User.create(nickname: '管理者', 
             name: '管理者', 
             name_kana: 'カンリシャ', 
             age: 20, 
