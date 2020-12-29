@@ -1,6 +1,6 @@
 <%= search_form_for @p, url: search_foods_path do |f| %>
   <%= f.radio_button :food_category_id_eq, '' %>すべて
-  <%= f.radio_button :food_category_id_eq, '2' %>おすすめ
+  <%= f.radio_button :food_category_id_eq, '2' %>今月のおすすめ
   <%= f.radio_button :food_category_id_eq, '3' %>とりあえず
   <%= f.radio_button :food_category_id_eq, '4' %>サラダ
   <%= f.radio_button :food_category_id_eq, '5' %>一品料理
@@ -9,5 +9,6 @@
   <%= f.radio_button :food_category_id_eq, '8' %>海鮮
   <%= f.radio_button :food_category_id_eq, '9' %>主食
   <%= f.radio_button :food_category_id_eq, '10' %>デザート
+  <%= f.radio_button :free_food_eq, '1' %>食べ放題
   <%= f.submit '検索', class: "btn btn-outline-primary ml-3" %>
 <% end %>

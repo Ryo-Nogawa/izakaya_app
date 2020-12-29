@@ -8,7 +8,7 @@ class FoodsController < ApplicationController
 
   def search
     # @results = @p.result.includes(:food_category)
-    @results = @p.result.all
+    @results = @p.result.all.order(food_category_id: :ASC)
   end
 
   def new
@@ -50,7 +50,7 @@ class FoodsController < ApplicationController
 
   private
   def food_params
-    params.require(:food).permit(:title, :detail, :price, :image, :food_category_id).merge(user_id: current_user.id)
+    params.require(:food).permit(:title, :detail, :price, :image, :food_category_id, :free_food).merge(user_id: current_user.id)
   end
 
   def search_product

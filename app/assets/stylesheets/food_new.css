@@ -21,3 +21,7 @@
   width: 450px;
   height: 300px;
 }
+
+#food_free_food{
+  transform: scale(1.3);
+}
