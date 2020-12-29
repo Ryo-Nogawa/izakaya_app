@@ -35,6 +35,7 @@ ja:
         detail: 詳細
         price: 値段
         image: 画像
+        free_drink: 飲み放題
 
       drink_comment:
         comment: コメント

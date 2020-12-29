@@ -21,3 +21,11 @@
   width: 450px;
   height: 300px;
 }
+
+.check-box-content{
+  font-weight: bold;
+}
+
+#drink_free_drink{
+  transform: scale(1.3);
+}

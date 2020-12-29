@@ -6,6 +6,7 @@ class CreateDrinks < ActiveRecord::Migration[6.0]
       t.string     :detail,            null: false
       t.integer    :price,             null: false
       t.integer    :drink_category_id, null: false
+      t.boolean    :free_drink,        default: false, null: false
       t.timestamps
     end
   end
