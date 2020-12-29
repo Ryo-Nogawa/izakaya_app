@@ -43,7 +43,7 @@ class VisualsController < ApplicationController
   private
 
   def visual_params
-    params.require(:visual).permit(:image).merge(user_id: current_user.id)
+    params.require(:visual).permit(:image, :visual_category_id).merge(user_id: current_user.id)
   end
 
   def only_admin
