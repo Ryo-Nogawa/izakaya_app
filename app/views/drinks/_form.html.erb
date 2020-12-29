@@ -42,6 +42,10 @@
       </div>
 
       <div class="field">
+        <p class="check-box-content"><%= f.check_box :free_drink, {class: "mr-2"} %>飲み放題を許可する</p>
+      </div>
+
+      <div class="field">
         <%= f.label :image, class: "field-label" %><br />
         <%= f.file_field :image %>
         <% if @drink.errors.include?(:image) %>
