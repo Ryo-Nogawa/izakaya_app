@@ -18,7 +18,11 @@ Rails.application.routes.draw do
       resources :books, only: :index
     end
   end
-  resources :visuals
+  resources :visuals do
+    collection do
+      get :search
+    end
+  end
   resources :blogs do
     resources :blog_comments, only: :create
     resource :blog_likes, only: [:create, :destroy]
