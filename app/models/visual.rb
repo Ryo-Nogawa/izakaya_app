@@ -5,7 +5,8 @@ class Visual < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
-  # 画像は必須
-  validates :image, presence: true
-  validates :visual_category_id, numericality: { other_than: 1 } 
+  with_options presence: true do
+    validates :visual_category_id, numericality: { other_than: 1 } 
+    validates :image
+  end
 end

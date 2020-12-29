@@ -11,9 +11,9 @@ class VisualsController < ApplicationController
   end
 
   def create
-    visual = Visual.new(visual_params)
-    if visual.valid?
-      visual.save
+    @visual = Visual.new(visual_params)
+    if @visual.valid?
+      @visual.save
     else
       render :new
     end
