@@ -7,7 +7,7 @@ class DrinksController < ApplicationController
   end
 
   def search
-    @results = @p.result.all
+    @results = @p.result.all.order(drink_category_id: :ASC)
   end
 
   def new
@@ -48,7 +48,7 @@ class DrinksController < ApplicationController
 
   private
   def drink_params
-    params.require(:drink).permit(:title, :detail, :price, :drink_category_id, :image).merge(user_id: current_user.id)
+    params.require(:drink).permit(:title, :detail, :price, :drink_category_id, :image, :free_drink).merge(user_id: current_user.id)
   end
 
   def search_product
