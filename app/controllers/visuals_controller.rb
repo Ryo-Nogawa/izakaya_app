@@ -3,7 +3,7 @@ class VisualsController < ApplicationController
   before_action :only_admin, only: [:new, :create, :destroy, :edit, :update]
 
   def index
-    @visuals = Visual.all
+    @visuals = Visual.all.order(visual_category_id: :ASC)
   end
 
   def new
