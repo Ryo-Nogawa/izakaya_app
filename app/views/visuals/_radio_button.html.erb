@@ -1,0 +1,6 @@
+<%= search_form_for @p, url: search_visuals_path do |f| %>
+  <%= f.radio_button :visual_category_id_eq, '' %>すべて
+  <%= f.radio_button :visual_category_id_eq, '2' %>外観
+  <%= f.radio_button :visual_category_id_eq, '3' %>内装
+  <%= f.submit '検索', class: "btn btn-outline-primary ml-3" %>
+<% end %>

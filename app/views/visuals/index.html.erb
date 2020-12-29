@@ -5,6 +5,11 @@
     <% end %>
   </div>
 
+  <%#= 検索ボタン %>
+  <div class="visual-search-btn">
+    <%= render 'visuals/radio_button' %>
+  </div>
+
   <div class="visual-index-content container">
     <div class="row justify-content-md-center">
       <% @visuals.each do |visual| %>
