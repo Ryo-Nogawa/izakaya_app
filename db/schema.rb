@@ -175,6 +175,7 @@ ActiveRecord::Schema.define(version: 2020_12_12_193057) do
 
   create_table "visuals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
+    t.integer "visual_category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_visuals_on_user_id"
