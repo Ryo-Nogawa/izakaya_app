@@ -1,9 +1,6 @@
 #message-form-area{
-  position: fixed;
-  bottom: 18px;
   border: none;
   background-color: #EEEEEE;
-  left: 497px;
   padding: 10px;
 }
 
@@ -11,6 +8,7 @@
   width: 390px;
   border-radius: 3px;
   border: none;
+  padding-left: 5px;
 }
 
 .message-btn{
