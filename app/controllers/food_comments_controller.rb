@@ -1,11 +1,15 @@
 class FoodCommentsController < ApplicationController
 
   def create
-    @food = Food.find(params[:food_id])
-    @food_comment = @food.food_comments.build(comment_params)
-    if @food_comment.save
-      render :index
-    end
+    # Ajax
+    # @food = Food.find(params[:food_id])
+    # @food_comment = @food.food_comments.build(comment_params)
+    # if @food_comment.save
+    #   render :index
+    # end
+    # 同期通信
+    FoodComment.create(comment_params)
+    redirect_to food_path(params[:food_id])
   end
 
   private
