@@ -1,11 +1,15 @@
 class DrinkCommentsController < ApplicationController
 
   def create
-    @drink = Drink.find(params[:drink_id])
-    @drink_comment = @drink.drink_comments.build(comment_params)
-    if @drink_comment.save
-      render :index
-    end
+    # Ajax
+    # @drink = Drink.find(params[:drink_id])
+    # @drink_comment = @drink.drink_comments.build(comment_params)
+    # if @drink_comment.save
+    #   render :index
+    # end
+    # 同期通信
+    DrinkComment.create(comment_params)
+    redirect_to drink_path(params[:drink_id])
   end
 
   private
