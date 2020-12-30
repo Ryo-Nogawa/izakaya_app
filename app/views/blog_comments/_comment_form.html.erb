@@ -1,5 +1,5 @@
 <div class="comment-form">
-  <%= form_with model: [blog, comment], id: "form", class: "comment-form-text", remote: true do |f| %>
+  <%= form_with model: [blog, comment], id: "form", class: "comment-form-text", local: true do |f| %>
     <%= f.text_field :comment, id: "content", class: "comment-text-field" %>
     <%= f.submit 'コメントを送信する', id: "submit", class: "comment-submit" %>
   <% end %>
