@@ -42,13 +42,14 @@ body{
   font-size: 30px;
   color: white;
   text-decoration: none;
+  padding: 0 5px;
 }
 
 .nickname-btn:hover{
   border: 2px solid white;
   text-decoration: none;
   color: white;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 .nickname-btn{
