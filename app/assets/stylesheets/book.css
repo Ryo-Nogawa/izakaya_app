@@ -101,3 +101,44 @@
 .complete-book-btn{
   margin-top: 40px;
 }
+
+@media (max-width: 500px){
+  .new-book-main, .confirm-book-main, .complete-book-main{
+    padding-top: 20px;
+  }
+
+  .new-book-title{
+    margin-bottom: 50px;
+  }
+
+  .new-book-form{
+    width: 80vw;
+  }
+
+  .confirm-book-title{
+    width: 250px;
+    margin-bottom: 50px;
+  }
+
+  .confirm-book-form{
+    width: 80vw;
+    padding: 10px 0 40px;
+  }
+
+  .confirm-book-table{
+    width: 85%;
+    margin: 10px auto 40px;
+  }
+
+  .complete-book-form{
+    width: 80vw;
+  }
+
+  .complete-book-subtitle{
+    font-size: 25px;
+  }
+
+  .book-complete-btn{
+    margin-bottom: 20px;
+  }
+}
