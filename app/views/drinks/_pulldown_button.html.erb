@@ -1,0 +1,4 @@
+<%= search_form_for @p, url: search_drinks_path do |f| %>
+  <%= f.collection_select :drink_category_id_eq, @drinks, :drink_category_id, :drink_category_id %>
+  <%= f.submit '検索' %>
+<% end %>
