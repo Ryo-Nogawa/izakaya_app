@@ -37,3 +37,18 @@
   font-size: 18px;
   padding: 10px 0;
 }
+
+@media (max-width: 500px){
+  .admin-book-table{
+    width: 90%;
+  }
+
+  .admin-book-index th{
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+
+  .admin-book-content td{
+    font-size: 10px;
+  }
+}
