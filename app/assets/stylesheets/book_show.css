@@ -36,3 +36,30 @@
   font-size: 18px;
   padding: 10px;
 }
+
+@media (max-width: 500px){
+  .user-book-title{
+    font-size: 25px;
+  }
+
+  .user-book-table{
+    width: 90%;
+    height: 600px;
+  }
+
+  .user-book-show th{
+    letter-spacing: 0;
+    font-size: 10px;
+  }
+
+  .user-book-content td{
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  .user-book-content td a{
+    font-size: 3px;
+    padding: 3px;
+  }
+
+}
