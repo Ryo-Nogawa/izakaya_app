@@ -2,11 +2,19 @@ header{
   display: block;
 }
 
-.navbar{
+.header-nav{
   height: 60px;
   display: flex;
+  justify-content: space-between;
   background-color: #C00;
 }
+
+.header-right-nav{
+  height: 100%;
+  display: flex;
+  margin-bottom: 0;
+}
+
 
 .login-nickname{
   font-size: 30px;
@@ -20,4 +28,16 @@ header{
 .nav-item{
   padding-right: 20px;
   font-weight: bold;
+}
+
+@media (max-width: 500px){
+  .header-nav{
+    height: 50px;
+  }
+
+  .logo{
+    height: 50px;
+    width: 80px;
+  }
+  
 }
