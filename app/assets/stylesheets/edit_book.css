@@ -8,3 +8,13 @@
   border-bottom: 2px solid black;
   margin: 20px auto;
 }
+
+@media (max-width: 500px){
+  .edit-book-main{
+    margin: 10px 0;
+  }
+
+  .edit-book-title{
+    margin-bottom: 40px;
+  }
+}
