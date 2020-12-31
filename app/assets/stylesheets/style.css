@@ -33,7 +33,7 @@ body{
 }
 
 .logo{
-  height: 60px;
+  height: 100%;
   width: 100px;
 }
 
@@ -48,6 +48,31 @@ body{
   border: 2px solid white;
   text-decoration: none;
   color: white;
-  padding: 3px;
   border-radius: 15px;
+}
+
+.nickname-btn{
+  margin-right: 20px;
+}
+
+.logout-btn{
+  margin-right: 10px;
+}
+
+
+
+@media (max-width: 500px){
+  .logo{
+    width: 70px;
+  }
+
+  .nickname-btn{
+    font-size: 25px;
+    margin-right: 10px;
+  }
+
+  .logout-btn{
+    display: none;
+    margin-right: 10px;
+  }
 }
