@@ -35,7 +35,8 @@ body{
 
 .logo{
   height: 100%;
-  width: 100px;
+  margin-left: 10px;
+  width: 80px;
 }
 
 .nickname-btn{
@@ -65,7 +66,8 @@ body{
 
 @media (max-width: 500px){
   .logo{
-    width: 70px;
+    margin-left: 0;
+    width: 60px;
   }
 
   .nickname-btn{
