@@ -17,8 +17,6 @@
 }
 
 .edit-registrations-title{
-  width: 430px;
-  border-bottom: 2px solid black;
   margin: 0 auto 20px;
 }
 
@@ -112,7 +110,7 @@
 }
 
 @media (max-width: 500px){
-  .new-registrations-form, .confirm-registrations-form{
+  .new-registrations-form, .confirm-registrations-form, .new-sessions-form, .edit-regitstrations-form{
     width: 80vw;
   }
 
@@ -125,6 +123,23 @@
   }
 
   .text-field{
+    width: 90%;
+  }
+
+  .edit-registrations-title{
+    font-size: 20px;
+  }
+
+  .update-user-title{
+    width: 100%;
+    font-size: 25px;
+  }
+
+  .update-user-form{
+    width: 90vw;
+  }
+
+  .update-user-table{
     width: 90%;
   }
 }
