@@ -38,6 +38,8 @@
 
 .comment-user-nickname{
   font-weight: bold;
+  font-size: 20px;
+  color: #0033FF;
 }
 
 .comment-text{
