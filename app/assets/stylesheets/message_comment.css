@@ -84,6 +84,9 @@
 
 .otermessage-user-nickname{
   margin-bottom: 0;
+  font-weight: bold;
+  font-size: 16px;
+  color: #0033FF;
 }
 
 .otermessage-user-nickname a{
