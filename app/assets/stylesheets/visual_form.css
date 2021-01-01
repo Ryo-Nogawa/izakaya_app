@@ -2,6 +2,10 @@
   margin-top:30px;
 }
 
+#visual_image{
+  margin-bottom: 10px;
+}
+
 #visual-image-list img{
   width: 450px;
   height: 300px;
@@ -20,7 +24,6 @@
 @media (max-width: 500px){
   #visual_image{
     width: 90%;
-    margin-bottom: 10px;
   }
 
   #visual-image-list img{
