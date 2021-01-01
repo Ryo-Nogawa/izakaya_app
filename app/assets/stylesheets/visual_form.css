@@ -16,3 +16,14 @@
 #visual-image-list img{
   margin-top: 10px;
 }
+
+@media (max-width: 500px){
+  #visual_image{
+    width: 90%;
+  }
+
+  #visual-image-list img{
+    width: 90%;
+    height: 200px;
+  }
+}
