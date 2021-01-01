@@ -20,3 +20,10 @@
   color: #0000DD;
   font-size: 20px;
 }
+
+@media (max-width: 500px){
+  #message_content{
+    width: 80vw;
+    margin-right: 10px;
+  }
+}
