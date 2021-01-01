@@ -20,6 +20,7 @@
 @media (max-width: 500px){
   #visual_image{
     width: 90%;
+    margin-bottom: 10px;
   }
 
   #visual-image-list img{
