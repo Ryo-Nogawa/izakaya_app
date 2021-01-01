@@ -1,12 +1,12 @@
 .search-title{
-  width: 250px;
-  border-bottom: 2px solid black;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, .5);
+  font-family: 'Noto Serif JP', serif;
   margin: 20px 0;
 }
 
 .drink-search-title{
-  width: 280px;
-  border-bottom: 2px solid black;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, .5);
+  font-family: 'Noto Serif JP', serif;
   margin: 20px 0;
 }
 

@@ -6,8 +6,9 @@
 
 .food-new-title{
   width: 180px;
-  border-bottom: 2px solid black;
+  font-family: 'Noto Serif JP', serif;
   margin: 30px auto ;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, .5);
 }
 
 #food_food_category_id{

@@ -1,5 +1,6 @@
 .message-title{
   width: 260px;
-  border-bottom: 3px solid black;
+  font-family: 'Noto Serif JP', serif;
   margin: 20px auto;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, .5);
 }
