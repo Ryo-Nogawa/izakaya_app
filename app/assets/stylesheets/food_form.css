@@ -49,3 +49,21 @@
   border-radius: 5px;
   text-align: center;
 }
+
+@media (max-width: 500px){
+  .form-content{
+    width: 80vw;
+  }
+
+  .title-field{
+    width: 90%;
+  }
+
+  .detail-field{
+    width: 90%;
+  }
+
+  #drink_image{
+    width: 90%;
+  }
+}

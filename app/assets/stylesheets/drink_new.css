@@ -29,3 +29,14 @@
 #drink_free_drink{
   transform: scale(1.3);
 }
+
+@media (max-width: 500px){
+  .drink-new-title{
+    margin: 10px auto 20px;
+  }
+
+  #drink-image-list img{
+    width: 90%;
+    height: 200px;
+  }
+}
