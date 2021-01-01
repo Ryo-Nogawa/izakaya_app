@@ -85,6 +85,14 @@ input[type="radio"] {
 }
 
 @media (max-width: 500px){
+  .index-content-main-title{
+    width: 250px;
+  }
+
+  .index-content-new a{
+    margin: 0;
+  }
+
   .index-content-form{
     overflow-x: none;
     display:  block;
