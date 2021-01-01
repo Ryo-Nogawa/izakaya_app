@@ -17,8 +17,6 @@
 }
 
 .edit-registrations-title{
-  width: 430px;
-  border-bottom: 2px solid black;
   margin: 0 auto 20px;
 }
 
@@ -41,7 +39,7 @@
   background-color:  #EEEEEE;
   width: 30vw;
   margin: 100px auto 0;
-  padding: 20px 0;
+  padding: 60px 0;
   border-radius: 5px;
 }
 
@@ -111,3 +109,37 @@
   border-bottom: 1px solid black;
 }
 
+@media (max-width: 500px){
+  .new-registrations-form, .confirm-registrations-form, .new-sessions-form, .edit-regitstrations-form{
+    width: 80vw;
+  }
+
+  .complete-registrations-form{
+    width: 90vw;
+  }
+
+  .complete-registrations-subtitle{
+    font-size: 25px;
+  }
+
+  .text-field{
+    width: 90%;
+  }
+
+  .edit-registrations-title{
+    font-size: 20px;
+  }
+
+  .update-user-title{
+    width: 100%;
+    font-size: 25px;
+  }
+
+  .update-user-form{
+    width: 90vw;
+  }
+
+  .update-user-table{
+    width: 90%;
+  }
+}
