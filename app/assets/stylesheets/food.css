@@ -85,6 +85,14 @@ input[type="radio"] {
 }
 
 @media (max-width: 500px){
+  .index-content-main-title{
+    width: 280px;
+  }
+
+  .index-content-new a{
+    margin: 0;
+  }
+
   .index-content-form{
     overflow-x: none;
     display:  block;
@@ -95,6 +103,7 @@ input[type="radio"] {
     width: 80%;
     margin: 0 auto;
     margin-bottom: 10px;
+    height: 380px;
   }
 
   .search-btn{
@@ -116,5 +125,13 @@ input[type="radio"] {
 
   .index-content-new{
     text-align: center;
+  }
+
+  .index-content-image img{
+    height: 200px;
+  }
+
+  .index-content-category{
+    margin: 10px 0;
   }
 }

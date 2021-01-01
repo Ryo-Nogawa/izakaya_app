@@ -25,3 +25,14 @@
 #food_free_food{
   transform: scale(1.3);
 }
+
+@media (max-width: 500px){
+  #food_image{
+    width: 90%;
+  }
+
+  #food-image-list img{
+    width: 90%;
+    height: 200px;
+  }
+}

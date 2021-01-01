@@ -34,4 +34,10 @@
     font-weight: bold;
     margin-top: 15px;
   }
+
+  .destroy-content-text{
+    font-size: 18px;
+    font-weight: bold;
+    
+  }
 }
