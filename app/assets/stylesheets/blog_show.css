@@ -43,6 +43,7 @@
   border-radius: 10px;
   letter-spacing: 2px;
   line-height: 1.5em;
+  overflow-wrap: break-word;
   overflow-y: scroll;
 }
 
@@ -54,4 +55,22 @@
 
 .blog-back-btn{
   text-align: center;
+}
+
+@media (max-width: 500px){
+  .blog-show-main{
+    display: block;
+  }
+
+  .blog-show-content{
+    width: 80vw;
+  }
+
+  .blog-show-content{
+    width: 100%;
+  }
+
+  .blog-show-image img{
+    height: 200px;
+  }
 }

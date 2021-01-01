@@ -1,9 +1,5 @@
 <%= form_with model: @blog, local: true do |f| %>
 
-  <%# プレビュー画像の表示 %>
-  <div id="blog-image-list"></div>
-  <%# 編集画面はこちらに表示 %>
-  <%= image_tag @blog.image, id: 'image' if @blog.image.present? %>
 
   <div class="field">
     <%= f.label :image, class: "field-label" %><br />
@@ -12,7 +8,11 @@
       <p style="color: red; margin: 0;">
         <%= @blog.errors.full_messages_for(:image).first %>
       </p>
-      <% end %>
+    <% end %>
+    <%# プレビュー画像の表示 %>
+    <div id="blog-image-list"></div>
+    <%# 編集画面はこちらに表示 %>
+    <%= image_tag @blog.image, id: 'image' if @blog.image.present? %>
   </div>
 
   <div class="field">

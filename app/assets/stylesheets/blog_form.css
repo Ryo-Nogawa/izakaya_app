@@ -27,8 +27,35 @@
   border-radius: 5px;
 }
 
+#blog_image{
+  margin-bottom: 10px;
+}
+
 #blog-image-list img{
   width: 450px;
   height: 300px;
   margin: 0 auto 20px;
+}
+
+@media (max-width: 500px){
+  .blog-content-form{
+    width: 80vw;
+  }
+
+  #blog_image{
+    width: 90%;
+  }
+
+  #blog-image-list img{
+    width: 90%;
+    height: 200px;
+  }
+
+  .blog-title-form{
+    width: 90%;
+  }
+
+  .blog-text-form{
+    width: 90%;
+  }
 }

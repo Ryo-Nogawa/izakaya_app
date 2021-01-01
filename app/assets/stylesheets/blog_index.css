@@ -41,3 +41,28 @@
 .blog-index-daytime{
   font-weight: bold;
 }
+
+@media (max-width: 500px){
+  .blog-table{
+    width: 100%;
+  }
+
+  .blog-index-img img{
+    width: 100px;
+    height: 80px;
+  }
+  
+  .blog-index-title{
+    font-size: 10px;
+    width: 80px;
+  }
+
+  .blog-index-daytime{
+    font-size: 10px;
+  }
+
+  .blog-table-content td a{
+    font-size: 10px;
+    padding: 5px;
+  }
+}
