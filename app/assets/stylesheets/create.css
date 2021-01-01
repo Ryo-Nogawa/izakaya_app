@@ -21,3 +21,17 @@
   padding: 60px;
   border-radius: 10px;
 }
+
+@media (max-width: 500px){
+  .create-content{
+    width: 80vw;
+    margin: 100px auto;
+    padding: 60px 20px;
+  }
+
+  .create-content-text{
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+}
