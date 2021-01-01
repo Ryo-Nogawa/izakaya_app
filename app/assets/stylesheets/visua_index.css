@@ -28,3 +28,17 @@
   margin-top: 10px;
   text-align: center;
 }
+
+@media (max-width: 500px){
+  .visual-index-content{
+    overflow-y: unset;
+  }
+
+  .visual-index-main{
+    margin: 0 auto;
+  }
+
+  .visual-search-btn{
+    display: none;
+  }
+}
