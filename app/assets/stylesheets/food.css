@@ -86,7 +86,7 @@ input[type="radio"] {
 
 @media (max-width: 500px){
   .index-content-main-title{
-    width: 280px;
+    text-align: center;
     margin: 10px auto 20px;
   }
 
