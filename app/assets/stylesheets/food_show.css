@@ -50,3 +50,33 @@
 .content-only-admin{
   margin-top: 30px;
 }
+
+@media (max-width: 500px){
+  .show-content-main{
+    display: block;
+  }
+
+  .show-content-left{
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .show-content{
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .content-only-admin a{
+    font-size: 15px;
+  }
+
+  .show-content-right{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .comment-area{
+    width: 100%;
+    margin: 30px auto;
+  }
+}

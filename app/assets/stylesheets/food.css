@@ -9,6 +9,10 @@
   margin-left: 40px;
 }
 
+.index-content-top a{
+  margin-left: 50px;
+}
+
 
 .index-content-main-title{
   width: 280px;
@@ -20,6 +24,10 @@
   margin-bottom: 30px;
   text-align: center;
   letter-spacing: 3px;
+}
+
+.search-pulldown{
+  display: none;
 }
 
 input[type="radio"] {
@@ -74,4 +82,39 @@ input[type="radio"] {
   margin: 20px 0 15px;
   letter-spacing: 3px;
   font-size: 20px;
+}
+
+@media (max-width: 500px){
+  .index-content-form{
+    overflow-x: none;
+    display:  block;
+    margin-top: 20px;
+  }
+
+  .index-content{
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  .search-btn{
+    display: none;
+  }
+
+  .index-content-top{
+    display: block;
+    margin: 0;
+  }
+
+  .index-content-top a{
+    margin-left: 0;
+  }
+
+  .index-content-main-title{
+    margin: 10px auto 20px;
+  }
+
+  .index-content-new{
+    text-align: center;
+  }
 }

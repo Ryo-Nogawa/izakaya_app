@@ -3,7 +3,7 @@
     <h1 class="index-content-main-title">飲み物メニュー</h1>
     <div class="index-content-new">
       <% if current_user.admin? %>
-        <%= link_to '新規投稿', new_drink_path, class: "btn btn-outline-danger ml-5" %>
+        <%= link_to '新規投稿', new_drink_path, class: "btn btn-outline-danger" %>
       <% end %>
     </div>
   </div>
@@ -11,6 +11,11 @@
   <%# 検索ボタン %>
   <div id="search-area" class="search-btn">
     <%= render 'drinks/radio_button' %>
+  </div>
+
+  <%# 検索プルダウン  %>
+  <div class="search-pulldown">
+    <%= render 'drinks/pulldown_button' %>
   </div>
 
   <%# 投稿一覧 %>
