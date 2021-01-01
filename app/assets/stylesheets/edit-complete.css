@@ -1,7 +1,8 @@
 .edit-complete-book-title{
   width: 250px;
-  border-bottom: 2px solid black;
+  font-family: 'Noto Serif JP', serif;
   margin: 20px auto;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, .5);
 }
 
 @media (max-width: 500px){

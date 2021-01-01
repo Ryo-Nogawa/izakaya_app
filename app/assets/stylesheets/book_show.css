@@ -6,6 +6,8 @@
 
 .user-book-title{
   margin: 30px 0 50px;
+  font-family: 'Noto Serif JP', serif;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, .5);
 }
 
 .user-book-table{

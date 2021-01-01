@@ -5,20 +5,23 @@
 
 .new-book-title{
   width: 180px;
-  border-bottom: 2px solid black;
+  font-family: 'Noto Serif JP', serif;
   margin: 0 auto 15px;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, .5);
 }
 
 .confirm-book-title{
   width: 300px;
-  border-bottom: 2px solid black;
+  font-family: 'Noto Serif JP', serif;
   margin: 0 auto 20px;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, .5);
 }
 
 .complete-book-title{
   width: 180px;
-  border-bottom: 2px solid black;
+  font-family: 'Noto Serif JP', serif;
   margin: 0 auto 20px;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, .5);
 }
 
 .new-book-form{

@@ -15,9 +15,9 @@
 
 
 .index-content-main-title{
-  width: 280px;
-  border-bottom: 2px solid black;
   margin: 30px 0;
+  font-family: 'Noto Serif JP', serif;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, .5);
 }
 
 .search-btn{
@@ -87,6 +87,7 @@ input[type="radio"] {
 @media (max-width: 500px){
   .index-content-main-title{
     width: 280px;
+    margin: 10px auto 20px;
   }
 
   .index-content-new a{
@@ -117,10 +118,6 @@ input[type="radio"] {
 
   .index-content-top a{
     margin-left: 0;
-  }
-
-  .index-content-main-title{
-    margin: 10px auto 20px;
   }
 
   .index-content-new{
