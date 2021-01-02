@@ -4,3 +4,7 @@
   margin: 20px auto;
   text-shadow: 0 5px 5px rgba(0, 0, 0, .5);
 }
+
+.messages-main{
+  padding-top: 60px;
+}

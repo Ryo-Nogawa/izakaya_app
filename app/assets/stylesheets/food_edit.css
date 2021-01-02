@@ -2,11 +2,13 @@
   width: 100%;
   height: 100%;
   text-align: center;
+  padding-top: 60px;
 }
 
 .food-edit-title{
   width: 180px;
-  border-bottom: 2px solid black;
+  font-family: 'Noto Serif JP', serif;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, .5);
   margin: 20px auto; 
 }
 
