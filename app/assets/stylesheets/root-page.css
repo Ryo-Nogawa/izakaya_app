@@ -1,11 +1,11 @@
 .top-main{
   height: 100vh;
   width: 80vw;
-  margin: 0 auto;
+  margin: 0 auto 0;
 }
 
 .main-content{
-  padding-top: 150px;
+  padding-top: 200px;
 }
 
 .card{
@@ -53,27 +53,27 @@
 }
 
 .book-card{
-  background-image: url(book-card.jpeg);
+  background-image: url(/app/assets/images/book-card.jpg);
 }
 
 .chat-card{
-  background-image: url(chat-card.jpeg);
+  background-image: url(/app/assets/images/chat-card.jpg);
 }
 
 .blog-card{
-  background-image: url(blog-card.jpeg);
+  background-image: url(/app/assets/images/blog-card.jpg);
 }
 
 .visual-card{
-  background-image: url(visual-card.jpeg);
+  background-image: url(/app/assets/images/visual-card.jpg);
 }
 
 .food-card{
-  background-image: url(food-card.jpeg);
+  background-image: url(/app/assets/images/food-card.jpg);
 }
 
 .drink-card{
-  background-image: url(beer.jpeg);
+  background-image: url(/app/assets/images/beer.jpeg);
 }
 
 @media (max-width: 500px){

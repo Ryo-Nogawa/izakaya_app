@@ -1,7 +1,10 @@
 body{
-  padding-top: 60px;
+  padding: 0;
+  margin: 0;
   border: none;
   font-family: 'Noto Serif JP', serif;
+  list-style: none;
+  text-decoration: none;
 }
 
 .nav{
