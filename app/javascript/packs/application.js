@@ -14,8 +14,8 @@ require('./visual_preview')
 import '@fortawesome/fontawesome-free/js/all'
 import '../stylesheets/application'
 import './bootstrap_custom.js'
-// import 'bootstrap'
-// import '../stylesheets/application.scss'
+import 'bootstrap'
+import '../stylesheets/application'
 
 
 
