@@ -57,27 +57,27 @@
 }
 
 .book-card{
-  background-image:  url("book-card.jpg");
+  background-image: image-url("book-card.jpg");
 }
 
 .chat-card{
-  background-image: url("hat-card.jpg");
+  background-image: image-url("chat-card.jpg");
 }
 
 .blog-card{
-  background-image: url("blog-card.jpg");
+  background-image: image-url("blog-card.jpg");
 }
 
 .visual-card{
-  background-image: url("visual-card.jpg");
+  background-image: image-url("visual-card.jpg");
 }
 
 .food-card{
-  background-image: url("food-card.jpg");
+  background-image: image-url("food-card.jpg");
 }
 
 .drink-card{
-  background-image: url("beer.jpeg");
+  background-image: image-url("beer.jpeg");
 }
 
 @media (max-width: 500px){
