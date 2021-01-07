@@ -13,15 +13,15 @@ jobs:
 
     working_directory: ~/izakaya_app
 
-    steps:
+    steps: 
       checkout
 
-      - restore_cache:
+      - restore_cache: 
           keys:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
             - v1-dependencies-
 
-      - run:
+      - run: 
           name: install dependencies
           command: |
             gem install bundler -v 2.0.2
