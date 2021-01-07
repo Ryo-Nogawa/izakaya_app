@@ -14,7 +14,7 @@ jobs:
     working_directory: ~/izakaya_app
 
     steps: 
-      checkout
+      - checkout
 
       - restore_cache: 
           keys:
@@ -68,3 +68,8 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+      
+      # SSH認証
+      - add_ssh_keys:
+          fingerprints:
+            - "ce:d8:e6:b0:29:ea:5a:2b:15:3b:bd:0b:83:a1:8e:5a"
