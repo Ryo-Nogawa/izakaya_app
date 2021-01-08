@@ -7,7 +7,7 @@ RSpec.describe Visual, type: :model do
 
   describe '外観/内装の投稿' do
     context '投稿が有効な時' do
-      it 'imageが存在する' do
+      it 'image, visual_category_idが存在する' do
         expect(@visual).to be_valid
       end
     end
