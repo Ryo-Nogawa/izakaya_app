@@ -97,6 +97,7 @@
 @media (max-width: 500px){
   .message-content{
     height: 650px;
+    width: 90%;
   }
 
   #messages-comment-area{
