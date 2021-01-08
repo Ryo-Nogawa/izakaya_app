@@ -23,7 +23,7 @@
 
 @media (max-width: 500px){
   #message_content{
-    width: 80vw;
-    margin-right: 10px;
+    width: 85%;
+    margin-right: 0;
   }
 }
