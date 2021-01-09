@@ -106,9 +106,6 @@
 }
 
 @media (max-width: 500px){
-  .new-book-main, .confirm-book-main, .complete-book-main{
-    padding-top: 20px;
-  }
 
   .new-book-title{
     margin-bottom: 50px;
