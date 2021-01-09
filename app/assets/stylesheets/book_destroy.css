@@ -12,3 +12,15 @@
   padding: 60px;
   border-radius: 10px;
 }
+
+@media (max-width: 500px){
+  .book-destroy-content{
+    width: 90%;
+    padding: 60px 10px;
+  }
+
+  .book-destroy-text{
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
