@@ -18,6 +18,11 @@ RSpec.describe Visual, type: :model do
         @visual.valid?
         expect(@visual.errors.full_messages).to include('画像を入力してください')
       end
+      it 'visuak_category_idが空' do
+        @visual.visual_category_id = nil
+        @visual.valid?
+        expect(@visual.errors.full_messages).to include('カテゴリーを入力してください')
+      end
     end
   end
 end
