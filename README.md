@@ -32,7 +32,7 @@
     * admin@admin.com
     * 000aaa
 
-  また、LINE@からの問い合わせも可能です。
+  ### また、LINE@からの問い合わせも可能です。
   
   <a href="https://gyazo.com/d200868730117ca3dd6aeab599cc2f21"><img src="https://i.gyazo.com/d200868730117ca3dd6aeab599cc2f21.png" alt="Image from Gyazo" width="402"/></a>
 
@@ -46,7 +46,7 @@
     1. 友だちを追加する
     2. QRコード
     3. 下の画像を読み取る
-    <img src="https://qr-official.line.me/sid/M/290fogxs.png">
+      ![M](https://user-images.githubusercontent.com/69405100/104137596-6c05d280-53e1-11eb-875e-89fbe23a1e5c.png)
     4. **居酒屋アプリ**と出て来たら追加ボタンを押す
 
 # 利用方法
