@@ -21,6 +21,10 @@
 
 
 **テスト用ログインID**
+  * basic認証
+    * check
+    * 0001
+
   * 一般ユーザー
     * test@gmail.com
     * test2020
