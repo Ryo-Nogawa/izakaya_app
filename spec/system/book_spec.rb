@@ -63,4 +63,43 @@ RSpec.describe "予約", type: :system do
         find_link('トップページへ戻る', href: root_path).click
     end
   end
+  context '予約がうまくいかないとき' do
+    it '入力フォームが空の時' do
+      # 新規登録ページへ移動する
+        visit new_user_registration_path
+      # ユーザー情報を入力する
+        fill_in 'user[nickname]', with: @user.nickname
+        fill_in 'user[name]', with: @user.name
+        fill_in 'user[name_kana]', with: @user.name_kana
+        fill_in 'user[age]', with: @user.age
+        fill_in 'user[phone_number]', with: @user.phone_number
+        fill_in 'user[email]', with: @user.email
+        fill_in 'user[password]', with: @user.password
+        fill_in 'user[password_confirmation]', with: @user.password_confirmation
+      # 確認画面ボタンを押すと今入力した情報を確認できる
+        find('input[name="commit"]').click
+      # 登録するボタンを押すとユーザーモデルのカウントが1上がることを確認する
+        expect{
+          find('input[name="commit"]').click
+        }.to change {User.count}.by(1)
+      # ログインボタンをクリックする
+        find_link('ログイン画面', href: root_path).click
+      # sign_in情報を入力する
+        sign_in(@user)
+      # 予約ページへのリンクがあることを確認する
+        expect(page).to have_content('ご予約はこちらから')
+      # 予約ページに移動する
+        find_link('ご予約はこちらから', href: "/books/new").click
+      # 入力フォームが空
+        fill_in 'book[reserve_date]', with: Date.today
+        select "-----", from: 'book[reserve_time(4i)]'
+        select "-----", from: 'book[reserve_time(5i)]'
+        fill_in 'book[number_reserve]', with: ""
+        select "選択してください", from: 'book[reserve_category_id]'
+      # 確認画面ボタンを押す
+        find('input[name="commit"]').click
+      # 予約ページに戻ってくる
+        expect(current_path).to eq confirm_books_path
+    end
+  end
 end
