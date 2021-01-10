@@ -19,7 +19,6 @@
 
 [ここから](https://www.izakaya-app.com/)Izakaya Appを体験できます。
 
-
 **テスト用ログインID**
   * basic認証
     * check
@@ -32,6 +31,23 @@
   * 管理者用
     * admin@admin.com
     * 000aaa
+
+  また、LINE@からの問い合わせも可能です。
+  
+  <a href="https://gyazo.com/d200868730117ca3dd6aeab599cc2f21"><img src="https://i.gyazo.com/d200868730117ca3dd6aeab599cc2f21.png" alt="Image from Gyazo" width="402"/></a>
+
+  * ID検索
+    1. 友だちを追加する
+    2. 検索
+    3. *友だちのIDで検索*で**@290fogxs**と入力する
+    4. **居酒屋アプリ**と出て来たら追加ボタンを押す
+  
+  * QRコードでの検索
+    1. 友だちを追加する
+    2. QRコード
+    3. 下の画像を読み取る
+    <img src="https://qr-official.line.me/sid/M/290fogxs.png">
+    4. **居酒屋アプリ**と出て来たら追加ボタンを押す
 
 # 利用方法
 
@@ -193,64 +209,85 @@
   <a href="https://gyazo.com/9e66cc9ebdcdbdcf6a1953b640e09a74"><img src="https://i.gyazo.com/9e66cc9ebdcdbdcf6a1953b640e09a74.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### ユーザーログイン機能
+  <a href="https://gyazo.com/492f42555cfeaf51ff9dd467b3983bb9"><img src="https://i.gyazo.com/492f42555cfeaf51ff9dd467b3983bb9.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### 予約機能
+  <a href="https://gyazo.com/b644d96c1740395547cd051ae9e7d8d6"><img src="https://i.gyazo.com/b644d96c1740395547cd051ae9e7d8d6.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### 予約履歴確認機能
+  <a href="https://gyazo.com/7fda6ba60a2afe15f4ee7c2da90b3c0a"><img src="https://i.gyazo.com/7fda6ba60a2afe15f4ee7c2da90b3c0a.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### 予約編集機能
+  <a href="https://gyazo.com/e35a3069dde880b057e244a5fe047007"><img src="https://i.gyazo.com/e35a3069dde880b057e244a5fe047007.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### 予約キャンセル機能
+  <a href="https://gyazo.com/2aa3c4aded1bf667a15f998f646f6542"><img src="https://i.gyazo.com/2aa3c4aded1bf667a15f998f646f6542.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### メニュー新規登録機能
+  <a href="https://gyazo.com/9bcff5b5dabdf0b363411809d32c041d"><img src="https://i.gyazo.com/9bcff5b5dabdf0b363411809d32c041d.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### メニュー編集機能
+  <a href="https://gyazo.com/dc8fe9368d0cdaa4becf23773edd2a94"><img src="https://i.gyazo.com/dc8fe9368d0cdaa4becf23773edd2a94.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### メニュー削除機能
+  <a href="https://gyazo.com/c7daac8ab274fb21e618d95ef41eef6f"><img src="https://i.gyazo.com/c7daac8ab274fb21e618d95ef41eef6f.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### メニュー一覧表示機能
+  <a href="https://gyazo.com/2784d6c6ebdc312c8a917c437a61edf7"><img src="https://i.gyazo.com/2784d6c6ebdc312c8a917c437a61edf7.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### メニューコメント機能
+  <a href="https://gyazo.com/32f51ebf1fb835b2794b6272c4a1abcf"><img src="https://i.gyazo.com/32f51ebf1fb835b2794b6272c4a1abcf.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### メニューいいね機能
+  <a href="https://gyazo.com/737b1d8ca7b99afa3415a2a2e9fc481b"><img src="https://i.gyazo.com/737b1d8ca7b99afa3415a2a2e9fc481b.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### メニュー検索機能
+  <a href="https://gyazo.com/e254c69d9f57de0f389ff5f14cff9820"><img src="https://i.gyazo.com/e254c69d9f57de0f389ff5f14cff9820.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### ブログ新規投稿機能
+  <a href="https://gyazo.com/7a431d53455cbc71cbbce7b23f9791ff"><img src="https://i.gyazo.com/7a431d53455cbc71cbbce7b23f9791ff.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### ブログ編集機能
+  <a href="https://gyazo.com/8ee18c6602088bb892d51c1fcf20bf76"><img src="https://i.gyazo.com/8ee18c6602088bb892d51c1fcf20bf76.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### ブログ削除機能
-
-  ### ブログ一覧表示機能
+  <a href="https://gyazo.com/fff95275b4878eaa320840a84be9af4c"><img src="https://i.gyazo.com/fff95275b4878eaa320840a84be9af4c.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### ブログコメント機能
+  <a href="https://gyazo.com/0106f0cf1e3aa85d0a4293b4ddb28a73"><img src="https://i.gyazo.com/0106f0cf1e3aa85d0a4293b4ddb28a73.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### ブログいいね機能
+  <a href="https://gyazo.com/7e1dafa2082f054498f01d13dc5d7a8d"><img src="https://i.gyazo.com/7e1dafa2082f054498f01d13dc5d7a8d.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### チャット機能
+  <a href="https://gyazo.com/d3f6b15ade32f2dd15e8653b385a8f9b"><img src="https://i.gyazo.com/d3f6b15ade32f2dd15e8653b385a8f9b.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### 外観/内装一覧表示機能
+  <a href="https://gyazo.com/eba3f93a98b86cb87056ac1734ff7349"><img src="https://i.gyazo.com/eba3f93a98b86cb87056ac1734ff7349.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### 外観/内装新規投稿機能
+  <a href="https://gyazo.com/d0cb87f405a087fb150f5d6cadeb2188"><img src="https://i.gyazo.com/d0cb87f405a087fb150f5d6cadeb2188.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### 外観/内装編集機能
+  <a href="https://gyazo.com/663992316884168dc10aec49c5943a01"><img src="https://i.gyazo.com/663992316884168dc10aec49c5943a01.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### 外観/内装削除機能
+  <a href="https://gyazo.com/74fe35f98d6026b5d1d4b36757967a18"><img src="https://i.gyazo.com/74fe35f98d6026b5d1d4b36757967a18.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### 管理者機能
+  <a href="https://gyazo.com/d4a0c57c82447848ed5dffa1cb28bf89"><img src="https://i.gyazo.com/d4a0c57c82447848ed5dffa1cb28bf89.gif" alt="Image from Gyazo" width="1000"/></a>
 
 
 # 実装予定の機能
 
-  - [ ] メニューの検索ボタンに「すべて」という項目を追加
+  - [x] メニューの検索ボタンに「すべて」という項目を追加
   - [ ] メニュー検索の非同期化
   - [ ] チャットを1対1でも出来るようにルーム作成機能の追加
-  - [ ] チャットを送信する際の非同期化
   - [ ] チャットで画像を送信
-  - [ ] ユーザー情報の編集機能を追加
-  - [ ] 外観/内装のカテゴリー検索機能の追加
-  - [ ] スマホでも操作できるようなレスポンシブ対応
+  - [x] ユーザー情報の編集機能を追加
+  - [x] 外観/内装のカテゴリー検索機能の追加
+  - [x] スマホでも操作できるようなレスポンシブ対応
+  - [x] LINE@での対応
 
 
 # テーブル設計
