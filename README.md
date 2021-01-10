@@ -190,6 +190,7 @@
 # 実装した機能についてのGIFと説明
 
   ### ユーザー新規登録機能
+  <a href="https://gyazo.com/9e66cc9ebdcdbdcf6a1953b640e09a74"><img src="https://i.gyazo.com/9e66cc9ebdcdbdcf6a1953b640e09a74.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### ユーザーログイン機能
 
