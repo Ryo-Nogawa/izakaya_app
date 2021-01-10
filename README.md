@@ -204,7 +204,7 @@
   | 管理者専用機能        | 管理者権限を付与することによって一般ユーザーと区別するため | ユーザー管理テーブルのadminカラムを一般ユーザーはデフォルトでFalseだが管理者のみTrueにしてある |
 
 
-# 実装した機能についてのGIFと説明
+# 実装した機能についてのGIF
 
   ### ユーザー新規登録機能
   <a href="https://gyazo.com/9e66cc9ebdcdbdcf6a1953b640e09a74"><img src="https://i.gyazo.com/9e66cc9ebdcdbdcf6a1953b640e09a74.gif" alt="Image from Gyazo" width="1000"/></a>
