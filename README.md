@@ -1,7 +1,7 @@
 # Izakaya App
  
  ### 一般ユーザー
-  ![一般ユーザートップ画面](https://gyazo.com/caffaa238643a4c1e77b68738296a2dd "一般ユーザー用トップ画面")
+  <a href="https://gyazo.com/caffaa238643a4c1e77b68738296a2dd"><img src="https://i.gyazo.com/caffaa238643a4c1e77b68738296a2dd.jpg" alt="Image from Gyazo" width="1439"/></a>
 
  ### 管理者
   ![管理者用トップ画面](https://gyazo.com/059e83e8ae633e52646dcd876bb274c3 "管理者用トップ画面")
