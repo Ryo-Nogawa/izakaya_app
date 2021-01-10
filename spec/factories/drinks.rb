@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :drink do
-    drink_category_id {Faker::Number.between(from: 2, to: 11)}
-    title             {Faker::Lorem.characters(number: 10)}
-    detail            {Faker::Lorem.characters(number: 100)}
-    price             {Faker::Number.between(from: 1, to: 9999999)}
+    drink_category_id { Faker::Number.between(from: 2, to: 11) }
+    title             { Faker::Lorem.characters(number: 10) }
+    detail            { Faker::Lorem.characters(number: 100) }
+    price             { Faker::Number.between(from: 1, to: 9_999_999) }
     image             {}
     association :user
 

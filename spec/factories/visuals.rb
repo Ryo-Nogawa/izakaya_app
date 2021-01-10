@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :visual do
-    visual_category_id { Faker::Number.between(from: 2, to: 3)}
+    visual_category_id { Faker::Number.between(from: 2, to: 3) }
     image {}
     association :user
 

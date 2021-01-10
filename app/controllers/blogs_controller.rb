@@ -48,8 +48,6 @@ class BlogsController < ApplicationController
   end
 
   def only_admin
-    unless current_user.admin?
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.admin?
   end
 end

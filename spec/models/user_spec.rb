@@ -34,7 +34,7 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include('お名前は不正な値です')
       end
       it 'nameが数字を含む' do
-        @user.name = 123456
+        @user.name = 123_456
         @user.valid?
         expect(@user.errors.full_messages).to include('お名前は不正な値です')
       end
@@ -69,12 +69,12 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include('電話番号を入力してください')
       end
       it 'phone_numberが9桁未満' do
-        @user.phone_number = Faker::Number.number(digits:8)
+        @user.phone_number = Faker::Number.number(digits: 8)
         @user.valid?
         expect(@user.errors.full_messages).to include('電話番号は不正な値です')
       end
       it 'phone_numberが12桁以上' do
-        @user.phone_number = Faker::Number.number(digits:12)
+        @user.phone_number = Faker::Number.number(digits: 12)
         @user.valid?
         expect(@user.errors.full_messages).to include('電話番号は不正な値です')
       end

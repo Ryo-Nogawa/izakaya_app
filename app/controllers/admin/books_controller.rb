@@ -5,11 +5,9 @@ class Admin::BooksController < ApplicationController
     @books = Book.includes(:user).order(reserve_date: :ASC)
   end
 
-
   private
+
   def only_admin
-    unless current_user.admin?
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.admin?
   end
 end

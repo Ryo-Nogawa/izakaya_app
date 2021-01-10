@@ -1,5 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe "BlogLikes", type: :request do
-
+RSpec.describe 'BlogLikes', type: :request do
 end

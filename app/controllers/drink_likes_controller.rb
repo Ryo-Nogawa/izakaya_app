@@ -1,5 +1,4 @@
 class DrinkLikesController < ApplicationController
-
   before_action :set_drink
 
   def create
@@ -13,6 +12,7 @@ class DrinkLikesController < ApplicationController
   end
 
   private
+
   def set_drink
     @drink = Drink.find(params[:drink_id])
   end

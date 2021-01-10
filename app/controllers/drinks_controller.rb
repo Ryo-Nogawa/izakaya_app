@@ -47,6 +47,7 @@ class DrinksController < ApplicationController
   end
 
   private
+
   def drink_params
     params.require(:drink).permit(:title, :detail, :price, :drink_category_id, :image, :free_drink).merge(user_id: current_user.id)
   end
@@ -56,8 +57,6 @@ class DrinksController < ApplicationController
   end
 
   def only_admin
-    unless current_user.admin?
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.admin?
   end
 end

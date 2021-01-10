@@ -1,5 +1,4 @@
 class BlogCommentsController < ApplicationController
-
   def create
     # Ajax
     # @blog = Blog.find(params[:blog_id])
@@ -14,6 +13,7 @@ class BlogCommentsController < ApplicationController
   end
 
   private
+
   def comment_params
     params.require(:blog_comment).permit(:comment).merge(user_id: current_user.id, blog_id: params[:blog_id])
   end

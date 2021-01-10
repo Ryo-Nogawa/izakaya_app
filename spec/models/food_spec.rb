@@ -46,7 +46,7 @@ RSpec.describe Food, type: :model do
       it 'priceが9,999,999以上' do
         @food.price = Faker::Number.between(from: 10_000_000)
         @food.valid?
-        expect(@food.errors.full_messages).to  include('値段は整数で入力してください')
+        expect(@food.errors.full_messages).to include('値段は整数で入力してください')
       end
       it 'imageが空' do
         @food.image = nil

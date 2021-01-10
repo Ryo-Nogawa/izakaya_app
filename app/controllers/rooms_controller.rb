@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   def new
     @room = Room.new
   end
-  
+
   def create
     @room = Room.new(room_params)
     binding.pry
@@ -14,6 +14,7 @@ class RoomsController < ApplicationController
   end
 
   private
+
   def room_params
     params.require(:room).permit(:name, user_ids: [])
   end

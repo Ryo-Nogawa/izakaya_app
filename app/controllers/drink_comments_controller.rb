@@ -1,5 +1,4 @@
 class DrinkCommentsController < ApplicationController
-
   def create
     # Ajax
     # @drink = Drink.find(params[:drink_id])
@@ -13,8 +12,8 @@ class DrinkCommentsController < ApplicationController
   end
 
   private
+
   def comment_params
     params.require(:drink_comment).permit(:comment).merge(user_id: current_user.id, drink_id: params[:drink_id])
   end
-  
 end

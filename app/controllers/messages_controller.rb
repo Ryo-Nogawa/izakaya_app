@@ -1,5 +1,4 @@
 class MessagesController < ApplicationController
-
   def index
     @message = Message.new
     @messages = Message.includes(:user).order(created_at: :DESC)
@@ -14,6 +13,7 @@ class MessagesController < ApplicationController
   end
 
   private
+
   def message_params
     params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end

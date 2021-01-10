@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :blog do
-    title {Faker::Lorem.characters(number: 50)}
-    text  {Faker::Lorem.characters(number: 100)}
+    title { Faker::Lorem.characters(number: 50) }
+    text  { Faker::Lorem.characters(number: 100) }
     image {}
     association :user
 

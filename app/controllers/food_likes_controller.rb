@@ -1,5 +1,4 @@
 class FoodLikesController < ApplicationController
-
   before_action :set_food
 
   def create
@@ -13,6 +12,7 @@ class FoodLikesController < ApplicationController
   end
 
   private
+
   def set_food
     @food = Food.find(params[:food_id])
   end

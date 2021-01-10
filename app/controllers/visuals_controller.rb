@@ -1,9 +1,8 @@
 class VisualsController < ApplicationController
-
   before_action :only_admin, only: [:new, :create, :destroy, :edit, :update]
 
   before_action :search_product, only: [:index, :search]
-  
+
   def index
     @visuals = Visual.all.order(visual_category_id: :ASC)
   end
@@ -53,9 +52,7 @@ class VisualsController < ApplicationController
   end
 
   def only_admin
-    unless current_user.admin?
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.admin?
   end
 
   def search_product

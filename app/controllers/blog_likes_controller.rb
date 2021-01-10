@@ -1,5 +1,4 @@
 class BlogLikesController < ApplicationController
-
   before_action :set_blog
 
   def create
@@ -13,6 +12,7 @@ class BlogLikesController < ApplicationController
   end
 
   private
+
   def set_blog
     @blog = Blog.find(params[:blog_id])
   end
