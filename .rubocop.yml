@@ -8,6 +8,8 @@ AllCops:
     - "bin/*"
     - "node_modules/**/*"
     - "Gemfile"
+
+  SuggestExtensions: false
   
   
   # 1行あたりの文字数をチェックする
