@@ -234,7 +234,7 @@
   <a href="https://gyazo.com/c7daac8ab274fb21e618d95ef41eef6f"><img src="https://i.gyazo.com/c7daac8ab274fb21e618d95ef41eef6f.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### メニュー一覧表示機能
-  <a href="https://gyazo.com/2784d6c6ebdc312c8a917c437a61edf7"><img src="https://i.gyazo.com/2784d6c6ebdc312c8a917c437a61edf7.gif" alt="Image from Gyazo" width="1000"/></a>
+   <a href="https://gyazo.com/2784d6c6ebdc312c8a917c437a61edf7"><img src="https://i.gyazo.com/2784d6c6ebdc312c8a917c437a61edf7.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### メニューコメント機能
   <a href="https://gyazo.com/32f51ebf1fb835b2794b6272c4a1abcf"><img src="https://i.gyazo.com/32f51ebf1fb835b2794b6272c4a1abcf.gif" alt="Image from Gyazo" width="1000"/></a>
