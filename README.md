@@ -233,9 +233,6 @@
   ### メニュー削除機能
   <a href="https://gyazo.com/c7daac8ab274fb21e618d95ef41eef6f"><img src="https://i.gyazo.com/c7daac8ab274fb21e618d95ef41eef6f.gif" alt="Image from Gyazo" width="1000"/></a>
 
-  ### メニュー一覧表示機能
-  [![Image from Gyazo](https://i.gyazo.com/96d6908275069c44ee7d0d0cf47dc9cd.gif)](https://gyazo.com/96d6908275069c44ee7d0d0cf47dc9cd)
-
   ### メニューコメント機能
   <a href="https://gyazo.com/32f51ebf1fb835b2794b6272c4a1abcf"><img src="https://i.gyazo.com/32f51ebf1fb835b2794b6272c4a1abcf.gif" alt="Image from Gyazo" width="1000"/></a>
 
@@ -264,7 +261,7 @@
   <a href="https://gyazo.com/d3f6b15ade32f2dd15e8653b385a8f9b"><img src="https://i.gyazo.com/d3f6b15ade32f2dd15e8653b385a8f9b.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### 外観/内装一覧表示機能
-  <a href="https://gyazo.com/eba3f93a98b86cb87056ac1734ff7349"><img src="https://i.gyazo.com/eba3f93a98b86cb87056ac1734ff7349.gif" alt="Image from Gyazo" width="1000"/></a>
+  [![Image from Gyazo](https://i.gyazo.com/eba3f93a98b86cb87056ac1734ff7349.gif)](https://gyazo.com/eba3f93a98b86cb87056ac1734ff7349)
 
   ### 外観/内装新規投稿機能
   <a href="https://gyazo.com/d0cb87f405a087fb150f5d6cadeb2188"><img src="https://i.gyazo.com/d0cb87f405a087fb150f5d6cadeb2188.gif" alt="Image from Gyazo" width="1000"/></a>
