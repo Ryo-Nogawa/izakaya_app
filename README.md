@@ -239,6 +239,9 @@
   ### メニューいいね機能
   <a href="https://gyazo.com/737b1d8ca7b99afa3415a2a2e9fc481b"><img src="https://i.gyazo.com/737b1d8ca7b99afa3415a2a2e9fc481b.gif" alt="Image from Gyazo" width="1000"/></a>
 
+  ### メニュー一覧機能
+  <a href="https://gyazo.com/fb0fe1e867c93b0cf9d5f858c349abb8"><img src="https://i.gyazo.com/fb0fe1e867c93b0cf9d5f858c349abb8.gif" alt="Image from Gyazo" width="1000"/></a>
+
   ### メニュー検索機能
   <a href="https://gyazo.com/e254c69d9f57de0f389ff5f14cff9820"><img src="https://i.gyazo.com/e254c69d9f57de0f389ff5f14cff9820.gif" alt="Image from Gyazo" width="1000"/></a>
 
@@ -259,16 +262,16 @@
 
   ### チャット機能
   <a href="https://gyazo.com/d3f6b15ade32f2dd15e8653b385a8f9b"><img src="https://i.gyazo.com/d3f6b15ade32f2dd15e8653b385a8f9b.gif" alt="Image from Gyazo" width="1000"/></a>
-  
-  ### 外観/内装一覧表示機能
-  [![Image from Gyazo](https://i.gyazo.com/eba3f93a98b86cb87056ac1734ff7349.gif)](https://gyazo.com/eba3f93a98b86cb87056ac1734ff7349)
+
+  ### 外観/内装一覧表示
+  <a href="https://gyazo.com/31ea266e0fb62e219beaf834dbdbd92a"><img src="https://i.gyazo.com/31ea266e0fb62e219beaf834dbdbd92a.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### 外観/内装新規投稿機能
   <a href="https://gyazo.com/d0cb87f405a087fb150f5d6cadeb2188"><img src="https://i.gyazo.com/d0cb87f405a087fb150f5d6cadeb2188.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### 外観/内装編集機能
-  <a href="https://gyazo.com/2784d6c6ebdc312c8a917c437a61edf7"><img src="https://i.gyazo.com/2784d6c6ebdc312c8a917c437a61edf7.gif" alt="Image from Gyazo" width="1000"/></a>
-
+  <a href="https://gyazo.com/7d2fdc78d12648eab72a21cb4b4970b8"><img src="https://i.gyazo.com/7d2fdc78d12648eab72a21cb4b4970b8.gif" alt="Image from Gyazo" width="1000"/></a>
+  
   ### 外観/内装削除機能
   <a href="https://gyazo.com/74fe35f98d6026b5d1d4b36757967a18"><img src="https://i.gyazo.com/74fe35f98d6026b5d1d4b36757967a18.gif" alt="Image from Gyazo" width="1000"/></a>
 
