@@ -270,7 +270,7 @@
   <a href="https://gyazo.com/d0cb87f405a087fb150f5d6cadeb2188"><img src="https://i.gyazo.com/d0cb87f405a087fb150f5d6cadeb2188.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### 外観/内装編集機能
-  <a href="https://gyazo.com/663992316884168dc10aec49c5943a01"><img src="https://i.gyazo.com/663992316884168dc10aec49c5943a01.gif" alt="Image from Gyazo" width="1000"/></a>
+  <a href="https://gyazo.com/2784d6c6ebdc312c8a917c437a61edf7"><img src="https://i.gyazo.com/2784d6c6ebdc312c8a917c437a61edf7.gif" alt="Image from Gyazo" width="1000"/></a>
 
   ### 外観/内装削除機能
   <a href="https://gyazo.com/74fe35f98d6026b5d1d4b36757967a18"><img src="https://i.gyazo.com/74fe35f98d6026b5d1d4b36757967a18.gif" alt="Image from Gyazo" width="1000"/></a>
