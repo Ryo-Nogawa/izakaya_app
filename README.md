@@ -260,7 +260,7 @@
   ### チャット機能
   <a href="https://gyazo.com/d3f6b15ade32f2dd15e8653b385a8f9b"><img src="https://i.gyazo.com/d3f6b15ade32f2dd15e8653b385a8f9b.gif" alt="Image from Gyazo" width="1000"/></a>
 
-  ### 外観/内装覧表示機能
+  ### 外観/内装一覧表示機能
   [![Image from Gyazo](https://i.gyazo.com/eba3f93a98b86cb87056ac1734ff7349.gif)](https://gyazo.com/eba3f93a98b86cb87056ac1734ff7349)
 
   ### 外観/内装新規投稿機能
