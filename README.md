@@ -501,6 +501,6 @@
 
 # 開発環境
 
-  * Ruby on Rails 6.0.0
+  * Ruby on Rails 6.0.5
   * MySQL
 
