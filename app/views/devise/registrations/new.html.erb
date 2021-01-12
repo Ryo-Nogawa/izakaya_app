@@ -11,6 +11,8 @@
   <div class="new-registrations-form">
     <%= form_with model: @user, url: { action: 'confirm'}, local: true do |f| %>
 
+    <%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post%>
+
       <div class="field">
         <%= f.label :nickname, class: "label" %><br />
         <%= f.text_field :nickname, class: "text-field", placeholder: '40文字以内で入力して下さい' %>
