@@ -28,4 +28,5 @@ class User < ApplicationRecord
   has_many :drinks
   has_many :drink_comments
   has_many :drink_likes
+  has_many :sns_credentials
 end
