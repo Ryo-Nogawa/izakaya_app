@@ -8,6 +8,7 @@
         <%= flash[:notice] %>
         <%= flash[:alert] %>
       </div>
+      <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post%>
       <div class="field">
         <%= f.label :email, class: "label" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "text-field", placeholder: 'example@email.com' %>
