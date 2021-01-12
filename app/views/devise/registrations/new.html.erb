@@ -72,8 +72,11 @@
           </p>
         <% end %>
       </div>
-
-      <div class="field">
+      
+      <%if @sns_id.present? %>
+        <%= hidden_field_tag :sns_auth, true %>
+      <% else %>
+        <div class="field">
         <%= f.label :password, class: "label" %>
         <% if @minimum_password_length %>
         <em>(英数字混合の<%= @minimum_password_length %>文字以上)</em>
@@ -95,6 +98,7 @@
           </p>
         <% end %>
       </div>
+      <% end %>
 
       <div class="actions">
         <%= link_to 'ログインする', new_user_session_path, class: "btn btn-outline-primary mr-3" %>
