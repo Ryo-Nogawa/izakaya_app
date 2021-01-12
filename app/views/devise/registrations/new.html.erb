@@ -11,6 +11,8 @@
   <div class="new-registrations-form">
     <%= form_with model: @user, url: { action: 'confirm'}, local: true do |f| %>
 
+    <%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post%>
+
       <div class="field">
         <%= f.label :nickname, class: "label" %><br />
         <%= f.text_field :nickname, class: "text-field", placeholder: '40文字以内で入力して下さい' %>
@@ -70,8 +72,11 @@
           </p>
         <% end %>
       </div>
-
-      <div class="field">
+      
+      <%if @sns_id.present? %>
+        <%= hidden_field_tag :sns_auth, true %>
+      <% else %>
+        <div class="field">
         <%= f.label :password, class: "label" %>
         <% if @minimum_password_length %>
         <em>(英数字混合の<%= @minimum_password_length %>文字以上)</em>
@@ -93,6 +98,7 @@
           </p>
         <% end %>
       </div>
+      <% end %>
 
       <div class="actions">
         <%= link_to 'ログインする', new_user_session_path, class: "btn btn-outline-primary mr-3" %>
