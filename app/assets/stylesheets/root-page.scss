@@ -12,7 +12,31 @@
   background-size: cover;
 }
 
-.card:hover{
+// .card:hover{
+//   transform: scale(1.1, 1.1);
+// }
+
+.book-card:hover{
+  transform: scale(1.1, 1.1);
+}
+
+.drink-card:hover{
+  transform: scale(1.1, 1.1);
+}
+
+.food-card:hover{
+  transform: scale(1.1, 1.1);
+}
+
+.visual-card:hover{
+  transform: scale(1.1, 1.1);
+}
+
+.blog-card:hover{
+  transform: scale(1.1, 1.1);
+}
+
+.chat-card:hover{
   transform: scale(1.1, 1.1);
 }
 
@@ -85,7 +109,6 @@
   .top-main{
     padding-top: 60px;
   }
-  
   .main-content{
     padding: 20px 0;
   }
