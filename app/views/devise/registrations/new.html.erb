@@ -12,9 +12,7 @@
   <div class="new-registrations-form">
     <%= form_with model: @user, url: { action: 'confirm'}, local: true do |f| %>
 
-      <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post do%>
-        <p>Googleでログイン</p>
-      <% end %>
+      <%#= link_to 'Googleアカウトで登録' user_google_oauth2_omniauth_authorize_path, method: :post %>
 
       <div class="field">
         <%= f.label :nickname, class: "label" %><br />
@@ -76,32 +74,32 @@
         <% end %>
       </div>
       
-      <%if @sns_id.present? %>
-        <%= hidden_field_tag :sns_auth, true %>
-      <% else %>
+      <%#if @sns_id.present? %>
+        <%#= hidden_field_tag :sns_auth, true %>
+      <%# else %>
         <div class="field">
-        <%= f.label :password, class: "label" %>
-        <% if @minimum_password_length %>
-        <em>(英数字混合の<%= @minimum_password_length %>文字以上)</em>
-        <% end %><br />
-        <%= f.password_field :password, class: "text-field", placeholder: '12345abcd' %>
-        <% if @user.errors.include?(:password) %>
-          <p style="color: red; margin: 0;">
-            <%= @user.errors.full_messages_for(:password).first %>
-          </p>
-        <% end %>
-      </div>
+          <%= f.label :password, class: "label" %>
+          <% if @minimum_password_length %>
+          <em>(英数字混合の<%= @minimum_password_length %>文字以上)</em>
+          <% end %><br />
+          <%= f.password_field :password, class: "text-field", placeholder: '12345abcd' %>
+          <% if @user.errors.include?(:password) %>
+            <p style="color: red; margin: 0;">
+              <%= @user.errors.full_messages_for(:password).first %>
+            </p>
+          <% end %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation, class: "label" %><br />
-        <%= f.password_field :password_confirmation, class: "text-field", placeholder: '12345abcd' %>
-        <% if @user.errors.include?(:password_confirmation) %>
-          <p style="color: red; margin: 0;">
-            <%= @user.errors.full_messages_for(:password_confirmation).first %>
-          </p>
-        <% end %>
-      </div>
-      <% end %>
+        <div class="field">
+          <%= f.label :password_confirmation, class: "label" %><br />
+          <%= f.password_field :password_confirmation, class: "text-field", placeholder: '12345abcd' %>
+          <% if @user.errors.include?(:password_confirmation) %>
+            <p style="color: red; margin: 0;">
+              <%= @user.errors.full_messages_for(:password_confirmation).first %>
+            </p>
+          <% end %>
+        </div>
+      <%# end %>
 
       <div class="actions">
         <%= link_to 'ログインする', new_user_session_path, class: "btn btn-outline-primary mr-3" %>
