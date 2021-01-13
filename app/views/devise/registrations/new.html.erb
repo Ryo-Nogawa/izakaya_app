@@ -8,8 +8,8 @@
     <li class="nav-list">3.完了</li>
   </ol>
 
-  <%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path%>
-
+  <%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post%>
+  
   <div class="new-registrations-form">
     <%= form_with model: @user, url: { action: 'confirm'}, local: true do |f| %>
 
