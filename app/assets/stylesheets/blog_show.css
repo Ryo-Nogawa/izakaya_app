@@ -46,6 +46,8 @@
   line-height: 1.5em;
   overflow-wrap: break-word;
   overflow-y: scroll;
+  white-space: pre-line;
+  word-wrap: break-word;
 }
 
 .blog-show-daytime{
