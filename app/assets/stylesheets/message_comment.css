@@ -37,6 +37,7 @@
   border-radius: 12px;
   background: #30e852;
   font-size: 15px;
+  text-align: left;
 }
 
 .mymessage-content p:after{
@@ -68,6 +69,7 @@
   max-width: 250px;
   border-radius: 12px;
   background-color: #edf1ee;
+  text-align: left;
 }
 
 .othermessage-content p:after{
