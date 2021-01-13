@@ -12,8 +12,8 @@
   <div class="new-registrations-form">
     <%= form_with model: @user, url: { action: 'confirm'}, local: true do |f| %>
 
-      <%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path do%>
-
+      <%= link_to user_google_oauth2_omniauth_authorize_path do%>
+        <p>Googleでログイン</p>
       <% end %>
 
       <div class="field">
