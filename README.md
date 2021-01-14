@@ -501,6 +501,8 @@
 
 # 開発環境
 
-  * Ruby on Rails 6.0.5
-  * MySQL
+  * 言語：HTML/CSS/JavaScript/Ruby
+  * フレームワーク:Ruby on Rails
+  ＊ データベース:MySQL/MariaDB
+  * デプロイ環境:AWS（EC2/S3/Route 53）
 
