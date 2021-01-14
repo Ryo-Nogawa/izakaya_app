@@ -43,7 +43,9 @@
 
 .blog-index-img span{
   position: absolute;
-  display: inline-block;
+  /* display: inline-block; */
+  /* 非表示 */
+  display: none;
   top: 5px;
   left: -30px;
   background-color: red;

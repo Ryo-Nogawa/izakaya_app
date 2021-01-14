@@ -21,7 +21,9 @@
                   <%= image_tag blog.image.variant(resize: '200x200') if blog.image.attached? %> 
                 <% end %>
                 <%# ブログの作成日が1週間以内であれば表示する %>
-                <div class="caption"><span>NEW</span></div>
+                <% if blog.created_at == Date.today %>
+                  <div class="caption"><span>NEW</span></div>
+                <% end %>
               </td>
               <td>
                 <div class="blog-index-title"><%= blog.title %></div>
