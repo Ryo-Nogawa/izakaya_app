@@ -4,6 +4,10 @@
 
       <div class="show-content-image">
         <%= image_tag @food.image.variant(resize: '400x400') %><br />
+        <%# 食べ放題が許可されているメニューにラベル %>
+          <% if @food.free_food == true %>
+            <div class="caption"><span>食べ放題</span></div>
+          <% end %>
       </div>
 
       <div class="show-content-title">
