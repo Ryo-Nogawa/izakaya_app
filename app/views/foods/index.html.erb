@@ -21,6 +21,10 @@
           <%= link_to food_path(food.id) do %>
             <%= image_tag food.image.variant(resize: '400x400') %>
           <% end %>
+          <%# 食べ放題が許可されているメニューにラベル %>
+          <% if food.free_food == true %>
+            <div class="caption"><span>食べ放題</span></div>
+          <% end %>
         </div>
 
         <%# いいね機能 %>
