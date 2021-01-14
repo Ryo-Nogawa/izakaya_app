@@ -504,7 +504,8 @@
   * 言語：        HTML/CSS/JavaScript/Ruby<br/>
   * フレームワーク: Ruby on Rails<br/>
   * データベース:  MySQL/MariaDB<br/>
-  * デプロイ環境:  AWS（EC2/S3/Route 53）<br/>
+  * インフラ:  AWS（EC2/S3/Route 53）<br/>
   * テストツール:  RSpec
   * コードレビュー：  Rubocop
+  * デプロイ:Capistrano
 
