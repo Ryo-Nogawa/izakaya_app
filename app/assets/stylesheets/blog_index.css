@@ -26,12 +26,32 @@
 
 .blog-index-img{
   text-align: center;
-  padding: 5px 0;
+  margin: 5px 0;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
 }
 
 .blog-index-img img{
   width: 150px;
   height: 100px;
+}
+
+.blog-index-img .cption{
+  display: inline;
+}
+
+.blog-index-img span{
+  position: absolute;
+  display: inline-block;
+  top: 5px;
+  left: -30px;
+  background-color: red;
+  color: white;
+  transform: rotate(-45deg);
+  width: 100px;
+  text-align: center;
+  font-family: 'arial black';
 }
 
 .blog-index-title{
