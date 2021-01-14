@@ -26,6 +26,10 @@
         <%= link_to drink_path(drink.id) do %>
           <%= image_tag drink.image.variant(resize: '400x400') %>
         <% end %>
+        <%# 飲み放題のメニューのみラベルをつける %>
+        <% if drink.free_drink == true %>
+          <div class="caption"><span>飲み放題</span></div>
+        <% end %>
       </div>
 
       <%# いいね機能 %>

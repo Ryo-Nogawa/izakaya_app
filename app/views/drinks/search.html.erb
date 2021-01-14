@@ -13,12 +13,17 @@
       <% if @results.length != 0 %>
         <% @results.each do |result| %>
           <div class="index-content">
-
-            <%= link_to drink_path(result.id) do %>
-              <div class="index-content-image">
-                <%= image_tag result.image.variant(resize: '400x400') %><br />
-              </div>
-            <% end %>
+            <div class="index-content-image">
+              <%= link_to drink_path(result.id) do %>
+                <div class="index-content-image">
+                  <%= image_tag result.image.variant(resize: '400x400') %><br />
+                </div>
+              <% end %>
+              <%# 飲み放題のメニューのみラベルをつける %>
+              <% if result.free_drink == true %>
+                <div class="caption"><span>飲み放題</span></div>
+              <% end %>
+            </div>
 
             <%#= いいね機能 %>
             <div id="drink-<%= result.id %>" class="content-like-btn"> 

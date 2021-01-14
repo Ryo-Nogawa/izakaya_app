@@ -5,6 +5,10 @@
 
       <div class="show-content-image">
         <%= image_tag @drink.image.variant(resize: '400x400') %><br />
+        <%# 飲み放題のメニューのみラベルをつける %>
+        <% if @drink.free_drink == true %>
+          <div class="caption"><span>飲み放題</span></div>
+        <% end %>
       </div>
 
       <div class="show-content-title">
