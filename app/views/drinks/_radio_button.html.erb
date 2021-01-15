@@ -11,5 +11,7 @@
   <%= f.radio_button :drink_category_id_eq, '10' %>日本酒
   <%= f.radio_button :drink_category_id_eq, '11' %>ノンアルコール
   <%= f.radio_button :free_drink_eq, '1' %>飲み放題
-  <%= f.submit '検索', class: "btn btn-outline-primary ml-3" %>
+  <%= button_tag type: 'submit',class: 'btn btn-outline-primary btn-sm ml-3' do %>
+    <i class="fas fa-search mr-1"></i>検索
+  <% end %>
 <% end %>

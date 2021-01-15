@@ -1,12 +1,17 @@
 <div class="index-content-main">
   <div class="index-content-top">
-    <h1 class="drink-search-title">ドリンクメニュー</h1>
+    <h1 class="search-title">ドリンクメニュー</h1>
   </div>
 
-    <%# 検索ボタン %>
-    <div class="search-btn">
-      <%= render 'drinks/radio_button' %>
-    </div>
+  <%# 検索ボタン %>
+  <div class="search-btn">
+    <%= render 'drinks/radio_button' %>
+  </div>
+
+  <%# 検索セレクトボックス %>
+  <div class="select-search">
+    <%= render 'drinks/select_box' %>
+  </div>
 
     <%# 検索結果の一覧 %>
     <div class="index-content-form">

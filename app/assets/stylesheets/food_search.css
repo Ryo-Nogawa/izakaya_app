@@ -4,16 +4,26 @@
   margin: 20px 0;
 }
 
-.drink-search-title{
-  text-shadow: 0 5px 5px rgba(0, 0, 0, .5);
-  font-family: 'Noto Serif JP', serif;
-  margin: 20px 0;
-}
-
 .non-result-research{
   margin: 100px auto;
   background-color: lightgray;
   border-radius: 10px;
   color: red;
   padding: 30px;
+}
+
+@media (max-width: 500px){
+  .search-title{
+    text-align: center;
+  }
+
+  .non-result-research{
+    width: 90%;
+    padding: 30px 10px;
+  }
+
+  .non-result-research h3{
+    text-align: center;
+    font-size: 17px;
+  }
 }

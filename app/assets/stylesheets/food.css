@@ -27,7 +27,7 @@
   letter-spacing: 3px;
 }
 
-.search-pulldown{
+.select-search{
   display: none;
 }
 
@@ -135,6 +135,12 @@ input[type="radio"] {
 
   .search-btn{
     display: none;
+  }
+
+  .select-search{
+    display: block;
+    margin-top: 20px;
+    text-align: center;
   }
 
   .index-content-top{

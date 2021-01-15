@@ -8,6 +8,11 @@
     <%= render 'foods/radio_button' %>
   </div>
 
+  <%# 検索セレクトボックス %>
+  <div class="select-search">
+    <%= render 'foods/select_box' %>
+  </div>
+
   <%# 検索結果の一覧表示 %>
   <div class="index-content-form">
     <% if @results.length != 0 %>
