@@ -27,6 +27,10 @@
   letter-spacing: 3px;
 }
 
+.select-search{
+  display: none;
+}
+
 input[type="radio"] {
   margin-right: 5px;
 }
@@ -131,6 +135,12 @@ input[type="radio"] {
 
   .search-btn{
     display: none;
+  }
+
+  .select-search{
+    display: block;
+    margin-top: 20px;
+    text-align: center;
   }
 
   .index-content-top{
