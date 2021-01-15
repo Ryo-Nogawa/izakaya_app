@@ -4,6 +4,7 @@ class FoodsController < ApplicationController
 
   def index
     @foods = Food.all.order(food_category_id: :ASC)
+    set_category_column
   end
 
   def search
@@ -59,5 +60,9 @@ class FoodsController < ApplicationController
 
   def only_admin
     redirect_to root_path unless current_user.admin?
+  end
+
+  def set_category_column
+    @category_name = Food.select("food_category_id").distinct
   end
 end

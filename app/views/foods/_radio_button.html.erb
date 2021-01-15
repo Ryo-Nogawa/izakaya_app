@@ -10,5 +10,7 @@
   <%= f.radio_button :food_category_id_eq, '9' %>主食
   <%= f.radio_button :food_category_id_eq, '10' %>デザート
   <%= f.radio_button :free_food_eq, '1' %>食べ放題
-  <%= f.submit '検索', class: "btn btn-outline-primary ml-3" %>
+  <%= button_tag type: 'submit',class: 'btn btn-outline-primary btn-sm ml-3' do %>
+    <i class="fas fa-search mr-1"></i>検索
+  <% end %>
 <% end %>
