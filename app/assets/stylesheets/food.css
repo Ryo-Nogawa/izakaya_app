@@ -27,10 +27,6 @@
   letter-spacing: 3px;
 }
 
-.search-pulldown{
-  display: none;
-}
-
 input[type="radio"] {
   margin-right: 5px;
 }
