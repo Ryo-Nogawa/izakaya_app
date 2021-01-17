@@ -1,0 +1,6 @@
+<%= search_form_for @p, url: search_visuals_path do |f| %>
+  <%= f.collection_select :visual_category_id_eq, VisualCategory.where.not(id: 1), :id, :name %>
+  <%= button_tag type: 'submit',class: 'btn btn-outline-primary btn-sm ml-3' do %>
+    <i class="fas fa-search"></i>
+  <% end %>
+<% end %>
