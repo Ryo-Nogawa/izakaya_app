@@ -18,7 +18,7 @@
   <div class="visual-index-content container">
     <div class="row justify-content-md-center">
       <% @results.each do |visual| %>
-        <div class="col col-md-4 visual-col">
+        <div class="col-md-4 visual-col">
           <div class="visual-index-image">
             <%= image_tag visual.image.variant(resize: '400x400') %><br />
           </div>
