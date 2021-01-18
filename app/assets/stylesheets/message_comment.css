@@ -101,6 +101,7 @@
   .message-content{
     height: 650px;
     width: 90%;
+    margin-top: 30px;
   }
 
   #messages-comment-area{
