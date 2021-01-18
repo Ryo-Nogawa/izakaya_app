@@ -8,3 +8,14 @@
 .messages-main{
   padding-top: 60px;
 }
+
+@media (max-width: 500px){
+  .message-title{
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .messages-main{
+    padding-top: 50px;
+  }
+}
