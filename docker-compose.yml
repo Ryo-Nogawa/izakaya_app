@@ -3,7 +3,7 @@ services:
   app:
     build: 
       context: .
-    command: bundle exec puma -C cofig/puma.rb
+    command: bundle exec puma -C cofig/puma.rb -e production
     volumes: 
       - .:/izakaya_app
       - public-data: izakaya_app/public
@@ -12,16 +12,16 @@ services:
     depends_on: 
       - db
   
-  db:
-    image: mysql:5.6 
-    environment: 
-      MYSQL_ROOT_PASSWORD: password 
-      MYSQL_DATABASE: root 
-    volumes: 
+  # db:
+  #   image: mysql:5.6 
+  #   environment: 
+  #     MYSQL_ROOT_PASSWORD: password 
+  #     MYSQL_DATABASE: root 
+  #   volumes: 
       # データの永続化のため
-      - mysql-data:/var/lib/mysql
-    ports:
-      - "4306:3306"
+      # - mysql-data:/var/lib/mysql
+    # ports:
+    #   - "4306:3306"
   
   web:
     build: 
@@ -44,14 +44,11 @@ services:
       - tmp-data: /izakaya_app/tmp
     ports: 
       - "80:80"
-    links: 
-      - db
     environment: 
       # 環境変数の読み込み
       - BASIC_AUTH_USER
       - BASIC_AUTH_PASSWORD
-    depends_on: 
-      - app
+
   
 volumes: 
   mysql-data:
