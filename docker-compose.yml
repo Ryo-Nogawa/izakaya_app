@@ -32,6 +32,10 @@ services:
       - "3000:3000"
     links: 
       - db
+    environment: 
+      # 環境変数の読み込み
+      - BASIC_AUTH_USER
+      - BASIC_AUTH_PASSWORD
   
 volumes: 
   mysql-data:
