@@ -5,6 +5,7 @@ services:
       context: .
     command: bundle exec puma -C cofig/puma.rb -e production
     volumes: 
+      - type: volume
       - .:/izakaya_app
       - public-data: izakaya_app/public
       - tmp-data: /izakaya_app/tmp
@@ -36,6 +37,7 @@ services:
     # DB側のコンテナが出来上がってからwebを実行する
       - db
     volumes: 
+      - type: volume
       # ローカルのディレクトリをコンテナ上にマウント
       - .:/izakaya_app
       # bundle installした後にbuildし直さなくても良くなる
