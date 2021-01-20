@@ -9,7 +9,7 @@ services:
       # データの永続化のため
       - mysql-data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "4306:3306"
   
   web:
     build: 
