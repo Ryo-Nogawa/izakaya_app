@@ -15,3 +15,5 @@ RUN gem install bundler
 RUN bundle install
 
 ADD . /izakaya_app
+
+CMD ["rails", "server", "-b", "0.0.0.0"]
