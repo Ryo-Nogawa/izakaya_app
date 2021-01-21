@@ -40,7 +40,7 @@ jobs:
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
-      rubocopを走らせる
+      #rubocopを走らせる
       - run:
           name: Rubocop 
           command: bundle exec rubocop
