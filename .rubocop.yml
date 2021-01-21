@@ -10,6 +10,8 @@ AllCops:
     - "bin/*"
     - "node_modules/**/*"
     - "Gemfile" 
+  TargetRubyVersion: 2.6.6
+
 
 # 1行あたりの文字数をチェックする
 Layout/LineLength:
