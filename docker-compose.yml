@@ -1,51 +1,33 @@
 version: '2'
 services: 
-  app:
-    build: 
-      context: .
-    command: bundle exec puma -C cofig/puma.rb -e production
+  db:
+    image: mysql:5.6 
+    environment: 
+      MYSQL_ROOT_PASSWORD: password 
+      MYSQL_DATABASE: root 
     volumes: 
-      - type: volume
-      - .:/izakaya_app
-      - public-data: izakaya_app/public
-      - tmp-data: /izakaya_app/tmp
-      - log-data: /izakaya_app/log
-    depends_on: 
-      - db
-  
-  # db:
-  #   image: mysql:5.6 
-  #   environment: 
-  #     MYSQL_ROOT_PASSWORD: password 
-  #     MYSQL_DATABASE: root 
-  #   volumes: 
       # データの永続化のため
-      # - mysql-data:/var/lib/mysql
-    # ports:
-    #   - "4306:3306"
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "4306:3306"
+
   
   web:
-    build: 
-      context: container/nginx
-      dockerfile: Dockerfile 
-    command: bundle exec rails s -p 3000 -b "0.0.0.0"
     # コンテナ上でbinding.pryするために必要
     tty: true
     # コンテナ上でbinding.pryするために必要
     stdin_open: true
-    depends_on: 
-    # DB側のコンテナが出来上がってからwebを実行する
-      - db
+    build: .
+    command: bundle exec rails s -p 3000 -b "0.0.0.0"
     volumes: 
-      - type: volume
       # ローカルのディレクトリをコンテナ上にマウント
       - .:/izakaya_app
       # bundle installした後にbuildし直さなくても良くなる
       - bundle:/user/local/bundle
-      - public-data: /izakaya_app/public
-      - tmp-data: /izakaya_app/tmp
     ports: 
-      - "80:80"
+      - "3000:3000"
+    links: 
+      - db
     environment: 
       # 環境変数の読み込み
       - BASIC_AUTH_USER
@@ -56,7 +38,7 @@ volumes:
   mysql-data:
   # bundle installした後にbuildし直さなくてよくなる
   bundle:
-  public-data:
-  tmp-data:
-  log-data:
-  db-data:
+  # public-data:
+  # tmp-data:
+  # log-data:
+  # db-data:
