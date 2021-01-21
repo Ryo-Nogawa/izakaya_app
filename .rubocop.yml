@@ -12,6 +12,9 @@ AllCops:
   DisplayCopNames: true
   TargetRubyVersion: 2.6
 
+AsciiComments:
+  Enabled: false
+
 Style/AndOr:
   EnforcedStyle: conditionals
 
