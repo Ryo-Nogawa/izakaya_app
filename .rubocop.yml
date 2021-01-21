@@ -1,5 +1,6 @@
 AllCops:
   SuggestExtensions: false
+  NewCops: enable
   Exclude:
     - "tmp/**/*"
     - "config/initializers/*"
