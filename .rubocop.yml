@@ -2,11 +2,13 @@ AllCops:
 # 除外するディレクトリ（自動生成されたファイル）
 # デフォルト設定にある"vendor/**/*"が無効化されないように記述
   Exclude:
+    - "tmp/**/*"
+    - "config/initializers"
     - "vendor/**/*" # rubocop config/default.yml
-    - "db/**/*"
-    - "config/**/*"
-    - "bin/*"
+    - "db/shcema.rb"
     - "node_modules/**/*"
+    - "db/migrate/*.rb"
+    - "bin/*"
     - "Gemfile"
   TargetRubyVersion: 2.6.5
   DisplayCopNames: true
@@ -16,7 +18,7 @@ AllCops:
     EnforcedStyle: conditionals
 
   Style/AsciiComments:
-  Enabled: false
+    Enabled: false
 
   Style/Documentation:
     Enabled: false
