@@ -8,7 +8,7 @@ AllCops:
     - "bin/*"
     - "node_modules/**/*"
     - "Gemfile"
-  TargetRubyVersion: 2.6.6
+  TargetRubyVersion: 2.6.5
   DisplayCopNames: true
   SuggestExtensions: false
 
