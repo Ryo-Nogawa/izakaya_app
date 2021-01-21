@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class FoodsController < ApplicationController
-  before_action :search_product, only: [:index, :search]
-  before_action :only_admin, only: [:new, :create, :destroy, :edit, :update]
+  before_action :search_product, only: %i[index search]
+  before_action :only_admin, only: %i[new create destroy edit update]
 
   def index
     @foods = Food.all.order(food_category_id: :ASC)

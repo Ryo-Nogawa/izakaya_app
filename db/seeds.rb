@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 User.create(nickname: '店長',
             name: '管理者',
             name_kana: 'カンリシャ',

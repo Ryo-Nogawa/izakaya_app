@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # サーバ上でのアプリケーションコードが設置されているディレクトリを変数に入れておく
 app_path = File.expand_path('../..', __dir__)
 

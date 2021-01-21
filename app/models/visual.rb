@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Visual < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :visual_category

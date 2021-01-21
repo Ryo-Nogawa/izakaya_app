@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Food < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :food_category

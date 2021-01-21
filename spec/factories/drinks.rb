@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :drink do
     drink_category_id { Faker::Number.between(from: 2, to: 11) }

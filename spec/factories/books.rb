@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :book do
     reserve_date        { Faker::Date.between(from: 1.day.from_now, to: 1.year.from_now) }

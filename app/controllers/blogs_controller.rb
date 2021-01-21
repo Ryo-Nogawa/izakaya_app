@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class BlogsController < ApplicationController
-  before_action :only_admin, only: [:new, :create, :destroy, :edit, :update]
+  before_action :only_admin, only: %i[new create destroy edit update]
 
   def index
     @blogs = Blog.all.order(created_at: :DESC)
