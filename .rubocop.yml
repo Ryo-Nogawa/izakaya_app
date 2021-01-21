@@ -11,9 +11,6 @@ AllCops:
   TargetRubyVersion: 2.6.5
   DisplayCopNames: true
   SuggestExtensions: false
-  
-  Rails:
-    Enabled: true
 
   Style/AndOr:
     EnforcedStyle: conditionals
