@@ -47,13 +47,11 @@ jobs:
 
       # rsepecを走らせる
       - run:
-          name: Run rspec
+          name: RSpec
           command: |
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
               circleci tests split --split-by=timings)"
-        
-          # RsepecJunitFormatterをインストール
             bundle exec rspec \
               --format progress \
               --format RspecJunitFormatter \
