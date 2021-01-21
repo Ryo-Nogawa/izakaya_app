@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BlogCommentsController < ApplicationController
   def create
     # Ajax

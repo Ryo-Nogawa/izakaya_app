@@ -1,2 +1,6 @@
-module Admin::BooksHelper
+# frozen_string_literal: true
+
+module Admin
+  module BooksHelper
+  end
 end

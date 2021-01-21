@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Drink < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :drink_category

@@ -1,7 +1,9 @@
-class VisualsController < ApplicationController
-  before_action :only_admin, only: [:new, :create, :destroy, :edit, :update]
+# frozen_string_literal: true
 
-  before_action :search_product, only: [:index, :search]
+class VisualsController < ApplicationController
+  before_action :only_admin, only: %i[new create destroy edit update]
+
+  before_action :search_product, only: %i[index search]
 
   def index
     @visuals = Visual.all.order(visual_category_id: :ASC)

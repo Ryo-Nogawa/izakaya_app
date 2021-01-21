@@ -1,13 +1,17 @@
-class Admin::BooksController < ApplicationController
-  before_action :only_admin
+# frozen_string_literal: true
 
-  def index
-    @books = Book.includes(:user).order(reserve_date: :ASC)
-  end
+module Admin
+  class BooksController < ApplicationController
+    before_action :only_admin
 
-  private
+    def index
+      @books = Book.includes(:user).order(reserve_date: :ASC)
+    end
 
-  def only_admin
-    redirect_to root_path unless current_user.admin?
+    private
+
+    def only_admin
+      redirect_to root_path unless current_user.admin?
+    end
   end
 end

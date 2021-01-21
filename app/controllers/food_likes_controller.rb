@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FoodLikesController < ApplicationController
   before_action :set_food
 
