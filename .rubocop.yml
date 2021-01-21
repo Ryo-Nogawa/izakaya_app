@@ -8,13 +8,9 @@ AllCops:
     - "bin/*"
     - "node_modules/**/*"
     - "Gemfile"
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 2.6.5
   DisplayCopNames: true
   SuggestExtensions: false
-
-  Rails:
-    Enabled: true
-  
   
   # 1行あたりの文字数をチェックする
   Layout/LineLength:
