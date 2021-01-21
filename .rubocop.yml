@@ -1,39 +1,80 @@
 AllCops:
 # 除外するディレクトリ（自動生成されたファイル）
 # デフォルト設定にある"vendor/**/*"が無効化されないように記述
-  Exclude:
-    - "tmp/**/*"
-    - "config/initializers"
-    - "vendor/**/*" # rubocop config/default.yml
-    - "db/shcema.rb"
-    - "node_modules/**/*"
-    - "db/migrate/*.rb"
-    - "bin/*"
-    - "Gemfile"
-  TargetRubyVersion: 2.6.5
-  DisplayCopNames: true
-  SuggestExtensions: false
+ Exclude:
+   - "vendor/**/*" # rubocop config/default.yml
+   - "db/**/*"
+   - "config/**/*"
+   - "bin/*"
+   - "node_modules/**/*"
+   - "Gemfile"
 
-  Rails:
-    Enabled: true
+# 1行あたりの文字数をチェックする
+Layout/LineLength:
+ Max: 130
+# 下記ファイルはチェックの対象から外す
+ Exclude:
+   - "Rakefile"
+   - "spec/rails_helper.rb"
+   - "spec/spec_helper.rb"
 
-  Style/AndOr:
-    EnforcedStyle: conditionals
+# RSpecは1つのブロックあたりの行数が多くなるため、チェックの除外から外す
+# ブロック内の行数をチェックする
+Metrics/BlockLength:
+ Exclude:
+   - "spec/**/*"
 
-  Style/AsciiComments:
-    Enabled: false
+# Assignment: 変数への代入
+# Branch: メソッド呼び出し
+# Condition: 条件文
+# 上記項目をRubocopが計算して基準値を超えると警告を出す（上記頭文字をとって'Abc'）
+Metrics/AbcSize:
+ Max: 50
 
-  Style/Documentation:
-    Enabled: false
+# メソッドの中身が複雑になっていないか、Rubocopが計算して基準値を超えると警告を出す
+Metrics/PerceivedComplexity:
+ Max: 8
 
-  Style/NumericLiterals:
-    Enabled: false
+# 循環的複雑度が高すぎないかをチェック（ifやforなどを1メソッド内で使いすぎている）
+Metrics/CyclomaticComplexity:
+ Max: 10
 
-  Style/ClassAndModuleChildren:
-    Enabled: false
+# メソッドの行数が多すぎないかをチェック
+Metrics/MethodLength:
+ Max: 30
 
-  Bundler/OrderedGems:
-    Enabled: false
+# ネストが深すぎないかをチェック（if文のネストもチェック）
+Metrics/BlockNesting:
+ Max: 5
 
-  Lint/ShadowedException:
-    Enabled: false
+# クラスの行数をチェック（無効）
+Metrics/ClassLength:
+ Enabled: false
+
+# 空メソッドの場合に、1行のスタイルにしない　NG例：def style1; end
+Style/EmptyMethod:
+ EnforcedStyle: expanded
+
+# クラス内にクラスが定義されていないかチェック（無効）
+Style/ClassAndModuleChildren:
+ Enabled: false
+
+# 日本語でのコメントを許可
+Style/AsciiComments:
+ Enabled: false
+
+# クラスやモジュール定義前に、それらの説明書きがあるかをチェック（無効）
+Style/Documentation:
+ Enabled: false
+
+# ％i（）構文を使用していないシンボルで構成される配列リテラルをチェック（無効）
+Style/SymbolArray:
+ Enabled: false
+
+# 文字列に値が代入されて変わっていないかチェック（無効）
+Style/FrozenStringLiteralComment:
+ Enabled: false
+
+# メソッドパラメータ名の最小文字数を設定
+Naming/MethodParameterName:
+ MinNameLength: 1
