@@ -508,4 +508,5 @@
   * テストツール:  RSpec
   * コードレビュー：  Rubocop
   * デプロイ:Capistrano
+  * その他環境構築: Docker, docker-compose, CircleCi
 
