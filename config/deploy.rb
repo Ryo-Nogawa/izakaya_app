@@ -45,7 +45,7 @@ set :slack_notify_events, [:finished, :failed, :started]
 set :slack_fields, ['status', 'stage', 'branch', 'hosts']
 
 # デプロイ開始
-before 'slack:notify_starting', :deploy_starting do
+before 'slack:notify_started', :deploy_starting do
   set :slack_emoji, ':pray:'
   set :slack_username, "デプロイ開始!"
 end
