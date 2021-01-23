@@ -290,7 +290,7 @@
   - [x] スマホでも操作できるようなレスポンシブ対応
   - [x] LINE@での対応
   - [x] Dockerの構築
-  - [x] CircleCiを使ってRSpecとRubocopとデプロイの自動化
+  - [ ] CircleCiを使ってRSpecとRubocopとデプロイの自動化
 
 
 # テーブル設計
