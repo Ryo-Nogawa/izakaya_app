@@ -25,6 +25,11 @@ services:
       - .:/izakaya_app
       # bundle installした後にbuildし直さなくても良くなる
       - bundle:/user/local/bundle
+      # ホストからマウントする必要のないディレクトリを上書きする
+      - /app/vendor
+      - /app/tmp
+      - /app/log
+      - /app/.git
     ports: 
       - "3000:3000"
     links: 
