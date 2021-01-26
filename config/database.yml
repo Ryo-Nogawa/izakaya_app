@@ -15,7 +15,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: 
-  socket: /tmp/mysql.socket
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -23,7 +23,7 @@ development:
   username: root
   password: password
   host: db
-  socket: /tmp/mysql.socket
+  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
