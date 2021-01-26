@@ -16,27 +16,10 @@ RSpec.describe '予約', type: :system do
 
   context '予約が完了するとき' do
     it 'ログインしたユーザーは予約することができる' do
-      # basic認証
+      # basic認証を入力する
       basic_auth new_user_session_path
-      # 新規登録ページへ移動する
-      visit new_user_registration_path
-      # ユーザー情報を入力する
-      fill_in 'user[nickname]', with: @user.nickname
-      fill_in 'user[name]', with: @user.name
-      fill_in 'user[name_kana]', with: @user.name_kana
-      fill_in 'user[age]', with: @user.age
-      fill_in 'user[phone_number]', with: @user.phone_number
-      fill_in 'user[email]', with: @user.email
-      fill_in 'user[password]', with: @user.password
-      fill_in 'user[password_confirmation]', with: @user.password_confirmation
-      # 確認画面ボタンを押すと今入力した情報を確認できる
-      find('input[name="commit"]').click
-      # 登録するボタンを押すとユーザーモデルのカウントが1上がることを確認する
-      expect do
-        find('input[name="commit"]').click
-      end.to change { User.count }.by(1)
-      # ログインボタンをクリックする
-      find_link('ログイン画面', href: root_path).click
+      # ユーザー登録
+      user_regitstration(@user)
       # sign_in情報を入力する
       sign_in(@user)
       # 予約ページへのリンクがあることを確認する
@@ -67,25 +50,8 @@ RSpec.describe '予約', type: :system do
   end
   context '予約がうまくいかないとき' do
     it '入力フォームが空の時' do
-      # 新規登録ページへ移動する
-      visit new_user_registration_path
-      # ユーザー情報を入力する
-      fill_in 'user[nickname]', with: @user.nickname
-      fill_in 'user[name]', with: @user.name
-      fill_in 'user[name_kana]', with: @user.name_kana
-      fill_in 'user[age]', with: @user.age
-      fill_in 'user[phone_number]', with: @user.phone_number
-      fill_in 'user[email]', with: @user.email
-      fill_in 'user[password]', with: @user.password
-      fill_in 'user[password_confirmation]', with: @user.password_confirmation
-      # 確認画面ボタンを押すと今入力した情報を確認できる
-      find('input[name="commit"]').click
-      # 登録するボタンを押すとユーザーモデルのカウントが1上がることを確認する
-      expect do
-        find('input[name="commit"]').click
-      end.to change { User.count }.by(1)
-      # ログインボタンをクリックする
-      find_link('ログイン画面', href: root_path).click
+      # ユーザー新規登録
+      user_regitstration(@user)
       # sign_in情報を入力する
       sign_in(@user)
       # 予約ページへのリンクがあることを確認する
