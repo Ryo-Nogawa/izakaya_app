@@ -9,6 +9,7 @@ end
 RSpec.describe 'ドリンク', type: :system do
   before do
     @drink = FactoryBot.build(:drink)
+    @user = FactoryBot.build(:user)
   end
   # seedファイルを読み込む
   before(:each) do
@@ -49,6 +50,20 @@ RSpec.describe 'ドリンク', type: :system do
       expect(page).to have_content(@drink.title)
       expect(page).to have_content(@drink.price)
       expect(page).to have_content('ビール')
+    end
+  end
+
+  context 'ドリンクの投稿が出来ないとき' do
+    it 'admin以外でログインしているときは新規投稿ボタンが存在しない' do
+      # ユーザー新規登録する
+      user_regitstration(@user)
+      # ログインする
+      sign_in(@user)
+      # ドリンク一覧ページへ遷移する
+      expect(page).to have_content("お飲み物")
+      visit drinks_path
+      # 新規投稿ボタンがないことを確認する
+      expect(page).to have_no_content("新規投稿")
     end
   end
 end
