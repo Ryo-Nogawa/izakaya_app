@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 def basic_auth(path)
@@ -11,11 +13,10 @@ RSpec.describe 'フード', type: :system do
     @food = FactoryBot.build(:food)
     @user = FactoryBot.build(:user)
   end
-  #seedファイルを読み込む
+  # seedファイルを読み込む
   before(:each) do
-    load Rails.root.join("db/seeds.rb")
+    load Rails.root.join('db/seeds.rb')
   end
-
 
   context 'フード投稿が完了するとき' do
     it 'adminでログインしたときに投稿することができる' do
@@ -27,7 +28,7 @@ RSpec.describe 'フード', type: :system do
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       # お飲み物ボタンをクリック
-      expect(page).to have_content("お料理")
+      expect(page).to have_content('お料理')
       visit foods_path
       # 新規投稿ボタンをクリック
       find_link('新規作成', href: new_food_path).click
@@ -43,7 +44,7 @@ RSpec.describe 'フード', type: :system do
         find('input[value="投稿する"]').click
       end.to change { Food.count }.by(1)
       # 投稿完了ページに遷移することを確認する
-      expect(page).to have_content("投稿が完了しました")
+      expect(page).to have_content('投稿が完了しました')
       # ドリンク一覧ページに投稿した内容が存在する
       find_link('一覧へ戻る', href: foods_path).click
       expect(page).to have_selector("img[src$='test_image.png']")
@@ -60,10 +61,10 @@ RSpec.describe 'フード', type: :system do
       # ログインする
       sign_in(@user)
       # ドリンク一覧ページへ遷移する
-      expect(page).to have_content("お料理")
+      expect(page).to have_content('お料理')
       visit foods_path
       # 新規投稿ボタンがないことを確認する
-      expect(page).to have_no_content("新規作成")
+      expect(page).to have_no_content('新規作成')
     end
   end
 end

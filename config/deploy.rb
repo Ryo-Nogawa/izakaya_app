@@ -35,29 +35,29 @@ namespace :deploy do
 end
 
 # 通知
-set :slack_url, "https://hooks.slack.com/services/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"
-set :slack_channel, "Ryo Nogawa"
+set :slack_url, 'https://hooks.slack.com/services/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'
+set :slack_channel, 'Ryo Nogawa'
 
 # 通知リスト
-set :slack_notify_events, [:finished, :failed, :started]
+set :slack_notify_events, %i[finished failed started]
 
 # 通知のカスタマイズ
-set :slack_fields, ['status', 'stage', 'branch', 'hosts']
+set :slack_fields, %w[status stage branch hosts]
 
 # デプロイ開始
 before 'slack:notify_started', :deploy_starting do
   set :slack_emoji, ':pray:'
-  set :slack_username, "デプロイ開始!"
+  set :slack_username, 'デプロイ開始!'
 end
 
 # デプロイ成功
 before 'slack:notify_finished', :deploy_success do
   set :slack_emoji, ':dancers:'
-  set :slack_username, "デプロイ成功!!!"
+  set :slack_username, 'デプロイ成功!!!'
 end
 
 # デプロイ失敗
 before 'slack:notify_failed', :deploy_failure do
   set :slack_emoji, ':imp:'
-  set :slack_username, "デプロイ失敗..."
+  set :slack_username, 'デプロイ失敗...'
 end
