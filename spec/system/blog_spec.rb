@@ -48,4 +48,18 @@ RSpec.describe 'ブログ', type: :system do
       expect(page).to have_content(@blog.title)
     end
   end
+
+  context "ブログの投稿ができない時" do
+    it "admin以外でログインしているときは新規投稿ボタンが存在しない" do
+      # ユーザー新規登録する
+      user_regitstration(@user)
+      # ログインする
+      sign_in(@user)
+      # ドリンク一覧ページへ遷移する
+      expect(page).to have_content('ブログ')
+      visit blogs_path
+      # 新規投稿ボタンがないことを確認する
+      expect(page).to have_no_content('新規投稿')
+    end
+  end
 end
