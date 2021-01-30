@@ -29,6 +29,17 @@
   margin: 0;
 }
 
+.trash-icon{
+  font-size: 1.5em;
+  color: lightgray;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.trash-icon:hover{
+  color: #F30;
+}
+
 .mymessage-content p{
   display: inline-block;
   position: relative;

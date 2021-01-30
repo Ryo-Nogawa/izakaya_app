@@ -14,6 +14,13 @@ class MessagesController < ApplicationController
     end
   end
 
+  def destroy
+    message = Message.find(params[:id])
+    if message.destroy
+      redirect_to messages_path
+    end
+  end
+
   private
 
   def message_params
