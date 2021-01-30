@@ -4,7 +4,9 @@
       <% if message.user_id == current_user.id %>
         <div class="mymessage">
           <div class="mymessage-content">
-            <%= link_to '削除する', message_path(message.id), method: :DELETE %>
+            <%= link_to message_path(message.id), method: :DELETE do %>
+              <i class="fas fa-trash-alt trash-icon"></i>
+            <% end %>
             <p><%= message.content %></p>
           </div>
           <div class="mymessage-daytime">
