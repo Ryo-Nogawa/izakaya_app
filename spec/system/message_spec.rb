@@ -52,6 +52,26 @@ RSpec.describe 'メッセージ', type: :system do
       expect(page).to have_content(@message.content)
       # 削除ボタンがあることを確認する
       find(".trash-icon").click
+      # 削除したメッセージがないことを確認する
+      expect(page).to have_no_content(@message.content)
+    end
+  end
+
+  context "メッセージが送信できないとき" do
+    it 'メッセージが空の時送信できない' do
+      # ユーザー登録する
+      user_regitstration(@user)
+      # ログインする
+      sign_in(@user)
+      # ご意見/ご要望ページへ遷移する
+      expect(page).to have_content("ご意見/ご要望")
+      visit messages_path
+      # メッセージ内容を空欄にする
+      fill_in "message[content]", with: ""
+      # 送信ボタンをクリックする
+      find(".message-btn").click
+      # 送信した内容がないことを確認する
+      expect(page).to have_no_content(@message.content)
     end
   end
 end
