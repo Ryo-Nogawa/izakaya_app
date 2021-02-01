@@ -277,4 +277,55 @@ RSpec.describe 'ドリンク', type: :system do
       expect(page).to have_no_content("削除")
     end
   end
+
+  context "ドリンクメニューにコメントを残す" do
+    it "入力内容があればコメントを残すことができる" do
+      # adminでログインする
+      visit new_user_session_path
+      fill_in 'user[email]', with: 'admin@admin.com'
+      fill_in 'user[password]', with: '000aaa'
+      find('input[name="commit"]').click
+      expect(current_path).to eq root_path
+      # お飲み物ボタンをクリック
+      expect(page).to have_content('お飲み物')
+      visit drinks_path
+      # 新規投稿ボタンをクリック
+      find_link('新規作成', href: new_drink_path).click
+      expect(current_path).to eq new_drink_path
+      # フォームを入力する
+      fill_in 'drink[title]', with: @drink.title
+      fill_in 'drink[detail]', with: @drink.detail
+      fill_in 'drink[price]', with: @drink.price
+      select 'ビール', from: 'drink[drink_category_id]'
+      attach_file('drink[image]', 'public/images/test_image.png', make_visible: true)
+      # 投稿するボタンをクリック
+      expect do
+        find('input[value="投稿する"]').click
+      end.to change { Drink.count }.by(1)
+      # 投稿完了ページに遷移することを確認する
+      expect(page).to have_content('投稿が完了しました')
+      # ドリンク一覧ページに投稿した内容が存在する
+      find_link('一覧へ戻る', href: drinks_path).click
+      expect(page).to have_selector("img[src$='test_image.png']")
+      expect(page).to have_content(@drink.title)
+      expect(page).to have_content(@drink.price)
+      expect(page).to have_content('ビール')
+      # ログアウトする
+      click_on "ログアウト"
+      # ユーザー新規登録する
+      user_regitstration(@user)
+      # ログインする
+      sign_in(@user)
+      # ドリンク一覧ページへ遷移する
+      expect(page).to have_content('お飲み物')
+      visit drinks_path
+      # メニューの画像をクリックする
+      find(".index-content-image").click
+      # コメント欄にコメントを入力する
+      fill_in "drink_comment[comment]", with: Faker::Lorem.characters(number: 100)
+      # 送信ボタンをクリック
+      find(".comment-submit").click
+    end
+
+  end
 end
