@@ -67,4 +67,66 @@ RSpec.describe 'フード', type: :system do
       expect(page).to have_no_content('新規作成')
     end
   end
+
+  context "フードの編集" do
+    it "adminでログインしているときに詳細ページから編集できる" do
+      # adminでログインする
+      visit new_user_session_path
+      fill_in "user[email]", with: "admin@admin.com"
+      fill_in "user[password]", with: "000aaa"
+      find('input[name="commit"]').click
+      expect(current_path).to eq root_path
+      # お料理ボタンをクリックする
+      expect(page).to have_content("お料理")
+      visit foods_path
+      # 新規作成ボタンをクリックする
+      find_link("新規作成", href: new_food_path).click
+      expect(current_path).to eq new_food_path
+      # フォームを入力する
+      fill_in "food[title]", with: @food.title
+      fill_in "food[detail]", with: @food.detail
+      fill_in "food[price]", with: @food.price
+      select "今月のおすすめ", from: "food[food_category_id]"
+      attach_file("food[image]", "public/images/test_image.png", make_visible: true)
+      # 投稿するボタンをクリック
+      expect do
+        find('input[value="投稿する"]').click
+      end.to change { Food.count }.by(1)
+      # 投稿完了ページに遷移することを確認する
+      expect(page).to have_content("投稿が完了しました")
+      # フード一覧ページに投稿した内容が存在することを確認する
+      find_link("一覧へ戻る", href: foods_path).click 
+      expect(page).to have_selector("img[src$='test_image.png']")
+      expect(page).to have_content(@food.title)
+      expect(page).to have_content(@food.price)
+      expect(page).to have_content("今月のおすすめ")
+      # フードの画像をクリックする
+      find(".index-content-image").click 
+      # 投稿した内容があるのか確認する
+      expect(page).to have_selector("img[src$='test_image.png']")
+      expect(page).to have_content(@food.title)
+      expect(page).to have_content(@food.detail)
+      expect(page).to have_content(@food.price)
+      expect(page).to have_content("今月のおすすめ")
+      # 編集ボタンをクリックする
+      click_on "編集"
+      # 編集内容を入力する
+      fill_in "food[title]", with: @food.title
+      fill_in "food[detail]", with: @food.detail
+      fill_in "food[price]", with: @food.price
+      # 投稿するボタンをクリックする
+      expect do
+        find('input[value="投稿する"]').click
+      end.to change { Food.count }.by(0)
+      # 編集完了ページに遷移することを確認する
+      expect(page).to have_content("編集が完了しました")
+      # 詳細画面に戻り、編集した内容が存在するかを確認する
+      click_on "詳細へ戻る"
+      expect(page).to have_selector("img[src$='test_image.png']")
+      expect(page).to have_content(@food.title)
+      expect(page).to have_content(@food.detail)
+      expect(page).to have_content(@food.price)
+      expect(page).to have_content("今月のおすすめ")
+    end
+  end
 end
