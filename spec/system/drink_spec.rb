@@ -326,6 +326,5 @@ RSpec.describe 'ドリンク', type: :system do
       # 送信ボタンをクリック
       find(".comment-submit").click
     end
-
   end
 end
