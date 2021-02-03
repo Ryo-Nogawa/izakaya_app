@@ -151,4 +151,43 @@ RSpec.describe 'ブログ', type: :system do
       expect(page).to have_no_content("編集")
     end
   end
+
+  context "削除できる時" do
+    it "adminでログインしているときは削除できる" do
+      # adminでログインする
+      visit new_user_session_path
+      fill_in "user[email]", with: "admin@admin.com"
+      fill_in "user[password]", with: "000aaa"
+      find('input[name="commit"]').click 
+      expect(current_path).to eq root_path
+      # ブログボタンをクリック
+      expect(page).to have_content("ブログ")
+      visit blogs_path
+      # 新規投稿ボタンをクリック
+      find_link("新規投稿", href: new_blog_path).click 
+      expect(current_path).to eq new_blog_path
+      # フォームを入力する
+      attach_file("blog[image]", "public/images/test_image.png", make_visible: true)
+      fill_in "blog[title]", with: @blog.title
+      fill_in "blog[text]", with: @blog.text
+      # 投稿するボタンをクリックする
+      expect do
+        find('input[value="投稿する"]').click
+      end.to change { Blog.count }.by(1)
+      # 投稿完了ページに遷移することを確認する
+      expect(page).to have_content("投稿が完了しました")
+      # ブログ一覧ページに投稿した内容が存在する
+      find_link("一覧へ戻る", href: blogs_path).click 
+      expect(page).to have_selector("img[src$='test_image.png']")
+      expect(page).to have_content(@blog.title)
+      # 削除ボタンをクリック
+      click_on "削除"
+      # 削除完了ページに遷移する
+      expect(page).to have_content("投稿の削除が完了しました")
+      # ブログ一覧ページに遷移して、削除した内容がないことを確認する
+      find_link("一覧へ戻る", href: blogs_path).click 
+      expect(page).to have_no_selector("img[src$='test_image.png']")
+      expect(page).to have_no_content(@blog.title)
+    end
+  end
 end
