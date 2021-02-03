@@ -62,4 +62,51 @@ RSpec.describe 'ブログ', type: :system do
       expect(page).to have_no_content('新規投稿')
     end
   end
+
+  context "ブログの編集" do
+    it "adminでログインしているときに詳細ページから編集できる" do
+      # adminでログインする
+      visit new_user_session_path
+      fill_in "user[email]", with: "admin@admin.com"
+      fill_in "user[password]", with: "000aaa"
+      find('input[name="commit"]').click 
+      expect(current_path).to eq root_path
+      # ブログボタンをクリック
+      expect(page).to have_content("ブログ")
+      visit blogs_path
+      # 新規投稿ボタンをクリック
+      find_link("新規投稿", href: new_blog_path).click 
+      expect(current_path).to eq new_blog_path
+      # フォームを入力する
+      attach_file("blog[image]", "public/images/test_image.png", make_visible: true)
+      fill_in "blog[title]", with: @blog.title
+      fill_in "blog[text]", with: @blog.text
+      # 投稿するボタンをクリックする
+      expect do
+        find('input[value="投稿する"]').click
+      end.to change { Blog.count }.by(1)
+      # 投稿完了ページに遷移することを確認する
+      expect(page).to have_content("投稿が完了しました")
+      # ドリンク一覧ページに投稿した内容が存在する
+      find_link("一覧へ戻る", href: blogs_path).click 
+      expect(page).to have_selector("img[src$='test_image.png']")
+      expect(page).to have_content(@blog.title)
+      # 編集ボタンをクリック
+      click_on "編集"
+      # 編集内容を入力する
+      fill_in "blog[title]", with: @blog.title
+      fill_in "blog[text]", with: @blog.text
+      # 投稿するボタンをクリック
+      expect do
+        find('input[value="投稿する"]').click
+      end.to change { Blog.count }.by(0)
+      # 編集完了ページに遷移することを確認する
+      expect(page).to have_content("編集が完了しました")
+      # 詳細画面に戻り編集した内容が存在するかを確認する
+      click_on "詳細へ戻る"
+      expect(page).to have_selector("img[src$='test_image.png']")
+      expect(page).to have_content(@blog.title)
+      expect(page).to have_content(@blog.text)
+    end
+  end
 end
