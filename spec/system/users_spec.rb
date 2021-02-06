@@ -68,4 +68,45 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       expect(current_path).to eq '/users/sign_up/confirm'
     end
   end
+
+  context "ユーザー情報を変更する" do
+    it "ログインしているユーザーは情報を変更できる" do
+      # ユーザー新規登録する
+      user_regitstration(@user)
+      # ログインする
+      sign_in(@user)
+      # 登録したニックネームが表示されていることを確認する
+      expect(page).to have_content(@user.nickname)
+      # ニックネームをクリックする
+      find(".nickname-btn").click
+      # フォームを再入力する
+      fill_in 'user_nickname', with: @user.nickname
+      fill_in 'user_name', with: @user.name
+      fill_in 'user_name_kana', with: @user.name_kana
+      fill_in 'user_age', with: @user.age
+      fill_in 'user_phone_number', with: @user.phone_number
+      fill_in 'user_email', with: @user.email
+      fill_in 'user_password', with: @user.password
+      fill_in 'user_password_confirmation', with: @user.password_confirmation
+      # 登録するボタンをクリックする
+      expect do
+        find('input[name="commit"]').click
+      end.to change { User.count }.by(0)
+      # 完了ページに遷移する
+      expect(page).to have_content("ユーザー情報を更新しました")
+      # 修正した内容が存在することを確認する
+      expect(page).to have_content(@user.nickname)
+      expect(page).to have_content(@user.name)
+      expect(page).to have_content(@user.name_kana)
+      expect(page).to have_content(@user.age)
+      expect(page).to have_content(@user.phone_number)
+      expect(page).to have_content(@user.email)
+      # ログインするボタンをクリック
+      click_on "ログインする"
+      #  ログインする
+      sign_in(@user)
+      # トップページに遷移していることを確認する
+      expect(current_path).to eq root_path
+    end
+  end
 end
