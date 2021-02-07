@@ -1,7 +1,7 @@
 <%# 混雑状況のラジオボタン %>
-<div class="congestion">
-  <% if current_user.admin? %>
-    <form action="" name="congestionForm" class="congestion-form">
+<%# <div class="congestion"> %>
+  <%# <% if current_user.admin? %> %>
+    <%# <form action="" name="congestionForm" class="congestion-form">
       <input type="radio" id="congestion1" name="congestion-situation" onchange="onRadioButtonChange();" />
         <label for="congestion1">〜2割</label>
       <input type="radio" id="congestion2" name="congestion-situation" onchange="onRadioButtonChange();" />
@@ -10,13 +10,13 @@
         <label for="congestion3">6割〜8割</label>
       <input type="radio" id="congestion4" name="congestion-situation" onchange="onRadioButtonChange();" />
         <label for="congestion4">9割〜満席</label>
-    </form>
-  <% else %>
+    </form> %>
+  <%# <% else %> %>
 
     <%# 出力結果を表示させる場所 %>
-    <div class="congestion-output">現在のお店の空き状況は<span id="output"></span></div>
-  <% end %>
-</div>
+    <%# <div class="congestion-output">現在のお店の空き状況は<span id="output"></span></div> %>
+  <%# <% end %> %>
+<%# </div> %>
 
 <div class="top-main">
   <div class="main-content">
