@@ -1,3 +1,16 @@
+<%# 混雑状況のラジオボタン %>
+<div class="congestion">
+  <form action="" name="congestion-form">
+    <input type="radio" id="congestion1" name="congestion-situation" onchnage="onRadioButtonChange();">〜2割
+    <input type="radio" id="congestion2" name="congestion-situation" onchnage="onRadioButtonChange();">3割〜5割
+    <input type="radio" id="congestion3" name="congestion-situation" onchnage="onRadioButtonChange();">6割〜8割
+    <input type="radio" id="congestion4" name="congestion-situation" onchnage="onRadioButtonChange();">9割〜満席
+  </form>
+
+  <%# 出力結果を表示させる場所 %>
+  <div id="output"></div>
+</div>
+
 <div class="top-main">
   <div class="main-content">
     <div class="card booking-card">
