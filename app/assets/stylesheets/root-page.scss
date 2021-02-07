@@ -5,7 +5,7 @@
 }
 
 .main-content{
-  padding-top: 200px;
+  padding-top: 100px;
 }
 
 .card{
@@ -102,6 +102,50 @@
 
 .drink-card{
   background-image: image-url("beer.jpeg");
+}
+
+.congestion{
+  padding-top: 80px;
+  text-align: center;
+}
+
+.congestion-form input[type=radio]{
+  // ラジオボタンを非表示
+  display: none;
+}
+
+.congestion-form label{
+  margin: 0 10px;
+  border: 2px solid #0066FF;
+  width: 100px;
+  height: 45px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #0066FF;
+  text-align: center;
+  cursor: pointer;
+  line-height: 45px;
+  border-radius: 5px;
+}
+
+.congestion-form input[type="radio"]:checked + label{
+  background-color: #0066FF;
+  color: white;
+  font-weight: bold;
+}
+
+.congestion-output{
+  font-size: 20px;
+  background-color: yellow;
+  padding: 10px;
+  // margin-top: -50px;
+}
+
+#output{
+  color: red;
+  font-weight: bold;
+  margin-left: 5px;
+  font-size: 25px;
 }
 
 @media (max-width: 500px){

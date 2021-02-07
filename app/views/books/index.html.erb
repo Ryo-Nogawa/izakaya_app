@@ -1,14 +1,21 @@
 <%# 混雑状況のラジオボタン %>
 <div class="congestion">
-  <form action="" name="congestionForm">
-    <input type="radio" id="congestion1" name="congestion-situation" onchange="onRadioButtonChange();" />〜2割
-    <input type="radio" id="congestion2" name="congestion-situation" onchange="onRadioButtonChange();" />3割〜5割
-    <input type="radio" id="congestion3" name="congestion-situation" onchange="onRadioButtonChange();" />6割〜8割
-    <input type="radio" id="congestion4" name="congestion-situation" onchange="onRadioButtonChange();" />9割〜満席
-  </form>
+  <% if current_user.admin? %>
+    <form action="" name="congestionForm" class="congestion-form">
+      <input type="radio" id="congestion1" name="congestion-situation" onchange="onRadioButtonChange();" />
+        <label for="congestion1">〜2割</label>
+      <input type="radio" id="congestion2" name="congestion-situation" onchange="onRadioButtonChange();" />
+        <label for="congestion2">3割〜5割</label>
+      <input type="radio" id="congestion3" name="congestion-situation" onchange="onRadioButtonChange();" />
+        <label for="congestion3">6割〜8割</label>
+      <input type="radio" id="congestion4" name="congestion-situation" onchange="onRadioButtonChange();" />
+        <label for="congestion4">9割〜満席</label>
+    </form>
+  <% else %>
 
-  <%# 出力結果を表示させる場所 %>
-  <div id="output"></div>
+    <%# 出力結果を表示させる場所 %>
+    <div class="congestion-output">現在のお店の空き状況は<span id="output"></span></div>
+  <% end %>
 </div>
 
 <div class="top-main">
@@ -74,13 +81,13 @@
     target = document.getElementById("output");
     
     if (check1.checked == true) {
-      target.innerHTML = "〜2割<br/>";
+      target.innerHTML = "ガラガラです<br/>";
     } else if (check2.checked == true) {
-      target.innerHTML = "3割〜5割<br/>";
+      target.innerHTML = "すぐにご案内可能です<br/>";
     } else if (check3.checked == true) {
-      target.innerHTML = "6割〜8割<br/>";
+      target.innerHTML = "やや混んできています<br/>";
     } else if (check4.checked == true) {
-      target.innerHTML = "9割〜満席<br/>";
+      target.innerHTML = "満席に近いです<br/>";
     }
   }
 </script>
