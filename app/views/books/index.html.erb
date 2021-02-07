@@ -1,10 +1,10 @@
 <%# 混雑状況のラジオボタン %>
 <div class="congestion">
-  <form action="" name="congestion-form">
-    <input type="radio" id="congestion1" name="congestion-situation" onchnage="onRadioButtonChange();">〜2割
-    <input type="radio" id="congestion2" name="congestion-situation" onchnage="onRadioButtonChange();">3割〜5割
-    <input type="radio" id="congestion3" name="congestion-situation" onchnage="onRadioButtonChange();">6割〜8割
-    <input type="radio" id="congestion4" name="congestion-situation" onchnage="onRadioButtonChange();">9割〜満席
+  <form action="" name="congestionForm">
+    <input type="radio" id="congestion1" name="congestion-situation" onchange="onRadioButtonChange();" />〜2割
+    <input type="radio" id="congestion2" name="congestion-situation" onchange="onRadioButtonChange();" />3割〜5割
+    <input type="radio" id="congestion3" name="congestion-situation" onchange="onRadioButtonChange();" />6割〜8割
+    <input type="radio" id="congestion4" name="congestion-situation" onchange="onRadioButtonChange();" />9割〜満席
   </form>
 
   <%# 出力結果を表示させる場所 %>
@@ -62,3 +62,25 @@
 </div>
 
 <%#= link_to 'チャットルーム作成', new_room_path %>
+
+<%# 混雑状況のjs %>
+<script>
+  function onRadioButtonChange() {
+    check1 = document.getElementById("congestion1");
+    check2 = document.getElementById("congestion2");
+    check3 = document.getElementById("congestion3");
+    check4 = document.getElementById("congestion4");
+    
+    target = document.getElementById("output");
+    
+    if (check1.checked == true) {
+      target.innerHTML = "〜2割<br/>";
+    } else if (check2.checked == true) {
+      target.innerHTML = "3割〜5割<br/>";
+    } else if (check3.checked == true) {
+      target.innerHTML = "6割〜8割<br/>";
+    } else if (check4.checked == true) {
+      target.innerHTML = "9割〜満席<br/>";
+    }
+  }
+</script>
