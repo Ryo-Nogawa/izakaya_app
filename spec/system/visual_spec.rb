@@ -61,4 +61,43 @@ RSpec.describe 'フード', type: :system do
       expect(page).to have_no_content('新規作成')
     end
   end
+
+  context "外観/内装の編集" do
+    it "adminでログインしている時は編集できる" do
+      # adminでログインする
+      visit new_user_session_path
+      fill_in "user[email]", with: "admin@admin.com"
+      fill_in "user[password]", with: "000aaa"
+      find('input[name="commit"]').click
+      expect(current_path).to eq root_path
+      # 外観/内装ボタンをクリック
+      expect(page).to have_content("外観/内装")
+      visit visuals_path
+      # 新規作成ボタンをクリック
+      find_link("新規作成", href: new_visual_path).click
+      expect(current_path).to eq new_visual_path
+      # フォームを入力する
+      attach_file("visual[image]", "public/images/test_image.png", make_visible: true)
+      select "外観", from: "visual[visual_category_id]"
+      # 投稿するボタンをクリックする
+      expect do
+        find('input[value="投稿する"]').click
+      end.to change { Visual.count }.by(1)
+      # 投稿完了ページに遷移することを確認する
+      expect(page).to have_content("投稿が完了しました")
+      # 外観/内装一覧ページに投稿した内容が存在する
+      find_link("一覧へ戻る", href: visuals_path).click
+      expect(page).to have_selector("img[src$='test_image.png']")
+      # 編集ボタンをクリックする
+      click_on "編集"
+      # フォーム内容を変更する
+      select "内装", from: "visual[visual_category_id]"
+      # 投稿するボタンをクリックする
+      expect do
+        find('input[value="投稿する"]').click
+      end.to change { Visual.count }.by(0)
+      # 編集完了ページに遷移する
+      expect(page).to have_content("編集が完了しました")
+    end
+  end
 end
