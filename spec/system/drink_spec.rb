@@ -431,5 +431,43 @@ RSpec.describe 'ドリンク', type: :system do
       expect(page).to have_content(@drink.price)
       expect(page).to have_content("ビール")
     end
+
+    it "検索が該当しない時" do
+      # adminでログインする
+      visit new_user_session_path
+      fill_in "user[email]", with: "admin@admin.com"
+      fill_in "user[password]", with: "000aaa"
+      find('input[name="commit"]').click
+      expect(current_path).to eq root_path
+      # お飲み物ボタンをクリック
+      expect(page).to have_content("お飲み物")
+      visit drinks_path
+      # 新規投稿ボタンをクリック
+      find_link("新規作成", href: new_drink_path).click
+      expect(current_path).to eq new_drink_path
+      # フォームを入力する
+      fill_in "drink[title]", with: @drink.title
+      fill_in "drink[detail]", with: @drink.detail
+      fill_in "drink[price]", with: @drink.price
+      select "ビール", from: "drink[drink_category_id]"
+      attach_file("drink[image]", "public/images/test_image.png", make_visible: true)
+      # 投稿するボタンをクリック
+      expect do
+        find('input[value="投稿する"]').click
+      end.to change { Drink.count }.by(1)
+      # 投稿完了ページに遷移することを確認する
+      expect(page).to have_content("投稿が完了しました")
+      # ドリンク一覧ページに投稿した内容が存在する
+      find_link("一覧へ戻る", href: drinks_path).click
+      expect(page).to have_selector("img[src$='test_image.png']")
+      expect(page).to have_content(@drink.title)
+      expect(page).to have_content(@drink.price)
+      expect(page).to have_content("ビール")
+      # ハイボールのラジオボタンをクリック
+      find("#q_drink_category_id_eq_3").click
+      click_on "検索"
+      # 投稿した内容が存在しないことを確認する
+      expect(page).to have_content("該当する商品がありませんでした")
+    end
   end
 end
