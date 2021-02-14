@@ -373,4 +373,47 @@ RSpec.describe 'フード', type: :system do
       end.to change { FoodLike.count }.by(-1)
     end
   end
+
+  context "フード検索" do
+    it "カテゴリーと検索ボタンが一致した場合に表示する" do
+      # adminでログインする
+      visit new_user_session_path
+      fill_in "user[email]", with: "admin@admin.com"
+      fill_in "user[password]", with: "000aaa"
+      find('input[name="commit"]').click
+      expect(current_path).to eq root_path
+      # お飲み物ボタンをクリック
+      expect(page).to have_content("お飲み物")
+      visit foods_path
+      # 新規投稿ボタンをクリック
+      find_link("新規作成", href: new_food_path).click
+      expect(current_path).to eq new_food_path
+      # フォームを入力する
+      fill_in "food[title]", with: @food.title
+      fill_in "food[detail]", with: @food.detail
+      fill_in "food[price]", with: @food.price
+      select "とりあえず", from: "food[food_category_id]"
+      attach_file("food[image]", "public/images/test_image.png", make_visible: true)
+      # 投稿するボタンをクリック
+      expect do
+        find('input[value="投稿する"]').click
+      end.to change { Food.count }.by(1)
+      # 投稿完了ページに遷移することを確認する
+      expect(page).to have_content("投稿が完了しました")
+      # フード一覧ページに投稿した内容が存在する
+      find_link("一覧へ戻る", href: foods_path).click
+      expect(page).to have_selector("img[src$='test_image.png']")
+      expect(page).to have_content(@food.title)
+      expect(page).to have_content(@food.price)
+      expect(page).to have_content("とりあえず")
+      # とりあえずのラジオボタンをクリック
+      find("#q_food_category_id_eq_3").click
+      click_on "検索"
+      # 投稿した内容が存在する
+      expect(page).to have_selector("img[src$='test_image.png']")
+      expect(page).to have_content(@food.title)
+      expect(page).to have_content(@food.price)
+      expect(page).to have_content("とりあえず")
+    end
+  end
 end
