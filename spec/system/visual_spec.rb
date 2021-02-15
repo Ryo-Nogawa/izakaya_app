@@ -226,7 +226,7 @@ RSpec.describe 'フード', type: :system do
       # 外観/内装ボタンをクリック
       expect(page).to have_content("外観/内装")
       visit visuals_path
-      # 新規投稿ボタンをクリック
+      # 新規作成ボタンをクリック
       find_link("新規作成", href: new_visual_path).click
       expect(current_path).to eq new_visual_path
       # フォームを入力する
@@ -246,6 +246,38 @@ RSpec.describe 'フード', type: :system do
       click_on "検索"
       # 投稿した内容が存在する
       expect(page).to have_selector("img[src$='test_image.png']")
+    end
+
+    it "検索が該当しない時" do
+      # adminでログインする
+      visit new_user_session_path
+      fill_in "user[email]", with: "admin@admin.com"
+      fill_in "user[password]", with: "000aaa"
+      find('input[name="commit"]').click
+      expect(current_path).to eq root_path
+      # 外観/内装ボタンをクリック
+      expect(page).to have_content("外観/内装")
+      visit visuals_path
+      # 新規作成ボタンをクリック
+      find_link("新規作成", href: new_visual_path).click
+      expect(current_path).to eq new_visual_path
+      # フォームを入力する
+      attach_file("visual[image]", "public/images/test_image.png", make_visible: true)
+      select "外観", from: "visual[visual_category_id]"
+      # 投稿するボタンをクリック
+      expect do
+        find('input[value="投稿する"]').click
+      end.to change { Visual.count }.by(1)
+      # 投稿完了ページに遷移することを確認する
+      expect(page).to have_content("投稿が完了しました")
+      # 外観/内装一覧ページに投稿した内容が存在する
+      find_link("一覧へ戻る", href: visuals_path).click
+      expect(page).to have_selector("img[src$='test_image.png']")
+      # 内装のラジオボタンをクリック
+      find("#q_visual_category_id_eq_3").click
+      click_on "検索"
+      # 投稿した内容が存在しないことを確認する
+      expect(page).to have_no_selector("img[src$='test_image.png']")
     end
   end
 end
