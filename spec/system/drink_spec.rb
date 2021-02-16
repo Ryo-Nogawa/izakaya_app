@@ -506,6 +506,15 @@ RSpec.describe 'ドリンク', type: :system do
       expect(page).to have_content("ビール")
       # 飲み放題のラベルが付いていることを確認する
       expect(page).to have_css(".caption")
+      # 飲み放題のラジオボタンをクリック
+      find("#q_free_drink_eq_1").click
+      click_on "検索"
+      # 投稿した内容が存在する
+      expect(page).to have_selector("img[src$='test_image.png']")
+      expect(page).to have_content(@drink.title)
+      expect(page).to have_content(@drink.price)
+      expect(page).to have_content("ビール")
+      expect(page).to have_css(".caption")
     end
   end
 end
