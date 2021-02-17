@@ -490,6 +490,15 @@ RSpec.describe 'フード', type: :system do
       expect(page).to have_content("とりあえず")
       # 食べ放題のラベルが付いていることを確認する
       expect(page).to have_css(".caption")
+      # 食べ放題のラジオボタンをクリック
+      find("#q_free_food_eq_1").click
+      click_on "検索"
+      # 投稿した内容が存在する
+      expect(page).to have_selector("img[src$='test_image.png']")
+      expect(page).to have_content(@food.title)
+      expect(page).to have_content(@food.price)
+      expect(page).to have_content("とりあえず")
+      expect(page).to have_css(".caption")
     end
   end
 end
