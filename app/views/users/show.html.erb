@@ -24,7 +24,10 @@
               <td><%= book.reserve_category.name %></td>
               <% if book.reserve_date > @today %>
                 <td><%= link_to '変更する', edit_book_path(book.id), class: "btn btn-outline-primary" %></td>
-                <td><%= link_to 'キャンセルする', book_path(book.id), method: :DELETE, class: "btn btn-outline-primary" %></td>
+                <td><%= link_to 'キャンセルする', book_path(book.id), method: :DELETE, class: "btn btn-outline-primary", data: 
+                {confirm: "予約をキャンセルしてもよろしいでしょうか？",
+                cancel: "やめる",
+                commit: "キャンセルする"}, title: "キャンセル確認" %></td>
               <% end %>
             </tr>
           <% end %>
