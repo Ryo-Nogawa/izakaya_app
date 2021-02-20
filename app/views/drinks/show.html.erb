@@ -33,7 +33,10 @@
       <%= link_to '一覧へ戻る', drinks_path, class: "btn btn-outline-danger btn-lg mr-3" %>
       <% if current_user.admin? %>
         <%= link_to '編集', edit_drink_path(params[:id]), class: "btn btn-outline-danger btn-lg mr-3" %>
-        <%= link_to '削除', drink_path(params[:id]), method: :delete, class: "btn btn-outline-danger btn-lg" %>
+        <%= link_to '削除', drink_path(params[:id]), method: :delete, class: "btn btn-outline-danger btn-lg", data:
+        {confirm: "ドリンクメニューを削除してもよろしいでしょうか？",
+        cancel: "やめる",
+        commit: "キャンセルする"}, title: "キャンセル確認" %>
       <% end %>
     </div>
   </div>
