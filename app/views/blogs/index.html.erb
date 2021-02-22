@@ -33,7 +33,11 @@
               </td>
               <% if current_user.admin? %>
                 <td><%= link_to '編集', edit_blog_path(blog.id), class: "btn btn-outline-danger" %></td>
-                <td><%= link_to '削除', blog_path(blog.id), method: :delete, class: "btn btn-outline-danger" %></td>
+                <td><%= link_to '削除', blog_path(blog.id), method: :delete, class: "btn btn-outline-danger", data: {
+                  confirm: "こちらの投稿を削除してもよろしいでしょうか？",
+                  cancel: "やめる",
+                  commit: "削除する"
+                }, title: "削除確認" %></td>
               <% end %>
             </tr>
           </tbody>
