@@ -25,7 +25,11 @@
           <% if current_user.admin? %>
             <div class="visual-index-admin">
               <%= link_to '編集', edit_visual_path(visual.id), class: "btn btn-outline-danger btn-sm mr-2" %>
-              <%= link_to '削除', visual_path(visual.id), method: :delete,class: "btn btn-outline-danger btn-sm" %>
+              <%= link_to '削除', visual_path(visual.id), method: :delete,class: "btn btn-outline-danger btn-sm", data: {
+                confirm: "こちらの画像を削除してもよろしいでしょうか？",
+                cancel: "やめる",
+                commit: "削除する"
+              }, title: "削除確認" %>
             </div>
           <% end %>
         </div>
