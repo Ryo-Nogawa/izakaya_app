@@ -4,5 +4,9 @@
 
 <% if current_user.admin? %>
   <%= link_to '編集', edit_visual_path(@visual.id) %>
-  <%= link_to '削除', visual_path(@visual.id), method: :delete %>
+  <%= link_to '削除', visual_path(@visual.id), method: :delete, data: {
+    confirm: "こちらの画像を削除してもよろしいでしょうか？",
+    cancel: "やめる", 
+    commit: "削除する"
+  }, title: "削除確認" %>
 <% end %>
