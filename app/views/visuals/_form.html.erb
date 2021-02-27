@@ -25,7 +25,11 @@
       </div>
       
       <%= link_to '一覧へ戻る', visuals_path, class: "btn btn-outline-primary mr-3 mt-3" %>
-      <%= f.submit '投稿する', class: "btn btn-outline-primary mt-3" %>
+      <%= f.submit '投稿する', class: "btn btn-outline-primary mt-3", data: {
+        confirm: "この内容で投稿してもよろしいでしょうか？",
+        cancel: "やめる",
+        commit: "投稿する"
+      }, title: "投稿確認" %>
     </div>
   <% end %>
 </div>
