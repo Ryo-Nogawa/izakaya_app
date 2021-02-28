@@ -39,7 +39,11 @@
 
   <div class="submit">
     <%= link_to '戻る', blogs_path, class: "btn btn-outline-primary mt-3 mr-3" %>
-    <%= f.submit '投稿する', class: "btn btn-outline-primary mt-3" %>
+    <%= f.submit '投稿する', class: "btn btn-outline-primary mt-3", data: {
+      confirm: "この内容で投稿してもよろしいでしょうか？",
+      cancel: "やめる",
+      commit: "投稿する"
+    }, title: "投稿確認" %>
   </div>
 
 <% end %>
