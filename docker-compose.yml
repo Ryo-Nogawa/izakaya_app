@@ -38,6 +38,8 @@ services:
       # 環境変数の読み込み
       - BASIC_AUTH_USER
       - BASIC_AUTH_PASSWORD
+    depends_on: 
+      - db
 
   
 volumes: 
